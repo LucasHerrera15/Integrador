@@ -7,12 +7,12 @@ Adolescentes y adultos de Argentina
 
 Listado de pags de referencia (5)
 
-https://www.sportline.com.ar
-https://www.mercadolibre.com.ar/
-https://www.dexter.com.ar/
-https://www.solodeportes.com.ar/
-https://www.adidas.com.ar/
-
+https://www.sportline.com.ar  
+https://www.mercadolibre.com.ar/  
+https://www.dexter.com.ar/  
+https://www.solodeportes.com.ar/  
+https://www.adidas.com.ar/  
+ 
 
 Autores ✒️ Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios
 
