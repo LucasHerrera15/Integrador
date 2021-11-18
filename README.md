@@ -16,6 +16,7 @@ https://stockx.com/
 
 Nosotros somos...
 Lucas Herrera, de Buenos Aires, Argentina. Estudiante de "Digital House".
+
 Sabrina Vera, 22 años, de Concordia, Entre Rios. Estudiante de "Digital House".
 
 
