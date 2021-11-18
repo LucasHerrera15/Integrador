@@ -1,21 +1,19 @@
-Título del Proyecto Acá va un párrafo que describa lo que es el proyecto
+E-commerce de zapas de edicion limitada(Se cambia)
+Nuestro proyecto se basa en la venta de "Zapatillas de edición limitada". El mismo va a contar con registro y login, inicio con opciones desplegables, detalle de productos y carrito de compras.
 
-Publico objetivo 
+Público objetivo:
+Nuestro objetivo es enfocarnos en adolecentes y adultos de toda la Argentina.
 
-Adolescentes y adultos de Argentina
-
-
-Listado de pags de referencia (5)
+Lista de nuestras páginas referentes: 
 
 https://www.sportline.com.ar  
 https://www.mercadolibre.com.ar/  
 https://www.dexter.com.ar/  
 https://www.solodeportes.com.ar/  
 https://www.adidas.com.ar/  
- 
+https://stockx.com/
 
-Autores ✒️ Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios
+Nosotros somos...
+Lucas Herrera, de Buenos Aires, Argentina. Estudiante de "Digital House".
 
-Andrés Villanueva - Trabajo Inicial - villanuevand Fulanito Detal - Documentación - fulanitodetal También puedes mirar la lista de todos los contribuyentes quíenes han participado en este proyecto.
-
-link de tablero de trabajo
+Nuestro tablero de trabajo es https://trello.com/proyectointegradordigitalh.
