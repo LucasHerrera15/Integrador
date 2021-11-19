@@ -1,4 +1,4 @@
-E-commerce de zapas de edicion limitada(Se cambia)
+Agregar ideas para el nombre (deluxe sneakers, project limited, LE company, sneakers club, etc)
 
 Nuestro proyecto se basa en la venta de "Zapatillas de edición limitada". El mismo va a contar con registro y login, inicio con opciones desplegables, detalle de productos y carrito de compras.
 
