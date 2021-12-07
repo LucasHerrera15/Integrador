@@ -1,0 +1,19 @@
+{
+  "name": "integrador",
+  "version": "1.0.0",
+  "description": "*DELUXE SNEAKERS*",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasHerrera15/Integrador.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucasHerrera15/Integrador/issues"
+  },
+  "homepage": "https://github.com/LucasHerrera15/Integrador#readme"
+}
