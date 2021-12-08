@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/LucasHerrera15/Integrador/issues"
   },
-  "homepage": "https://github.com/LucasHerrera15/Integrador#readme"
+  "homepage": "https://github.com/LucasHerrera15/Integrador#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
 }
