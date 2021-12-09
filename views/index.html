@@ -4,35 +4,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/index.css" rel="stylesheet">
-    <title>DX SNEAKERS</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Dx sneaker: zapatillas deluxe</title>
 </head>
 <body>
     <header class="header">
-        <nav class="navegation">
-            <div class="contenedor">
-                <div class="logo">
-                    <img src="/images/logo.jpg">
-                </div>
-                <div class="barra-busqueda">
-                    <form class="barra">
-                        <input class="buscar" name="busqueda" placeholder="Buscar productos, marcas.">
-                        <span><i class="fas fa-search" style="padding: 6px;"></i></span>
-                    </form>    
-                </div>
-                <div class="contacto">
-                    <a class="cada-contacto" href="/carrito.html">carrito</a>
-                    <a class="cada-contacto" href="/registro.html">registro</a>
-                    <a class="cada-contacto" href="/login.html">login</a>
-                </div>
-            </div>
-        </nav>    
+        <div class="contenedor__header">
+            <img id="logo" src="/images/logo.png">
+            <form class="barra__busqueda">
+                    <input class="buscador" type="search" placeholder="Marcas, productos">
+                    <input class="boton" type="submit">
+            </form>
+            <span class="menu__icon"><i class="fas fa-bars" style="font-size: 1.5em;"></i></span>
+            <nav class="navigation">    
+                <ul>
+                    <li><a href="/views/carrito.html">carrito</li>
+                    <li><a href="/views/login.html">login</a></li>
+                    <li><a href="/views/registro.html">registro</a></li>
+                </ul>
+            </nav>
+        </div>    
     </header>
-    <main>
-       
+    <main class="main">
+        <div class="banner">
+            <p>imagenes</p>
+        </div>
+        <div>
+            <h3>Los más buscados</h3>
+        </div>
+        <div class="contenedor__productos">
+            <article class="productos">
+                <p>hola</p>
+                <br><br><br><br><br><br><br>
+            </article>
+            <article class="productos">
+                <p>hola</p>
+                <br><br><br><br><br><br><br>
+            </article>
+            <article class="productos">
+                <p>hola</p>
+                <br><br><br><br><br><br><br>
+            </article>
+            <article class="productos">
+                <p>hola</p>
+                <br><br><br><br><br><br><br>
+            </article>
+        </div>
+        <div>
+            <h3>Ofertas</h3>
+        </div>
+        <div class="contenedor__productos">
+            <article class="productos">
+                <p>hola</p>
+                <br><br><br><br><br><br><br>
+            </article>
+            <article class="productos">
+                <p>hola</p>
+                <br><br><br><br><br><br><br>
+            </article>
+            <article class="productos">
+                <p>hola</p>
+                <br><br><br><br><br><br><br>
+            </article>
+            <article class="productos">
+                <p>hola</p>
+                <br><br><br><br><br><br><br>
+            </article>
+        </div>
     </main>
-    <footer>
-
+    <footer class="footer">
+        <div class="contenedor__footer">
+            <div class="redes">
+                <h4>Seguinos en nuestras redes</h4><br>
+                <a href="carrito.html"><i class="fab fa-facebook" style="font-size: medium; color: blue;"></i></a>
+            </div>
+            <div class="copyright">
+                <i class="far fa-copyright"></i>
+                <h4>Copyrigth: Todos los derechos reservados</h4>
+            </div>
+        </div>    
     </footer>
 </body>
 </html>
