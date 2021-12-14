@@ -67,8 +67,45 @@ h3{
 }
 .productos{
     background-color: #FFF;
-    width: 46%;
+    width: 96%;
     margin: 2%;
     border-radius: 10px;
     box-shadow: 1px 1px 1px 1px #aaa;
+}
+
+@media (min-width: 425px){
+    .productos{
+        width: 46%;
+    }
+    #logo{
+        width: 20%;
+    }
+}
+@media (min-width: 768px){
+    .productos{
+        width: 29%;
+    }
+    #logo{
+        width: 15%;
+    }
+    h3{
+        font-size: 1.2em;
+    }
+    .redes{
+        font-size: 1.5em;
+    }
+    .copyright{
+        font-size: 1.5em;
+    }
+}
+@media (min-width: 1440px){
+    .productos{
+        width: 21%;
+    }
+    #logo{
+        width: 10%;
+    }
+    h3{
+        font-size: 1.5em;
+    }
 }
