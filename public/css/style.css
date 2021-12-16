@@ -3,9 +3,6 @@
     padding: 0px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-main{
-    background-color: #e3e4e5;
-}
 .contenedor__footer{
     background-color: #FF9A00;
     display: flex;
@@ -21,12 +18,12 @@ main{
     padding: 12px;
 }
 .header{
-    background-color: #F6F7D7;
+    background-color: #FF9A00;
     width: 100vw;
 }
 .contenedor__header{
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -37,8 +34,8 @@ main{
 .buscador{
     width: 100%;
     padding: 1%;
-    border-radius: 1px;
-    border-color: #FF9A00;
+    border-radius: 2px;
+    border-color: white;
 }
 .menu__icon{
     width: 10%;
@@ -48,7 +45,7 @@ main{
     display: none;
 }
 #logo{
-    width: 50%;
+    width: 100px;
 }
 .banner{
     width: 100%;
@@ -66,22 +63,24 @@ h3{
     flex-wrap: wrap;
 }
 .productos{
-    background-color: #FFF;
-    width: 96%;
+    border: black solid 1px;
+    width: 95%;
     margin: 2%;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px #aaa;
+    border-radius: 2px;
 }
 
 @media (min-width: 425px){
     .productos{
-        width: 46%;
+        width: 45%;
     }
-    #logo{
+   /*  #logo{
         width: 20%;
-    }
+    } */
 }
 @media (min-width: 768px){
+    .contenedor__header{
+        flex-direction: row;
+    }
     .menu__icon{
         display: none;
     }
@@ -105,9 +104,13 @@ h3{
     .productos{
         width: 29%;
     }
-    #logo{
-        width: 15%;
+    .productos:hover{
+        cursor: pointer;
+        box-shadow: 0px 0px 10px rgb( 100 , 100 , 100 );
     }
+    /* #logo{
+        width: 15%;
+    } */
     h3{
         font-size: 1.2em;
     }
@@ -118,13 +121,13 @@ h3{
         font-size: 1.5em;
     }
 }
-@media (min-width: 1440px){
+@media (min-width: 1024px){
     .productos{
-        width: 21%;
+        width: 20.8%;
     }
-    #logo{
+   /*  #logo{
         width: 10%;
-    }
+    } */
     h3{
         font-size: 1.5em;
     }
@@ -140,5 +143,10 @@ h3{
     }
     .redes h4{
         padding: 12px;
+    }
+}
+@media (min-width: 1440px){
+    .productos{
+        width: 15.8%;
     }
 }
