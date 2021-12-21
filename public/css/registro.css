@@ -1,23 +1,6 @@
 *{
     box-sizing: border-box;
 }
-#header{
-   
-}
-.contenedorHeader{
-    
-    background-color: #FFDAA8;
-    height: 200px;
-    border: solid 1px #FF9100 ;
-}
-#logo{
-    display: flex;
-    margin-left: 45%;
-    width: 200px;
-    height: 198px;
-    background-color: #FFDAA8;
-    
-}
 #registro{
     display: flex;
     flex-direction: column;
