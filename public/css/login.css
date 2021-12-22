@@ -1,0 +1,66 @@
+body{
+    background-image: url(/imagenes/fondoLogin.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+#logo{
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+    height: 150px;
+    width: 150px;    
+}
+#form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-right: 50px;
+
+}
+#fondoLogin{
+    padding: 10px;
+    margin-top: 130px;
+}
+.recuerdame{
+    display: flex;
+    justify-content: center;
+}
+.enviarLogin{
+    display: flex;
+    justify-content: center;
+    
+}
+.labelLogin{
+    display: flex;
+    justify-content: center;
+    font-family: 'Secular One', sans-serif;
+    font-weight: 900;
+    color: #FF9100;
+    font-size: 25px;
+}
+.letra{
+    font-family: 'Secular One', sans-serif;
+    font-weight: 900;
+    color: #FF9100;
+}
+.colorBoton{
+    background-color:#004AAD !important;
+    border-color: #6381FF !important;
+}
+.olvidasteContra{
+    display: flex;
+    justify-content: center;
+}
+#olvidasteLetra{
+    font-size: 10px;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+@media (max-width: 1300px){
+    body{
+        width: 100%;
+    }
+}

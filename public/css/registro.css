@@ -1,11 +1,11 @@
-*{
-    box-sizing: border-box;
+@font-face {
+    font-family: "miFuente";
+    src: url("/public/Fuentes/Sports\ World-Regular.ttf") format("opentype");
 }
 #header{
    
 }
 .contenedorHeader{
-    
     background-color: #FFDAA8;
     height: 200px;
     border: solid 1px #FF9100 ;
@@ -30,17 +30,13 @@
 .mb-3{
     border-radius: 5px;
 }
-/*
+
 #textoLogo{
     display: flex;
     align-items: flex-end;
     justify-content: center;
     color: #004AAD;
-    font-family: sport world;
+    font-family: "miFuente";
     
 }
-@font-face {
-    font-family: "miFuente";
-    src: url();
-}
-*/
+
