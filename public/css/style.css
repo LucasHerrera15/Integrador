@@ -55,6 +55,7 @@
 }
 .imagenes{
     width: 100%;
+    border-bottom: black solid 1px;
 }
 .descripcion{
     display: flex;
