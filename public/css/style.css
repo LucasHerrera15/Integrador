@@ -26,6 +26,65 @@
     left: 0;
     width: 100vw;
 }
+.banner{
+    margin-top: 100px;
+    height: 70px;
+    width: 100%;
+    animation: banner 10s infinite linear alternate;
+    background-size: 100% 100%;
+}
+@keyframes banner{
+    0%, 10%{
+        background-image: url(../images/banner.jpg);
+    }
+    15%, 25%{
+        background-image: url(../images/banner1.jpg);
+    }
+    30%, 40%{
+        background-image: url(../images/banner2.jpg);
+    }
+    45%, 55%{
+        background-image: url(../images/banner3.jpg);
+    }
+    60%, 70%{
+        background-image: url(../images/banner4.jpg);
+    }
+    75%, 100%{
+        background-image: url(../images/banner5.jpg);
+    }
+}
+.imagenes{
+    width: 100%;
+}
+.descripcion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em 10px 1em;
+}
+.informacion-precio{
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    margin-bottom: 1em;
+}
+.envio{
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+}
+.descripcion p{
+    font-size: 20px;
+    padding-left: 5px;
+}
+.informacion-precio i{
+    size: 20px;
+    color: #FFB000;
+}
+.envio i{
+    size: 20px;
+    color: #FFB000;
+}
 .contenedor__header{
     display: flex;
     flex-direction: row-reverse;
@@ -52,14 +111,9 @@
 #logo{
     width: 100px;
 }
-.banner{
-    padding-top: 100px;
-    width: 100%;
-    height: 15vh;
-}
 h3{
     color: #FF9100;
-    margin-top: 10px;
+    margin-top: 100px;
     margin-left: 2%;
     font-size: 1.5em;
 }
@@ -68,7 +122,6 @@ h4{
 }
 .contenedor__productos{
     margin-top: 10px;
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -83,11 +136,14 @@ h4{
     .productos{
         width: 45%;
     }
+    .banner{
+        height: 140px;
+    }
 }
 @media (min-width: 768px){
     .banner{
-        height: 25vh;
-    }
+        height: 350px;
+    } 
     .contenedor__header{
         flex-direction: row;
     }
@@ -107,6 +163,7 @@ h4{
         text-decoration: none;
         padding: 12px;
         font-size: 18px;
+        transition-delay: 0.1s;
     }
     .navigation a:hover{
         cursor: pointer;
@@ -116,14 +173,19 @@ h4{
     .navigation a i{
         margin-left: 4px;
     }
+    .contenedor__productos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
     .productos{
-        width: 29%;
+        width:29%;
     }
     .productos:hover{
         cursor: pointer;
         box-shadow: 0px 0px 10px rgb( 100 , 100 , 100 );
     }
     h3{
+        margin-left: 11.5%;
         font-size: 1.6em;
     }
     .redes{
@@ -134,9 +196,6 @@ h4{
     }
 }
 @media (min-width: 1024px){
-    .productos{
-        width: 20.8%;
-    }
     h3{
         font-size: 1.8em;
     }
@@ -152,10 +211,5 @@ h4{
     }
     .redes h4{
         padding: 12px;
-    }
-}
-@media (min-width: 1440px){
-    .productos{
-        width: 15.8%;
     }
 }
