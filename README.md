@@ -24,6 +24,6 @@ Ignacio Freitas, 29 años, de Buenos Aires, Argentina. Estudiante de "Digital Ho
 
 Valentin Alonso, 19 años, de Capital Federal, Argentina. Estudiante de "Digital House".
 
-Angel Garay, 38, de Mendoza, Argentina. Estudiante de "Digital House".
+Angel Garay, 38 años, de Mendoza, Argentina. Estudiante de "Digital House".
 
 Nuestro tablero de trabajo es https://trello.com/proyectointegradordigitalh.
