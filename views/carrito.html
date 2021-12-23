@@ -12,17 +12,17 @@
 <body>
     <header class="header">
         <div class="contenedor__header">
-            <img id="logo" src="/images/logoSinFondo.png">
-            <form class="barra__busqueda">
+            <a href="/"><img id="logo" src="/images/logoSinFondo.png"></a>
+            <form class="barra__busqueda" action="/search" method="get">
                     <input class="buscador" type="search" placeholder="Marcas, productos">
-                    <input class="boton" type="submit">
+                    <i class="fas fa-search"></i>
             </form>
             <span class="menu__icon"><i class="fas fa-bars" style="font-size: 1.5em; color: #FFC06D ;"></i></span>
             <nav class="navigation">    
                 <ul>
-                   <a href="carrito.html">Carrito<i class="fas fa-shopping-cart"></i></a>
-                   <a href="login.html">Login<i class="fas fa-sign-in-alt"></i></a>
-                   <a href="registro.html">Registro<i class="far fa-id-card"></i></a>
+                   <a href="/carrito">Carrito<i class="fas fa-shopping-cart"></i></a>
+                   <a href="/login">Login<i class="fas fa-sign-in-alt"></i></a>
+                   <a href="/registro">Registro<i class="far fa-id-card"></i></a>
                 </ul>
             </nav>
         </div>    
@@ -30,52 +30,115 @@
     <main>
         <div class="banner"></div>
         <div class="contenedor-carrito">
-            <h2>Carrito</h2>
+            <h2 id="carrito">Carrito</h2>
             <div class="cada-producto-carrito">
                 <article class="producto-carrito">
-                    <img src="">
+                    <img class="imagen-carrito" src="/images/adidas-negras-blancas.jpg">
                     <div class="informacion-producto">
                         <div class="informacion">
-                            <p>Zapatillas nike jordan 3m talle 42</p>
+                            <p>Adidas superstars B3</p>
+                            <form action="" method="post">
+                                <label for="talle">Talle</label>
+                                <select name="talle" id="talle">
+                                    <option>38</option>
+                                    <option>39</option>
+                                    <option>40</option>
+                                    <option>41</option>
+                                    <option>42</option>
+                                    <option>43</option>
+                                    <option>44</option>
+                                </select>
+                                <a href="">Eliminar</a>
+                            </form>
                         </div>
-                        <div class="precio">
-                            <p><i class="fas fa-dollar-sign"></i>20.550</p>
-                        </div>
+                    </div>
+                    <div class="precio">
+                        <p><i class="fas fa-dollar-sign"></i>20.550</p>
                     </div>
                 </article>
                 <article class="producto-carrito">
-                    <img src="">
+                    <img class="imagen-carrito" src="/images/adidas-yeezy-boost350br.jpg">
                     <div class="informacion-producto">
                         <div class="informacion">
-                            <p>Zapatillas nike jordan 3m talle 42</p>
+                            <p>Adidas superstars B3</p>
+                            <form class="talle-carrito" action="" method="post">
+                                <label for="talle">Talle</label>
+                                <select name="talle" id="talle">
+                                    <option>38</option>
+                                    <option>39</option>
+                                    <option>40</option>
+                                    <option>41</option>
+                                    <option>42</option>
+                                    <option>43</option>
+                                    <option>44</option>
+                                </select>
+                                <a href="">Eliminar</a>
+                            </form>
                         </div>
-                        <div class="precio">
-                            <p><i class="fas fa-dollar-sign"></i>20.550</p>
-                        </div>
+                    </div>
+                    <div class="precio">
+                        <p><i class="fas fa-dollar-sign"></i>20.550</p>
                     </div>
                 </article>
                 <article class="producto-carrito">
-                    <img src="">
+                    <img class="imagen-carrito" src="/images/newbalance-aime-leon-dore.png">
                     <div class="informacion-producto">
                         <div class="informacion">
-                            <p>Zapatillas nike jordan 3m talle 42</p>
+                            <p>Adidas superstars B3</p>
+                            <form action="" method="post">
+                                <label for="talle">Talle</label>
+                                <select name="talle" id="talle">
+                                    <option>38</option>
+                                    <option>39</option>
+                                    <option>40</option>
+                                    <option>41</option>
+                                    <option>42</option>
+                                    <option>43</option>
+                                    <option>44</option>
+                                </select>
+                                <a href="">Eliminar</a>
+                            </form>
                         </div>
-                        <div class="precio">
-                            <p><i class="fas fa-dollar-sign"></i>20.550</p>
-                        </div>
+                    </div>
+                    <div class="precio">
+                        <p><i class="fas fa-dollar-sign"></i>20.550</p>
                     </div>
                 </article>
                 <article class="producto-carrito">
-                    <img src="">
+                    <img class="imagen-carrito" src="/images/nike-solstice.jpg">
                     <div class="informacion-producto">
                         <div class="informacion">
-                            <p>Zapatillas nike jordan 3m talle 42</p>
-                        </div>
-                        <div class="precio">
-                            <p><i class="fas fa-dollar-sign"></i>20.550</p>
+                            <p>Adidas superstars B3</p>
+                            <form action="" method="post">
+                                <label for="talle">Talle</label>
+                                <select name="talle" id="talle">
+                                    <option>38</option>
+                                    <option>39</option>
+                                    <option>40</option>
+                                    <option>41</option>
+                                    <option>42</option>
+                                    <option>43</option>
+                                    <option>44</option>
+                                </select>
+                                <a href="">Eliminar</a>
+                            </form>
                         </div>
                     </div>
+                    <div class="precio">
+                        <p><i class="fas fa-dollar-sign"></i>20.550</p>
+                    </div>
                 </article>
+                <div id="total">
+                    <p id="total-compra">Total:</p>
+                    <div class="precio-total">
+                        <p><i class="fas fa-dollar-sign"></i>20.550</p>
+                    </div>
+                </div>
+                <div class="compra-carrito">
+                    <form action="/views/index.html" method="post">
+                        <button id="comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
             </div>
         </div>
     </main>
