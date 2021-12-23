@@ -15,48 +15,106 @@
 <body>
     <header class="header">
         <div class="contenedor__header">
-            <img id="logo" src="/imagenes/logoSinFondo.png">
-            <form class="barra__busqueda">
+            <a href="/"><img id="logo" src="/images/logoSinFondo.png"></a>
+            <form class="barra__busqueda" action="/search" method="get">
                     <input class="buscador" type="search" placeholder="Marcas, productos">
-                    <input class="boton" type="submit">
+                    <i class="fas fa-search"></i>
             </form>
             <span class="menu__icon"><i class="fas fa-bars" style="font-size: 1.5em; color: #FFC06D ;"></i></span>
             <nav class="navigation">    
                 <ul>
-                   <a href="carrito.html">Carrito<i class="fas fa-shopping-cart"></i></a>
-                   <a href="login.html">Login<i class="fas fa-sign-in-alt"></i></a>
-                   <a href="registro.html">Registro<i class="far fa-id-card"></i></a>
+                   <a href="/carrito">Carrito<i class="fas fa-shopping-cart"></i></a>
+                   <a href="/login">Login<i class="fas fa-sign-in-alt"></i></a>
+                   <a href="/registro">Registro<i class="far fa-id-card"></i></a>
                 </ul>
             </nav>
         </div>    
     </header>
     <main class="main">
-        <div class="banner">
-            <p>imagenes</p>
-        </div>
+        <div class="banner"></div>
         <div>
             <h3>Los más buscados</h3>
         </div>
         <div class="contenedor__productos">
             <article class="productos">
-                <p>hola</p>
-                <br><br><br><br><br><br><br>
+                <img class="imagenes" src="/images/adidas-yeezy-boost350br.jpg">
+                <div class="descripcion">
+                    <div class="informacion-precio">
+                        <i class="fas fa-dollar-sign"></i>
+                        <p class="precio">150</p>
+                    </div>
+                    <div class="envio">
+                        <i class="fas fa-truck"></i>
+                        <p>Envío gratis</p>
+                    </div>
+                    <div class="nombre-producto">
+                        <p>Adidas yeezy boost BR</p>
+                    </div>
+                </div>
             </article>
             <article class="productos">
-                <p>hola</p>
-                <br><br><br><br><br><br><br>
+                <img class="imagenes" src="/images/adidas-negras-blancas.jpg">
+                <div class="descripcion">
+                    <div class="informacion-precio">
+                        <i class="fas fa-dollar-sign"></i>
+                        <p class="precio">208</p>
+                    </div>
+                    <div class="envio">
+                        <i class="fas fa-truck"></i>
+                        <p>Envío gratis</p>
+                    </div>
+                    <div class="nombre-producto">
+                        <p>Adidas yeezy boost BR</p>
+                    </div>
+                </div>
             </article>
             <article class="productos">
-                <p>hola</p>
-                <br><br><br><br><br><br><br>
+                <img class="imagenes" src="/images/gore-tex.jpg">
+                <div class="descripcion">
+                    <div class="informacion-precio">
+                        <i class="fas fa-dollar-sign"></i>
+                        <p class="precio">223</p>
+                    </div>
+                    <div class="envio">
+                        <i class="fas fa-truck"></i>
+                        <p>Envío gratis</p>
+                    </div>
+                    <div class="nombre-producto">
+                        <p>Adidas yeezy boost BR</p>
+                    </div>
+                </div>
             </article>
             <article class="productos">
-                <p>hola</p>
-                <br><br><br><br><br><br><br>
+                <img class="imagenes" src="/images/jordan-rojas.jpg">
+                <div class="descripcion">
+                    <div class="informacion-precio">
+                        <i class="fas fa-dollar-sign"></i>
+                        <p class="precio">150</p>
+                    </div>
+                    <div class="envio">
+                        <i class="fas fa-truck"></i>
+                        <p>Envío gratis</p>
+                    </div>
+                    <div class="nombre-producto">
+                        <p>Adidas yeezy boost BR</p>
+                    </div>
+                </div>
             </article>
             <article class="productos">
-                <p>hola</p>
-                <br><br><br><br><br><br><br>
+                <img class="imagenes" src="/images/jordan-verdeazul.jpg">
+                <div class="descripcion">
+                    <div class="informacion-precio">
+                        <i class="fas fa-dollar-sign"></i>
+                        <p class="precio">385</p>
+                    </div>
+                    <div class="envio">
+                        <i class="fas fa-truck"></i>
+                        <p>Envío gratis</p>
+                    </div>
+                    <div class="nombre-producto">
+                        <p>Adidas yeezy boost BR</p>
+                    </div>
+                </div>
             </article>
         </div>
         <div>
@@ -64,20 +122,68 @@
         </div>
         <div class="contenedor__productos">
             <article class="productos">
-                <p>hola</p>
-                <br><br><br><br><br><br><br>
+                <img class="imagenes" src="/images/newbalance-550.jpg">
+                <div class="descripcion">
+                    <div class="informacion-precio">
+                        <i class="fas fa-dollar-sign"></i>
+                        <p class="precio">273</p>
+                    </div>
+                    <div class="envio">
+                        <i class="fas fa-truck"></i>
+                        <p>Envío gratis</p>
+                    </div>
+                    <div class="nombre-producto">
+                        <p>Adidas yeezy boost BR</p>
+                    </div>
+                </div>
             </article>
             <article class="productos">
-                <p>hola</p>
-                <br><br><br><br><br><br><br>
+                <img class="imagenes" src="/images/newbalance-aime-leon-dore.png">
+                <div class="descripcion">
+                    <div class="informacion-precio">
+                        <i class="fas fa-dollar-sign"></i>
+                        <p class="precio">118</p>
+                    </div>
+                    <div class="envio">
+                        <i class="fas fa-truck"></i>
+                        <p>Envío gratis</p>
+                    </div>
+                    <div class="nombre-producto">
+                        <p>Adidas yeezy boost BR</p>
+                    </div>
+                </div>
             </article>
             <article class="productos">
-                <p>hola</p>
-                <br><br><br><br><br><br><br>
+                <img class="imagenes" src="/images/nike-hacky-sack.jpg">
+                <div class="descripcion">                   
+                    <div class="informacion-precio">
+                        <i class="fas fa-dollar-sign"></i>
+                        <p class="precio">139</p>
+                    </div>
+                    <div class="envio">
+                        <i class="fas fa-truck"></i>
+                        <p>Envío gratis</p>
+                    </div>
+                    <div class="nombre-producto">
+                        <p>Adidas yeezy boost BR</p>
+                    </div>
+                </div>
             </article>
             <article class="productos">
-                <p>hola</p>
-                <br><br><br><br><br><br><br>
+                <img class="imagenes" src="/images/nike-lowa.jpg">
+                <div class="descripcion">
+                    <div class="informacion-precio">
+                        <i class="fas fa-dollar-sign"></i>
+                        <p class="precio">199</p>
+                    </div>
+                    <div class="envio">
+                        <i class="fas fa-truck"></i>
+                        <p>Envío gratis</p>
+                    </div>
+                    <div class="nombre-producto">
+                        <p>Adidas yeezy boost BR</p>
+                    </div>
+                </div>
             </article>
         </div>
     </main>

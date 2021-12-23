@@ -24,3 +24,64 @@
     
 }
 
+main{
+    margin-top: 10%;
+    height: 100%;
+}
+.formreg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-around;
+}
+div input{
+    width: 30em;
+    border: 4px solid #90AACB;
+    border-radius: 10px;
+}
+label{
+    width: 10em;
+    font-weight: bold;
+    
+    
+}
+/*#labelradio{
+    align-items: center !important;
+    
+}
+.divradio{
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+
+}*/
+
+p label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    justify-content: space-evenly;
+    
+}
+p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: -10px;
+   
+}
+
+.labelradio{
+    padding: 5px;
+    margin-left: 5px;
+}
+
+
+.botones{
+    width: 10em;
+    
+}
+input{
+    margin-right: 5px;
+}

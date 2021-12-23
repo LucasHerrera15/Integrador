@@ -14,13 +14,13 @@ app.listen(process.env.PORT || 3000, function() {
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/index.html'))
 });
-app.get('/carrito.html', (req, res) => {
+app.get('/carrito', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/carrito.html'))
 });
-app.get('/login.html', (req, res) => {
+app.get('/login', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/login.html'))
 });
-app.get('/producto.html', (req, res) => {
+app.get('/producto', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/producto.html'))
 });
 app.get('/registro', (req, res) => {

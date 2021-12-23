@@ -13,39 +13,76 @@
 <body>
   <header class="header">
     <div class="contenedor__header">
-        <img id="logo" src="/imagenes/logoSinFondo.png">
-        <form class="barra__busqueda">
+        <a href="/"><img id="logo" src="/images/logoSinFondo.png"></a>
+        <form class="barra__busqueda" action="/search" method="get">
                 <input class="buscador" type="search" placeholder="Marcas, productos">
-                <input class="boton" type="submit">
+                <i class="fas fa-search"></i>
         </form>
         <span class="menu__icon"><i class="fas fa-bars" style="font-size: 1.5em; color: #FFC06D ;"></i></span>
         <nav class="navigation">    
             <ul>
-               <a href="carrito.html">Carrito<i class="fas fa-shopping-cart"></i></a>
-               <a href="login.html">Login<i class="fas fa-sign-in-alt"></i></a>
-               <a href="registro.html">Registro<i class="far fa-id-card"></i></a>
+               <a href="/carrito">Carrito<i class="fas fa-shopping-cart"></i></a>
+               <a href="/login">Login<i class="fas fa-sign-in-alt"></i></a>
+               <a href="/registro">Registro<i class="far fa-id-card"></i></a>
             </ul>
         </nav>
     </div>    
-  </header>
+</header>
   <main>
     <div class="banner">
-      <p>imagenes</p>
+     <!-- <p>imagenes</p>-->
     </div>
-        <form id="registro">
-            <div class="mb-3">
-              <input type="email" class="form-control" placeholder="Dirección de E-mail" size="30" >
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+        <br>
+        <form class="formreg" action="/reistro" method="post">
+          <h3>Registrate</h3>
+          <br>
+          <div>
+            <label for="nombre">Nombre y Apellido</label>
+            <input type="text" name="nombre" id="nombre" required >
+          </div>
+          <br>
+          <div>
+            <label for="fecha">Fecha de Nacimiento</label>
+            <input type="date" name="fecha" value="  yyyy-mm-dd" max="30/12/1840" min="30/12/2003" required>
+          </div>
+          <br>
+
+          <p >
+            <label for="sexo">Sexo</label>
+            <br>
+            <label class="labelradio" ><input width="0" type="radio" name="sexo">Hombre</label>
+            <label class="labelradio" ><input width="0" type="radio" name="sexo">Mujer</label>
+            <label class="labelradio" ><input width="0" type="radio" name="sexo">  Otro</label>
+          </p>
+          <br>
+           <div>
+             <label for="email">Dirección de Email</label>
+            <input type="email" name="email" id="email" required>
+          </div>
+          <br>
+          <div>
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" id="password" required>
+          </div>
+          <br>
+          <div>
+            <label for="Reppassword">Confirmación Contraseña</label>
+            <input type="password" name="Reppassword" id="Reppassword" required >
+          </div>
+          <br>
+          <div>
+            <input class="btn btn-primary botones" type="submit" value="Registrar" required>
+          </div>
+          <br> 
+          
+
+
+
         </form>
+
+
+
+
     </main>
     <footer class="footer">
       <div class="contenedor__footer">
