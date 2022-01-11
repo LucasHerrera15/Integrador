@@ -1,52 +1,13 @@
-/* body{
-    background-image: url(/imagenes/fondoLogin.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-} */
+
 body{
     background-color: #FAFAFA !important;
-}
-#header{
-    background-color: white;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: #e0e0e0 1px solid;
-}
-#tituloHeader{
-    font-size: 50px;
-    font-family: 'Staatliches', cursive;
-    color: #004AAD;
-    text-shadow: black 1px 1px 1px ;
-}
-#contenedor{
-    display: flex;
-    justify-content: center;
-}
-#inicio{
-    display: flex;
-    justify-content: center;
-}
-#logo{
-    display: flex;
-    justify-content: center;
-    height: 150px;
-    width: 150px;    
 }
 #form{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 80px;
-    margin-right: 50px;
-}
-#fondoLogin{
-    padding: 50px 100px;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
+    padding: 10% 0 10%;
 }
 .linea{
     border-right: 1px solid gray;
@@ -59,9 +20,9 @@ body{
     font-size: 15px;
 }
 #solapa{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    padding: 50px;
+    border: solid #1D3E6B;
+    border-radius: 10px;
 }
 .subrayado{
     text-decoration: none;
@@ -100,11 +61,4 @@ body{
     font-size: 10px;
     text-decoration: none;
     margin-bottom: 10px;
-}
-@media (max-width: 980px){
-    html, body{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
 }

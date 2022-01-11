@@ -124,13 +124,14 @@
 #logo:hover{
     cursor: pointer;
 }
-h3{
+#los-buscados{
     color: #FF9100;
     margin-top: 100px;
     margin-left: 2%;
     font-size: 1.5em;
 }
 h4{
+    margin-bottom: 0 !important;
     color: #D1E1F6;
 }
 .contenedor__productos{
@@ -174,7 +175,7 @@ h4{
         color: black;
         text-decoration: none;
         padding: 12px;
-        font-size: 18px;
+        font-size: 14px;
         transition-delay: 0.1s;
     }
     .navigation a:hover{

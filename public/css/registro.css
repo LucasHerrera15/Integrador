@@ -23,65 +23,42 @@
     font-family: "miFuente";
     
 }
-
-main{
-    margin-top: 10%;
-    height: 100%;
-}
 .formreg{
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: space-around;
+    margin-bottom: 10%;
+}
+.formulario{
+    margin-bottom: 1%;
+    width: 50%;  
 }
 div input{
-    width: 30em;
+    width: 96%;
     border: 4px solid #90AACB;
-    border-radius: 10px;
+    border-radius: 5px;
+    padding-left: 6px;
 }
 label{
-    width: 10em;
     font-weight: bold;
-    
-    
+    padding-right: 20px;
 }
-/*#labelradio{
-    align-items: center !important;
-    
-}
-.divradio{
-    display: flex;
-    flex-direction: row;
-    padding: 15px;
-
-}*/
-
-p label{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 5px;
-    justify-content: space-evenly;
-    
-}
-p {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: -10px;
-   
+#registrate{
+    margin-top: 100px;
+    color: #FF9100;
 }
 
-.labelradio{
-    padding: 5px;
-    margin-left: 5px;
-}
-
-
-.botones{
-    width: 10em;
-    
-}
-input{
-    margin-right: 5px;
+@media (max-width: 768px){
+    label{
+        font-size: 14px;
+    }
+    .formulario{
+        width: 100%;
+        margin-bottom: 4%;
+    }
+    .formreg{
+        width: 96%;
+        margin-right: 2%;
+        margin-left: 2%;
+    }
 }
