@@ -13,29 +13,85 @@
 <body>
     <header class="header">
         <div class="contenedor__header">
-            <img id="logo" src="/imagenes/logoSinFondo.png">
-            <form class="barra__busqueda">
+            <a href="/"><img id="logo" src="/images/logoSinFondo.png"></a>
+            <form class="barra__busqueda" action="/search" method="get">
                     <input class="buscador" type="search" placeholder="Marcas, productos">
-                    <input class="boton" type="submit">
+                    <i class="fas fa-search"></i>
             </form>
             <span class="menu__icon"><i class="fas fa-bars" style="font-size: 1.5em; color: #FFC06D ;"></i></span>
             <nav class="navigation">    
                 <ul>
-                   <a href="carrito.html">Carrito<i class="fas fa-shopping-cart"></i></a>
-                   <a href="login.html">Login<i class="fas fa-sign-in-alt"></i></a>
-                   <a href="registro.html">Registro<i class="far fa-id-card"></i></a>
+                   <a href="/carrito">Carrito<i class="fas fa-shopping-cart"></i></a>
+                   <a href="/login">Login<i class="fas fa-sign-in-alt"></i></a>
+                   <a href="/registro">Registro<i class="far fa-id-card"></i></a>
                 </ul>
             </nav>
         </div>    
     </header>
     <main>
         <div class="banner"></div>
-        <div>
-         <p>Logos de marcas</p>   
+        <div class="nombre-producto">
+            <h2 id="titulo-producto">NOMBRE DEL PRODUCTO</h2> 
         </div>
-        <div><h2>Detalle de producto</h2></div>
-        <article>Galeria de imagenes</article>
-        <article>Descripcion de producto</article>
+        <div class="contenedor-general">
+            <div class="contenedor-producto">
+                <div class="detalle-producto">
+                    <img class="imagenes" src="/images/adidas-yeezy-boost350br.jpg">
+                    <p class="detlle-producto-descripcion">
+                        Es una zapatilla, hola hola hola hola
+                    </p>
+                </div>
+                <div class="talle-producto">
+                    <label for="talle">Talle</label>
+                    <select name="talle">
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                    </select>
+                </div>
+                <div class="informacion-producto">
+                    <div class="precio-producto">
+                        <i class="fas fa-dollar-sign"></i>
+                        <p>PRECIO</p>
+                    </div>
+                    <div class="descuento-producto">
+                        <p>DESCUENTO%</p>
+                    </div>
+                    <div class="precio-total-producto">
+                        <i class="fas fa-dollar-sign"></i>
+                        <p>PRECIO TOTAL</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accion-producto">
+                <div class="stock-producto">
+                    <p>ESTADO</p>
+                </div>
+                <div class="acciones-producto">
+                    <div class="cuotas-producto">
+                        <i class="fas fa-credit-card"></i>
+                        <p>Hasta 12 coutas sin interés</p>
+                    </div>    
+                    <div class="envio-producto">
+                        <i class="fas fa-truck"></i>
+                        <p>Envío gratis</p>
+                    </div>   
+                    <div class="compra-producto">
+                        <a href="#">COMPRAR</a>
+                    </div>
+                    <div class="add-carrito-producto">
+                        <form action="">
+                            <input type="submit" id="btn-carrito" value="AÑADIR AL CARRITO"><i class="fas fa-shopping-cart"></i>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <footer class="footer">
         <div class="contenedor__footer">
