@@ -6,13 +6,16 @@ const publicPath = path.resolve(__dirname, './public');
 const viewsPath = path.resolve(__dirname, './views');
 app.use(express.static(publicPath) );
 app.use(express.static(viewsPath) );
+app.set('view engine', 'ejs');
+app.set('views', 'rutaCarpetaVistas');
+
 
 
 app.listen(process.env.PORT || 3000, function() {
     console.log("Servidor corriendo");
 })
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/index.html'))
+    res.sendFile(path.resolve(__dirname, './src/views/index.html'))
 });
 app.get('/carrito', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/carrito.html'))
