@@ -11,23 +11,7 @@
     <title>producto</title>
 </head>
 <body>
-    <header class="header">
-        <div class="contenedor__header">
-            <a href="/"><img id="logo" src="/images/logoSinFondo.png"></a>
-            <form class="barra__busqueda" action="/search" method="get">
-                    <input class="buscador" type="search" placeholder="Marcas, productos">
-                    <i class="fas fa-search"></i>
-            </form>
-            <span class="menu__icon"><i class="fas fa-bars" style="font-size: 1.5em; color: #FFC06D ;"></i></span>
-            <nav class="navigation">    
-                <ul>
-                   <a href="/carrito">Carrito<i class="fas fa-shopping-cart"></i></a>
-                   <a href="/login">Login<i class="fas fa-sign-in-alt"></i></a>
-                   <a href="/registro">Registro<i class="far fa-id-card"></i></a>
-                </ul>
-            </nav>
-        </div>    
-    </header>
+    <%- include('header')%>
     <main>
         <div class="banner"></div>
         <div class="nombre-producto">
@@ -93,16 +77,6 @@
             </div>
         </div>
     </main>
-    <footer class="footer">
-        <div class="contenedor__footer">
-            <div class="redes">
-                <h4>Seguinos en nuestras redes</h4><br>
-                <a href="carrito.html"><i class="fab fa-facebook" style="font-size: medium; color: black;"></i></a>
-                <a href="carrito.html"><i class="fab fa-twitter" style="font-size: medium; color: black;"></i></a>
-                <a href="carrito.html"><i class="fab fa-instagram" style="font-size: medium; color: black;"></i></a>
-            </div>
-            <h4>Copyrigth: Todos los derechos reservados</h4>
-        </div>    
-    </footer>
+    <%- include('footer')%>
 </body>
 </html>
