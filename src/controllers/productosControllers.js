@@ -1,16 +1,16 @@
 const productosControllers =
 {
     carrito: (req, res) => {
-        res.render('carrito');
+        res.render('products/carrito');
     },
 
     
     detalleProducto: (req, res) => {
-        res.render('detalleProducto');
+        res.render('products/detalleProducto');
     },
 
     listadoProducto: (req, res) => {
-        res.render('listadoProducto');
+        res.render('products/listadoProducto');
     }
 }
 

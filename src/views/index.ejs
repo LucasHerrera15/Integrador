@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,7 @@
     <title>Dx sneaker: zapatillas deluxe</title>
 </head>
 <body>
-    <div>
-    
+    <%- include('partials/header') %>
     <main class="main">
         <div class="banner"></div>
         <div>
@@ -21,7 +20,7 @@
         </div>
         <div class="contenedor__productos">
             <article class="productos">
-                <a href="/producto.html"><img class="imagenes" src="/images/adidas-yeezy-boost350br.jpg"></a>
+                <a href="./products/detalleProducto"><img class="imagenes" src="/images/adidas-yeezy-boost350br.jpg"></a>
                 <div class="descripcion">
                     <div class="informacion-precio">
                         <i class="fas fa-dollar-sign"></i>
@@ -171,7 +170,6 @@
             </article>
         </div>
     </main>
-    <%- include('footer')%>
-    </div>
+    <%- include('partials/footer') %>
 </body>
 </html>

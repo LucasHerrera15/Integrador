@@ -4,9 +4,9 @@ const express = require('express');
 const router = express.Router();
 
 
-router.get('/users/login', usuariosControllers.login);
+router.get('/login', usuariosControllers.login);
 
-router.get('/users/register', usuariosControllers.register);
+router.get('/register', usuariosControllers.register);
 
 
 
