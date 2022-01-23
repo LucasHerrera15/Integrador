@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/creacionProducto.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <div class="banner"></div>
+        <div class="creacionProducto">
+            <h1 id="titulo-crear">CREAR NUEVO PRODUCTO</h1>
+            <form class="form-crear" action="/" method="get">
+                <label>Nombre del producto</label>
+                <input class="input-crear" type="text" name="producto">
+                <label>Descripcion del producto</label>
+                <textarea class="input-crear" name="descripcion" maxlength="120" minlength="10" required></textarea>
+                <label>Precio</label>
+                <input class="input-crear" type="number" name="precio">
+                <label>Descuento</label>
+                <input class="input-crear" type="number" name="descuento">
+                <label>Talles del producto</label>
+
+                <label>Imagen del producto</label>
+                <input class="input-crear" type="file" name="foto">
+
+                <button id="btn-enviar-crear" type="submit">Crear</button>
+            </form>
+        </div>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

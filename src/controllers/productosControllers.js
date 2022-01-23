@@ -11,6 +11,9 @@ const productosControllers =
 
     listadoProducto: (req, res) => {
         res.render('products/listadoProducto');
+    },
+    creacionProducto: (req, res) => {
+        res.render('products/creacionProducto');
     }
 }
 
