@@ -1,0 +1,10 @@
+{
+    "id":,
+    "nombre":,
+    "descripcion":,
+    "imagen":,
+    "precio":,
+    "talle":,
+    "descuento":,
+    "estado";
+}

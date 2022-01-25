@@ -14,7 +14,17 @@ const productosControllers =
     },
     creacionProducto: (req, res) => {
         res.render('products/creacionProducto');
-    }
+    },
+    editarProducto: (req, res) => {
+        res.render('products/editarProducto');
+    },
+    eliminarProducto: (req, res) => {
+        res.render('products/eliminarProducto');
+    },
+    updateProducto: (req, res) => {
+        res.render('products/updateProducto');
+    },
+
 }
 
 module.exports = productosControllers
