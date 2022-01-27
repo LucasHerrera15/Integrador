@@ -4,9 +4,9 @@ const express = require('express');
 const router = express.Router();
 
 
-
+router.get('/', productosControllers.listadoProducto);
 router.get('/carrito', productosControllers.carrito);
-router.get('/detalleProducto/:id', productosControllers.detalleProducto);
+router.get('/detalleProducto', productosControllers.detalleProducto);
 router.get('/listadoProducto', productosControllers.listadoProducto);
 router.get('/creacionProducto', productosControllers.creacionProducto);
 router.get('/:id/edit', productosControllers.editarProducto);
