@@ -1,3 +1,16 @@
+const fs = require('fs');
+const path = require('path');
+
+const productsFilePath = path.join(__dirname, '../database/productosbase.json');
+/* const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); */
+
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+
+
+
+
+
 const productosControllers =
 {
     carrito: (req, res) => {
@@ -8,7 +21,7 @@ const productosControllers =
     },
 
     listadoProducto: (req, res) => {
-        res.render('products/listadoProducto');
+        res.render('products/listadoProducto', {p: products});
     },
     creacionProducto: (req, res) => {
         res.render('products/creacionProducto');
