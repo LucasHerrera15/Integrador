@@ -3,8 +3,6 @@ const productosControllers =
     carrito: (req, res) => {
         res.render('products/carrito');
     },
-
-    
     detalleProducto: (req, res) => {
         res.render('products/detalleProducto');
     },

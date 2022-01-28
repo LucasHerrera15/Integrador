@@ -1,0 +1,51 @@
+[{
+    "id": 1,
+    "nombre": "adidas yeezy" ,
+    "descripcion":" descripcion",
+    "imagen":  "img/ejemplo",
+    "precio":"",
+    "talle":"",
+    "descuento":"",
+    "estado": ""
+},
+{
+    "id": 2,
+    "nombre": "adidas yeezy" ,
+    "descripcion":" descripcion",
+    "imagen":  "img/ejemplo",
+    "precio":"",
+    "talle":"",
+    "descuento":"",
+    "estado": ""
+},
+{
+    "id": 3,
+    "nombre": "adidas yeezy" ,
+    "descripcion":" descripcion",
+    "imagen":  "img/ejemplo",
+    "precio":"",
+    "talle":"",
+    "descuento":"",
+    "estado": ""
+},
+{
+    "id": 4,
+    "nombre": "adidas yeezy" ,
+    "descripcion":" descripcion",
+    "imagen":  "img/ejemplo",
+    "precio":"",
+    "talle":"",
+    "descuento":"",
+    "estado": ""
+},
+{
+    "id": 5,
+    "nombre": "adidas yeezy" ,
+    "descripcion":" descripcion",
+    "imagen":  "img/ejemplo",
+    "precio":"",
+    "talle":"",
+    "descuento":"",
+    "estado": ""
+}
+]
