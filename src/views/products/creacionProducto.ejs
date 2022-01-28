@@ -18,7 +18,7 @@
         <div class="banner"></div>
         <div class="creacionProducto">
             <h1 id="titulo-crear">CREAR NUEVO PRODUCTO</h1>
-            <form class="form-crear" action="/" method="post">
+            <form class="form-crear" action="../products/creacionProducto" method="post" enctype="multipart/form-data"> 
                 <label>Nombre del producto</label>
                 <input class="input-crear" type="text" name="producto">
                 <label>Descripcion del producto</label>
@@ -28,8 +28,27 @@
                 <label>Descuento</label>
                 <input class="input-crear" type="number" name="descuento">
                 <label>Talles del producto</label>
+                <select name="talle">
+                    <option value="36">36</option>
+                    <option value="36.5">36.5</option>
+                    <option value="37">37</option>
+                    <option value="37.5">37.5</option>
+                    <option value="38">38</option>
+                    <option value="38.5">38.5</option>
+                    <option value="39">39</option>
+                    <option value="39.5">39.5</option>
+                    <option value="40">40</option>
+                    <option value="40.5">40.5</option>
+                    <option value="41">41</option>
+                    <option value="41.5">41.5</option>
+                    <option value="42">42</option>
+                    <option value="42.5">42.5</option>
+                    <option value="43">43</option>
+                    <option value="43.5">43.5</option>
+                    <option value="44">44</option>
+                </select>
                 <div class="subir-archivo" id="src-file1" >
-                    <input class="input-crear" type="file" name="imagenproducto" aria-label="Archivo">
+                    <input class="input-crear" type="file" name="imagenproducto" aria-label="imagen del producto">
                 </div>
 
                 <button id="btn-enviar-crear" type="submit">Crear</button>

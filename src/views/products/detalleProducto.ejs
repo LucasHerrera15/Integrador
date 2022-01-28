@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../css/producto.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="../../../css/style.css" rel="stylesheet">
+    <link href="../../../css/producto.css" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
     <title>producto</title>
 </head>
 <body>
@@ -15,46 +18,37 @@
     <main>
         <div class="banner"></div>
         <div class="nombre-producto">
-            <h2 id="titulo-producto">NOMBRE DEL PRODUCTO</h2> 
+            <h2 id="titulo-producto"><%= productos.name%></h2> 
         </div>
         <div class="contenedor-general">
             <div class="contenedor-producto">
                 <div class="detalle-producto">
-                    <img class="imagenes" src="/images/adidas-yeezy-boost350br.jpg">
+                    <img class="imagenes" src="/images/products/<%=productos.image%>">
                     <p class="detlle-producto-descripcion">
-                        Es una zapatilla, hola hola hola hola
+                        <%= productos.description%>
                     </p>
                 </div>
                 <div class="talle-producto">
                     <label for="talle">Talle</label>
-                    <select name="talle">
-                        <option value="talle">35</option>
-                        <option value="talle">36</option>
-                        <option value="talle">37</option>
-                        <option value="talle">38</option>
-                        <option value="talle">39</option>
-                        <option value="talle">40</option>
-                        <option value="talle">41</option>
-                        <option value="talle">42</option>
-                    </select>
+                    <%= productos.talle%>
                 </div>
                 <div class="informacion-producto">
                     <div class="precio-producto">
                         <i class="fas fa-dollar-sign"></i>
-                        <p>PRECIO</p>
+                        <p><%= productos.price%></p>
                     </div>
                     <div class="descuento-producto">
-                        <p>DESCUENTO%</p>
+                        <p><%= productos.discount%>%</p>
                     </div>
                     <div class="precio-total-producto">
                         <i class="fas fa-dollar-sign"></i>
-                        <p>PRECIO TOTAL</p>
+                        <p><%= productos.price - (productos.price * productos.discount / 100) %></p>
                     </div>
                 </div>
             </div>
             <div class="accion-producto">
                 <div class="stock-producto">
-                    <p>ESTADO</p>
+                    <p><%= productos.category%></p>
                 </div>
                 <div class="acciones-producto">
                     <div class="cuotas-producto">
