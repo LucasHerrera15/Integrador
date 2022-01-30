@@ -81,5 +81,15 @@
   "talle": "talle",
   "image": "1643402996655.jpg",
   "category": "En stock"
+ },
+ {
+  "id": 10,
+  "name": "paloma",
+  "description": "hokaskdsndjsa",
+  "price": "23",
+  "discount": "5",
+  "talle": "43",
+  "image": "1643512195248.png",
+  "category": "En stock"
  }
 ]
