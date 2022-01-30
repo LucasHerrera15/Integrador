@@ -1,1 +1,44 @@
-hola
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+     <title>Document</title>
+ </head>
+ <body>
+    <%- include('../partials/header')%>
+    <main class="main">
+        <div class="banner"></div>
+        <div>
+            <h3 id="los-buscados">Todos los productos</h3>
+        </div>
+        <div class="contenedor__productos">
+            <% for (let i=0;i<p.length;i++) { %>
+            <article class="productos">
+                <a href="./detalleProducto/<%=p[i].id%>"><img class="imagenes" src="/images/products/<%=p[i].image%>"></a>
+                <div class="descripcion">
+                    <div class="informacion-precio">
+                        <i class="fas fa-dollar-sign"></i>
+                        <p class="precio"><%=p[i].price%></p>
+                    </div>
+                    <div class="envio">
+                        <i class="fas fa-truck"></i>
+                        <p>Envío gratis</p>
+                    </div>
+                    <div class="nombre-producto">
+                        <p><%=p[i].name%></p>
+                    </div>
+                </div>
+            </article>
+            <% } %>
+        </div>
+    </main>
+    <%- include('../partials/footer')%>
+ </body>
+ </html>

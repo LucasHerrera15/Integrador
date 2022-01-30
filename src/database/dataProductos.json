@@ -1,51 +1,95 @@
-[{
-    "id": 1,
-    "nombre": "adidas yeezy" ,
-    "descripcion":" descripcion",
-    "imagen":  "img/ejemplo",
-    "precio":"",
-    "talle":"",
-    "descuento":"",
-    "estado": ""
-},
-{
-    "id": 2,
-    "nombre": "adidas yeezy" ,
-    "descripcion":" descripcion",
-    "imagen":  "img/ejemplo",
-    "precio":"",
-    "talle":"",
-    "descuento":"",
-    "estado": ""
-},
-{
-    "id": 3,
-    "nombre": "adidas yeezy" ,
-    "descripcion":" descripcion",
-    "imagen":  "img/ejemplo",
-    "precio":"",
-    "talle":"",
-    "descuento":"",
-    "estado": ""
-},
-{
-    "id": 4,
-    "nombre": "adidas yeezy" ,
-    "descripcion":" descripcion",
-    "imagen":  "img/ejemplo",
-    "precio":"",
-    "talle":"",
-    "descuento":"",
-    "estado": ""
-},
-{
-    "id": 5,
-    "nombre": "adidas yeezy" ,
-    "descripcion":" descripcion",
-    "imagen":  "img/ejemplo",
-    "precio":"",
-    "talle":"",
-    "descuento":"",
-    "estado": ""
-}
+[
+ {
+  "id": 1,
+  "nombre": "adidas yeezy",
+  "descripcion": " descripcion",
+  "imagen": "img/ejemplo",
+  "precio": "",
+  "talle": "",
+  "descuento": "",
+  "estado": ""
+ },
+ {
+  "id": 2,
+  "nombre": "adidas yeezy",
+  "descripcion": " descripcion",
+  "imagen": "img/ejemplo",
+  "precio": "",
+  "talle": "",
+  "descuento": "",
+  "estado": ""
+ },
+ {
+  "id": 3,
+  "nombre": "adidas yeezy",
+  "descripcion": " descripcion",
+  "imagen": "img/ejemplo",
+  "precio": "",
+  "talle": "",
+  "descuento": "",
+  "estado": ""
+ },
+ {
+  "id": 4,
+  "nombre": "adidas yeezy",
+  "descripcion": " descripcion",
+  "imagen": "img/ejemplo",
+  "precio": "",
+  "talle": "",
+  "descuento": "",
+  "estado": ""
+ },
+ {
+  "id": 5,
+  "nombre": "adidas yeezy",
+  "descripcion": " descripcion",
+  "imagen": "img/ejemplo",
+  "precio": "",
+  "talle": "",
+  "descuento": "",
+  "estado": ""
+ },
+ {
+  "id": 6,
+  "image": "1643398755927.jpg",
+  "category": "En stock"
+ },
+ {
+  "id": 7,
+  "name": "Adidad buenas",
+  "description": "ssaassadasdsad",
+  "price": "345",
+  "discount": "10",
+  "image": "1643398755927.jpg",
+  "category": "En stock"
+ },
+ {
+  "id": 8,
+  "name": "Nike yeezy",
+  "description": "Zapatillas yeezy importadas desde no se",
+  "price": "250",
+  "discount": "10",
+  "talle": "talle",
+  "category": "En stock"
+ },
+ {
+  "id": 9,
+  "name": "Nike yeezy",
+  "description": "hoola como te va bien",
+  "price": "230",
+  "discount": "10",
+  "talle": "talle",
+  "image": "1643402996655.jpg",
+  "category": "En stock"
+ },
+ {
+  "id": 10,
+  "name": "paloma",
+  "description": "hokaskdsndjsa",
+  "price": "23",
+  "discount": "5",
+  "talle": "43",
+  "image": "1643512195248.png",
+  "category": "En stock"
+ }
 ]
