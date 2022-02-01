@@ -17,16 +17,16 @@
     <main>
         <div class="banner"></div>
         <div class="creacionProducto">
-            <h1 id="titulo-crear">EDITAR NUEVO PRODUCTO</h1>
+            <h1 id="titulo-crear">EDITAR PRODUCTO</h1>
             <form class="form-crear" action="/" method="get">
                 <label>Nombre del producto</label>
-                <input class="input-crear" type="text" name="producto">
+                <input class="input-crear" type="text" placeholder="<%= producto.name %>" value="<%= producto.name %>" name="producto">
                 <label>Descripcion del producto</label>
-                <textarea class="input-crear" name="descripcion" maxlength="240" minlength="10" required></textarea>
+                <textarea class="input-crear" name="descripcion" maxlength="240" minlength="10" required placeholder="<%= producto.descripcion %>" value="<%= producto.descripcion %>"></textarea>
                 <label>Precio</label>
-                <input class="input-crear" type="number" name="precio">
+                <input class="input-crear" type="number" name="precio" placeholder="<%= producto.precio %>" value="<%= producto.precio%>">
                 <label>Descuento</label>
-                <input class="input-crear" type="number" name="descuento">
+                <input class="input-crear" type="number" name="descuento" placeholder="<%= producto.descuento %>" value="<%= producto.descuento%>">
                 <label>Talles del producto</label>
                 <div class="subir-archivo" id="src-file1" >
                     <input class="input-crear" type="file" name="imagenproducto" aria-label="Archivo">

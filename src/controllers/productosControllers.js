@@ -30,11 +30,11 @@ const productosControllers =
     listadoProducto: (req, res) => {
         res.render('products/listadoProducto', {p: productos});
     },
-    // Crear Producto pagina
+
     creacionProducto: (req, res) => {
         res.render('products/creacionProducto');
     },
-    // Crear Producto
+
     crear: (req, res) => {
 		
 		let nuevoID=(productos[productos.length-1].id)+1 
@@ -66,9 +66,9 @@ const productosControllers =
 				break;
 			}
 		}
-		res.render('editarProducto',{producto: productoSeleccionado});
+		res.render('products/editarProducto',{producto: productoSeleccionado});
     },
-    guardarEdición: (req, res) => {
+    guardarEdicion: (req, res) => {
         let idProducto = req.params.id;
         let datos = req.body;
 
