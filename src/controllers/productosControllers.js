@@ -1,13 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-<<<<<<< HEAD
-const productsFilePath = path.join(__dirname, '../database/dataProductos.json');
-const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-=======
 const productosFilePath = path.join(__dirname, '../database/dataProductos.json');
 const productos = JSON.parse(fs.readFileSync(productosFilePath, 'utf-8'));
->>>>>>> 79cf19d1263d64aec59e1ea9bacbd3a4e13611da
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -71,9 +66,9 @@ const productosControllers =
 				break;
 			}
 		}
-		res.render('editarProducto',{producto: productoSeleccionado});
+		res.render('products/editarProducto',{producto: productoSeleccionado});
     },
-    guardarEdición: (req, res) => {
+    guardarEdicion: (req, res) => {
         let idProducto = req.params.id;
         let datos = req.body;
 
