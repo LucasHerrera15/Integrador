@@ -1,7 +1,3 @@
-@font-face {
-    font-family: "miFuente";
-    src: url("/public/Fuentes/Sports\ World-Regular.ttf") format("opentype");
-}
 #registro{
     display: flex;
     flex-direction: column;

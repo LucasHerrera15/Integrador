@@ -91,5 +91,15 @@
   "talle": "43",
   "image": "1643512195248.png",
   "category": "En stock"
+ },
+ {
+  "id": 11,
+  "name": "Adidad buenas",
+  "description": "wadawdsasdasd",
+  "price": "34",
+  "discount": "5",
+  "talle": "39",
+  "image": "1644460419450.jpg",
+  "category": "En stock"
  }
 ]
