@@ -29,26 +29,23 @@
                             <div class="loginPalabra linea">Iniciar sesión</div> 
                             <a href="/users/register" class="subrayado"><div class="loginPalabra">Registrate</div></a>
                         </div>
-                        <div class="mb-3 ">
-                            <label for="exampleInputEmail1" class="form-label label labelLogin">E-mail</label>
-                            <input type="email" class="form-control" placeholder="Ejemplo@gmail.com" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label label labelLogin">Contraseña</label>
+                            <input type="password" class="form-control" placeholder="•••••••••••" id="exampleInputPassword1" required>
+                            <label for="" class="olvidasteContra"><a href="#" id="olvidasteLetra"> Olvidaste tu contraseña?</a></label>
+                        </div>
+                        <div class="mb-3 form-check">
+                                <div class="recuerdame">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label letra" for="exampleCheck1">Recuérdame</label>
+                                </div>
+                        </div>
+                        <div class="enviarLogin"><button type="submit" class="btn btn-primary colorBoton">Iniciar sesión</button></div>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label label labelLogin">Contraseña</label>
-                        <input type="password" class="form-control" placeholder="•••••••••••" id="exampleInputPassword1" required>
-                        <label for="" class="olvidasteContra"><a href="#" id="olvidasteLetra"> Olvidaste tu contraseña?</a></label>
-                    </div>
-                    <div class="mb-3 form-check">
-                            <div class="recuerdame">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label letra" for="exampleCheck1">Recuérdame</label>
-                            </div>
-                     </div>
-                     <div class="enviarLogin"><button type="submit" class="btn btn-primary colorBoton">Iniciar sesión</button></div>
-                 </div>
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
+    </main>
     <%- include('../partials/footer') %>
 </body>
 </html>

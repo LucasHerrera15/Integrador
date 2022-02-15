@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const productosFilePath = path.join(__dirname, '../database/dataProductos.json');
-const productos = JSON.parse(fs.readFileSync(productosFilePath, 'utf-8'));
+const productsFilePath = path.join(__dirname, '../database/dataProductos.json');
+const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -30,11 +30,11 @@ const productosControllers =
     listadoProducto: (req, res) => {
         res.render('products/listadoProducto', {p: productos});
     },
-    // Crear Producto pagina
+
     creacionProducto: (req, res) => {
         res.render('products/creacionProducto');
     },
-    // Crear Producto
+
     crear: (req, res) => {
 		
 		let nuevoID=(productos[productos.length-1].id)+1 
@@ -51,7 +51,7 @@ const productosControllers =
 		}
 		productos.push(productoNuevo)
 
-		fs.writeFileSync(productosFilePath, JSON.stringify(productos,null,' '));
+		fs.writeFileSync(productsFilePath, JSON.stringify(productos,null,' '));
 
 		res.redirect('/');
 	},

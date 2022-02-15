@@ -15,15 +15,15 @@
   <%- include('../partials/header')%>
   <main>
     <div class="banner"></div>
-      <form class="formreg" action="/reistro" method="post">
+      <form class="formreg" action="../users/register" method="POST">
         <h2 id="registrate">Registrate</h2>
         <div class="formulario">
           <label for="nombre">Nombre y Apellido</label>
-          <input type="text" name="nombre" id="nombre" required >
+          <input type="text" name="nombre" required >
         </div>
         <div class="formulario">
           <label for="fecha">Fecha de Nacimiento</label>
-          <input type="date" name="fecha" value="  yyyy-mm-dd" max="30/12/1840" min="30/12/2003" required>
+          <input type="date" name="fecha" value="yyyy-MM-dd" max="30/12/1840" min="30/12/2003" required>
         </div>
         <div class="formulario">
           <label for="genero">Genero</label>
