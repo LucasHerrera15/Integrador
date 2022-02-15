@@ -55,6 +55,7 @@ const productosControllers =
 
 		res.redirect('/');
 	},
+
     editarProducto: (req, res) => {
         let idProductoSeleccionado = req.params.id;
 		let productoSeleccionado;
@@ -68,6 +69,7 @@ const productosControllers =
 		}
 		res.render('products/editarProducto',{producto: productoSeleccionado});
     },
+
     guardarEdicion: (req, res) => {
         let idProducto = req.params.id;
         let datos = req.body;
@@ -88,10 +90,12 @@ const productosControllers =
 		fs.writeFileSync(productsFilePath, JSON.stringify(productos,null,' '));
 
 	    res.redirect('/detalleProducto');
-    },    
+    },  
+
     eliminarProducto: (req, res) => {
         res.render('products/eliminarProducto');
     },
+	
     updateProducto: (req, res) => {
         res.render('products/updateProducto');
     },
