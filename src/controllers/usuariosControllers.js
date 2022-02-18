@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const usersFilePath = path.join(__dirname, '../database/dataUsuario.json');
+const usersFilePath = path.join(__dirname, '../database/dataUsuarios.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -27,7 +27,7 @@ const usuariosControllers =
 
     crear_usuario: (req, res) => {
     
-/*         let nuevoID=(users[users.length-1].id)+1 
+        let nuevoID=(users[users.length-1].id)+1 
 		
 		let newUser = {
 			id: nuevoID,
@@ -39,10 +39,10 @@ const usuariosControllers =
 		}
 		users.push(newUser)
 
-		fs.writeFileSync(usersFilePath, JSON.stringify(users,null,' ')); */
+		fs.writeFileSync(usersFilePath, JSON.stringify(users,null,' ')); 
         console.log(req.body)
 
-		/* res.redirect('/'); */
+		res.redirect('./login'); 
     }
 }
 

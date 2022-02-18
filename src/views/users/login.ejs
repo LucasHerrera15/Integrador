@@ -13,19 +13,14 @@
     <title>Login</title>
 </head>
 <body> 
-    <header>
-        <a href="/" class="subrayado"> 
-            <div id="header">
-                <div id="tituloHeader">Deluxe Sneakers</div>
-                <div id="logo"><img src="/images/logoSinFondo.png" alt="" ></div>  
-            </div>
-        </a>    
-    </header> 
-    <div id="contenedor">
-        <div id="inicio">
-            <form id="form" action="/" method="POST">
+    <%- include('../partials/header') %>
+    <main> 
+        <div class="banner"></div>
+        <div id="contenedor">
+            <div id="inicio">
+                <form id="form" action="/" method="POST">
                     <div id="fondoLogin">
-                       <div id="solapa">
+                        <div id="solapa">
                             <div class="loginPalabra linea">Iniciar sesión</div> 
                             <a href="/users/register" class="subrayado"><div class="loginPalabra">Registrate</div></a>
                         </div>

@@ -24,10 +24,29 @@
                 <label>Descripcion del producto</label>
                 <textarea class="input-crear" name="descripcion" maxlength="240" minlength="10" required placeholder="<%= producto.descripcion %>" value="<%= producto.descripcion %>"></textarea>
                 <label>Precio</label>
-                <input class="input-crear" type="number" name="precio" placeholder="<%= producto.precio %>" value="<%= producto.precio%>">
+                <input class="input-crear" type="number" name="precio" placeholder="<%= producto.precio %>" value="<%= producto.precio%>" min="0">
                 <label>Descuento</label>
-                <input class="input-crear" type="number" name="descuento" placeholder="<%= producto.descuento %>" value="<%= producto.descuento%>">
+                <input class="input-crear" type="number" name="descuento" placeholder="<%= producto.descuento %>" value="<%= producto.descuento%>" min="0" max="100">
                 <label>Talles del producto</label>
+                <select class="input-crear" name="talle">
+                    <option value="36">36</option>
+                    <option value="36.5">36.5</option>
+                    <option value="37">37</option>
+                    <option value="37.5">37.5</option>
+                    <option value="38">38</option>
+                    <option value="38.5">38.5</option>
+                    <option value="39">39</option>
+                    <option value="39.5">39.5</option>
+                    <option value="40">40</option>
+                    <option value="40.5">40.5</option>
+                    <option value="41">41</option>
+                    <option value="41.5">41.5</option>
+                    <option value="42">42</option>
+                    <option value="42.5">42.5</option>
+                    <option value="43">43</option>
+                    <option value="43.5">43.5</option>
+                    <option value="44">44</option>
+                </select>
                 <div class="subir-archivo" id="src-file1" >
                     <input class="input-crear" type="file" name="imagenproducto" aria-label="Archivo">
                 </div>

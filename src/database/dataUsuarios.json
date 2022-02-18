@@ -1,10 +1,18 @@
 [
-    {
-        "id": 1,
-        "nombre": "",
-        "fecha": "",
-        "genero": "",
-        "email": "",
-        "password": ""		
-    }
+ {
+  "id": 1,
+  "nombre": "",
+  "fecha": "",
+  "genero": "",
+  "email": "",
+  "password": ""
+ },
+ {
+  "id": 2,
+  "nombre": "Valentin Alonso",
+  "fecha": "2002-01-26",
+  "genero": "valor1",
+  "email": "alonsovalen6@gmail.com",
+  "password": "dssasda"
+ }
 ]
