@@ -18,11 +18,16 @@ const multerDiskStorage = multer.diskStorage({
 const uploadFile = multer({ storage: multerDiskStorage });
 
 router.get('/', productosControllers.listadoProducto);
+
 router.get('/carrito', productosControllers.carrito);
+
 router.get('/detalleProducto/:id', productosControllers.detalleProducto);
+
 router.get('/listadoProducto', productosControllers.listadoProducto);
+
 router.get('/creacionProducto', productosControllers.creacionProducto);
 router.post('/creacionProducto', uploadFile.single('imagenproducto') ,productosControllers.crear); 
+
 router.get('/edit/:id', productosControllers.editarProducto);
 router.put('/edit/:id', productosControllers.guardarEdicion);
 

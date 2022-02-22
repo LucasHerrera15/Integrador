@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const { validationResults }= require('express-validator');
 
-const usersFilePath = path.join(__dirname, '../database/dataUsuario.json');
+const usersFilePath = path.join(__dirname, '../database/dataUsuarios.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -13,11 +14,25 @@ const usuariosControllers =
         res.render('users/login');
     },
     procesoLogin: (req, res) => {
-        // if (){}
-        console.log("Hola")
+        let errors = validationResults(req);
+        let usuarios = users;
+
+        if(errors.isEmpty()){
+            for(let i = 0; i < users.length; i++){
+                if(usuarios[i].email == req.body.email){
+                    if (usuarios[i].password == req.body.password){
+                        let usuarioParaLoguearse = usuarios[i];
+                        break;
+                    }
+                }
+            }
+        }else{
+            res.render('login', {errors: errors.mapped(), old: req.body})
+        }
+        req.session.usuarioLogueado= usuarioParaLoguearse;
+        res.render ('/')
     },
 
-    
     index:(req, res) => {
         res.render("index");
     },

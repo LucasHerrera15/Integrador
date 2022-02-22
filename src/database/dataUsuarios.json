@@ -1,10 +1,10 @@
 [
     {
         "id": 1,
-        "nombre": "",
-        "fecha": "",
-        "genero": "",
-        "email": "",
-        "password": ""		
+        "nombre": "Lucas",
+        "fecha": "21/08/2001",
+        "genero": "masculino",
+        "email": "LucasHerrera1551@gmail.com",
+        "password": "Lucas123"		
     }
 ]
