@@ -15,7 +15,7 @@
   <%- include('../partials/header')%>
   <main>
     <div class="banner"></div>
-      <form class="formreg" action="../users/register" method="POST">
+      <form class="formreg" action="./register" method="POST">
         <h2 id="registrate">Registrate</h2>
         <div class="formulario">
           <label for="nombre">Nombre y Apellido</label>
@@ -23,14 +23,14 @@
         </div>
         <div class="formulario">
           <label for="fecha">Fecha de Nacimiento</label>
-          <input type="date" name="fecha" value="yyyy-MM-dd" max="30/12/1840" min="30/12/2003" required>
+          <input type="date" name="fecha" value="2002-01-26" max="30-12-2003" min="30-12-1910" required>
         </div>
         <div class="formulario">
           <label for="genero">Genero</label>
           <select name="genero">
-            <option value="valor1">Hombre</option>
-            <option value="valor2">Mujer</option>
-            <option value="valor3">Otro</option>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+            <option value="otro">Otro</option>
           </select>
         </div>
         <div class="formulario">

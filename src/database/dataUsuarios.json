@@ -6,5 +6,13 @@
         "genero": "masculino",
         "email": "LucasHerrera1551@gmail.com",
         "password": "Lucas123"		
-    }
+    },
+    {
+    "id": 2,
+    "nombre": "Valentin Alonso",
+    "fecha": "2002-01-26",
+    "genero": "valor1",
+  "email": "alonsovalen6@gmail.com",
+  "password": "dssasda"
+ }
 ]

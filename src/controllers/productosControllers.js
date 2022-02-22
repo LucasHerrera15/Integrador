@@ -58,7 +58,7 @@ const productosControllers =
 
     editarProducto: (req, res) => {
         let idProductoSeleccionado = req.params.id;
-		let productoSeleccionado;
+		/* let productoSeleccionado;
 
 		for (let p of productos){
 
@@ -66,8 +66,9 @@ const productosControllers =
 				productoSeleccionado=p;
 				break;
 			}
-		}
-		res.render('products/editarProducto',{producto: productoSeleccionado});
+		} */
+		res.render('products/editarProducto',{idProductoSeleccionado});
+		console.log(idProductoSeleccionado)
     },
 
     guardarEdicion: (req, res) => {

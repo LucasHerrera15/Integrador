@@ -42,7 +42,7 @@ const usuariosControllers =
 
     crear_usuario: (req, res) => {
     
-/*         let nuevoID=(users[users.length-1].id)+1 
+        let nuevoID=(users[users.length-1].id)+1 
 		
 		let newUser = {
 			id: nuevoID,
@@ -54,10 +54,10 @@ const usuariosControllers =
 		}
 		users.push(newUser)
 
-		fs.writeFileSync(usersFilePath, JSON.stringify(users,null,' ')); */
+		fs.writeFileSync(usersFilePath, JSON.stringify(users,null,' ')); 
         console.log(req.body)
 
-		/* res.redirect('/'); */
+		res.redirect('./login'); 
     }
 }
 
