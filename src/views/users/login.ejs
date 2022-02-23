@@ -13,14 +13,8 @@
     <title>Login</title>
 </head>
 <body> 
-    <header>
-        <a href="/" class="subrayado"> 
-            <div id="header">
-                <div id="tituloHeader">Deluxe Sneakers</div>
-                <div id="logo"><img src="/images/logoSinFondo.png" alt="" ></div>  
-            </div>
-        </a>    
-    </header> 
+    <%- include('../partials/footer') %>
+    <div class="banner"></div>
     <div id="contenedor">
         <div id="inicio">
             <form id="form" action="/users/login" method="POST">
