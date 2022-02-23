@@ -17,7 +17,11 @@ app.use(express.static(publicPath) );
 app.use(express.static(viewsPath) );
 app.set('view engine', 'ejs');
 app.set('views', './src/views');
-app.use(session({secret:"deluxeSneakers"}));
+app.use(session({
+    secret:"deluxeSneakers",
+    resave: false,
+    saveUninitialized: false
+}));
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/', mainRoutes);
