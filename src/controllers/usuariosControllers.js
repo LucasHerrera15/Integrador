@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const { validationResults }= require('express-validator');
+const { validationResult }= require('express-validator');
+const bcrypt = require('bcryptjs')
 
 const usersFilePath = path.join(__dirname, '../database/dataUsuarios.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -14,7 +15,7 @@ const usuariosControllers =
         res.render('users/login');
     },
     procesoLogin: (req, res) => {
-        let errors = validationResults(req);
+        let errors = validationResult(req);
         let usuarios = users;
 
         if(errors.isEmpty()){
@@ -29,7 +30,7 @@ const usuariosControllers =
         }else{
             res.render('login', {errors: errors.mapped(), old: req.body})
         }
-        req.session.usuarioLogueado= usuarioParaLoguearse;
+        req.session.usuarioLogueado = usuarioParaLoguearse;
         res.render ('/')
     },
 
@@ -41,6 +42,7 @@ const usuariosControllers =
     },
 
     crear_usuario: (req, res) => {
+
     
         let nuevoID=(users[users.length-1].id)+1 
 		
@@ -50,7 +52,7 @@ const usuariosControllers =
 			fecha: req.body.fecha,
 			genero: req.body.genero,
 			email: req.body.email,
-            password: req.body.password,		
+            password: bcrypt.hashSync(req.body.password, 10),		
 		}
 		users.push(newUser)
 
