@@ -33,7 +33,6 @@ const usuariosControllers =
         req.session.usuarioLogueado = usuarioParaLoguearse;
         res.render ('/')
     },
-
     index:(req, res) => {
         res.render("index");
     },

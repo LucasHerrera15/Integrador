@@ -34,5 +34,4 @@ router.put('/edit/:id', productosControllers.guardarEdicion);
 router.delete('/:id', productosControllers.eliminarProducto);
 
 
-
 module.exports = router;

@@ -10,11 +10,14 @@ const app = express();
 const path = require('path');
 const session = require('express-session')
 const {body, validationResult} = require('express-validator')
+const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+
 
 const publicPath = path.resolve(__dirname, './public');
 const viewsPath = path.resolve(__dirname, './views');
 app.use(express.static(publicPath) );
 app.use(express.static(viewsPath) );
+app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.set('view engine', 'ejs');
 app.set('views', './src/views');
 app.use(session({
