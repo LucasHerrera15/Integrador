@@ -6,6 +6,7 @@ let validateLogin = [
         .isEmail().withMessage('Este campo debe contener un E-mail')
     ,
     check ('password')
+    .isEmpty().withMessage('Debes completar este campo con tu constrasena')
 ];
 
 module.exports = validateLogin;
