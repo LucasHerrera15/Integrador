@@ -1,18 +1,34 @@
 [
-    {
-        "id": 1,
-        "nombre": "Lucas",
-        "fecha": "21/08/2001",
-        "genero": "masculino",
-        "email": "LucasHerrera1551@gmail.com",
-        "password": "Lucas123"		
-    },
-    {
-    "id": 2,
-    "nombre": "Valentin Alonso",
-    "fecha": "2002-01-26",
-    "genero": "valor1",
+ {
+  "id": 1,
+  "nombre": "Lucas",
+  "fecha": "21/08/2001",
+  "genero": "masculino",
+  "email": "LucasHerrera1551@gmail.com",
+  "password": "Lucas123"
+ },
+ {
+  "id": 2,
+  "nombre": "Valentin Alonso",
+  "fecha": "2002-01-26",
+  "genero": "hombre",
   "email": "alonsovalen6@gmail.com",
-  "password": "dssasda"
+  "password": "$2a$10$b9vzS7pj4n9GnqreV4TBTerLPXPJO3VX1e1tBtHWEqbvXsyoG09l."
+ },
+ {
+  "id": 3,
+  "nombre": "angel",
+  "fecha": "2022-02-22",
+  "genero": "hombre",
+  "email": "angel@gmail.com",
+  "password": "$2a$10$d0T9fo9Sy5AcY3otQ.mNeOi.SJL7x5tvNi3c/2gMDq22KWWflqONa"
+ },
+ {
+  "id": 4,
+  "nombre": "hhh",
+  "fecha": "2002-01-26",
+  "genero": "mujer",
+  "email": "h@gmail.com",
+  "password": "$2a$10$3/3fM9lQApYKyXBo5JqHnONwR1/7N7G.tcxik5d4Att3QmmqfkjDa"
  }
 ]

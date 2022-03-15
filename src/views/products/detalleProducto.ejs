@@ -18,7 +18,7 @@
     <main>
         <div class="banner"></div>
         <div class="nombre-producto">
-            <h2 id="titulo-producto"><%= productos.name%></h2> 
+            <h2 id="titulo-producto"><%=productos.name%></h2> 
         </div>
         <div class="contenedor-general">
             <div class="contenedor-producto">
@@ -68,9 +68,11 @@
                         </form>
                     </div>
                     <div>
-                        <a href="./editarProducto/<%=p[i].id%>"  class="compra-producto" name="botonEditar">EDITAR PRODUCTO</a>
-                    </div> 
-                </div>
+                        <a href="./editarProducto/<%= productos.id%>"  class="compra-producto" name="botonEditar">EDITAR PRODUCTO</a>
+                    <div>
+                        <form action="/products/delete/<%= productos.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+							<button type="submit" class="action-button delete">ELIMINAR</button>
+						</form>        
             </div>
         </div>
     </main>

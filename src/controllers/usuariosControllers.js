@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-let { validationResult }= require('express-validator');
-const {check} = require ('express-validator');
+const { validationResult }= require('express-validator');
+const bcrypt = require('bcryptjs')
 
 const usersFilePath = path.join(__dirname, '../database/dataUsuarios.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -33,7 +33,6 @@ const usuariosControllers =
         req.session.usuarioLogueado = usuarioParaLoguearse;
         res.render ('/')
     },
-
     index:(req, res) => {
         res.render("index");
     },
@@ -42,6 +41,7 @@ const usuariosControllers =
     },
 
     crear_usuario: (req, res) => {
+
     
         let nuevoID=(users[users.length-1].id)+1 
 		
@@ -51,7 +51,7 @@ const usuariosControllers =
 			fecha: req.body.fecha,
 			genero: req.body.genero,
 			email: req.body.email,
-            password: req.body.password,		
+            password: bcrypt.hashSync(req.body.password, 10),		
 		}
 		users.push(newUser)
 
