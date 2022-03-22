@@ -10,7 +10,7 @@ const app = express();
 const path = require('path');
 const session = require('express-session')
 const {body, validationResult} = require('express-validator')
-const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+const methodOverride =  require('method-override'); // Para poder usar los métodos PUT y DELETE
 
 
 const publicPath = path.resolve(__dirname, './public');
@@ -27,11 +27,13 @@ app.use(session({
 }));
 
 app.use(bodyParser.urlencoded({ extended: false }))
+
+// Rutas 
 app.use('/', mainRoutes);
 app.use('/users', usuariosRoutes);
 app.use('/products', productosRoutes);
 
-
+// Puerto
 app.listen(process.env.PORT || 3000, function() {
     console.log("Servidor corriendo");
 })

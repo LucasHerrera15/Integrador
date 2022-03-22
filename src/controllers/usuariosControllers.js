@@ -14,6 +14,7 @@ const usuariosControllers =
     login: (req, res) => {
         res.render('users/login');
     },
+    
     procesoLogin: (req, res) => {
         let errors = validationResult(req);
         let usuarios = users;
