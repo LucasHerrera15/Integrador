@@ -16,6 +16,7 @@ const usuariosControllers =
     },
     
     procesoLogin: (req, res) => {
+        console.log(req.body.email)
         let errors = validationResult(req);
         let usuarios = users;
 
@@ -23,7 +24,7 @@ const usuariosControllers =
             for(let i = 0; i < users.length; i++){
                 if(usuarios[i].email == req.body.email){
                     if (usuarios[i].password == req.body.password){
-                         usuarioParaLoguearse = usuarios[i];
+                        var usuarioParaLoguearse = usuarios[i];
                         break;
                     }
                 }
@@ -32,7 +33,7 @@ const usuariosControllers =
             res.render('login', {errors: errors.mapped(), old: req.body})
         }
         req.session.usuarioLogueado = usuarioParaLoguearse;
-        res.render ('/')
+        res.redirect ('/')
     },
     index:(req, res) => {
         res.render("index");

@@ -11,5 +11,14 @@ function condicionFiscalData (sequelize, DataTypes){
 
     const condicionFiscal = sequelize.define(alias,cols,config);
 
+    condicionFiscal.assiociate = function(models){
+        condicionFiscal.hasMany(models.usuario, {
+            as: "usuarios",
+            foreingKey: "condicionFiscalFK",
+            timestamps: false
+        })
+    }
     return condicionFiscal;
 }
+
+module.exports=condicionFiscalData;

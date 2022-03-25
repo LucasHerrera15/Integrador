@@ -4,15 +4,23 @@ function facturaData (sequelize, DataTypes){
 
     cols = {
         id: {type: DataTypes.INTEGER},
-        tipoFactura: {type: DataTypes.STRING(50)},
-        formaDePago: {type: DataTypes.STRING(50)},
-        usuarioFK: {type: DataTypes.INTEGER},
-        fechaCompra: {type: DataTypes.DATE}
+        total: {type:DataTypes.INTEGER},
+        fechaCompra: {type:DataTypes.DATE}
     }
 
     config = {camelCase: false, timestamps: false};
 
-    const facturas = sequelize.define(alias,cols,config);
+    const factura = sequelize.define(alias,cols,config);
 
-    return facturas;
+    factura.assiociate = function(models){
+        factura.hasMany(models.venta, {
+            as: "venta",
+            foreingKey: "facturaFK",
+            timestamps: false
+        })
+    }
+
+    return factura;
 }
+
+module.exports= facturaData;

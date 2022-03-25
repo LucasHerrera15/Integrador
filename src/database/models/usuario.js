@@ -18,6 +18,25 @@ function usuarioData (sequelize, DataTypes){
     config = {camelCase: false, timestamps: false};
 
     const usuarios = sequelize.define(alias,cols,config);
+    
+    usuarios.assiociate = function(models){
+        usuarios.belongsTo(models.zapatilla, {
+            as: "zapatillas",
+            through: "venta",
+            foreingKey: "u_compradorFK",
+            foreingKey: "u_vendedorFK",
+            otherKey: "zapatillaFK",
+            timestamps: false
+        });
+        usuarios.belongsTo(models.condicionFiscal, {
+            as: "condicionFiscal",
+            foreingKey: "condicionFiscalFK",
+            timestamps: false
+        })
+    }
+
 
     return usuarios;
 }
+
+module.exports = usuarioData;
