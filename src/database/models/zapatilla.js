@@ -12,7 +12,7 @@ function zapatillasData (sequelize, DataTypes){
         descripcion: {type: DataTypes.STRING (100)},
         stock: {type: DataTypes.BOOLEAN},
         imagen: {type: DataTypes.STRING(50)},
-        usuarioFK: {type: DataTypes.INTEGER}
+        marcaFK: {type: DataTypes.INTEGER}
     }
 
     config = {camelCase: false, timestamps: false};

@@ -7,6 +7,7 @@ function facturaData (sequelize, DataTypes){
         tipoFactura: {type: DataTypes.STRING(50)},
         formaDePago: {type: DataTypes.STRING(50)},
         usuarioFK: {type: DataTypes.INTEGER},
+        zapatillaFK: {type: DataTypes.INTEGER},
         fechaCompra: {type: DataTypes.DATE}
     }
 
