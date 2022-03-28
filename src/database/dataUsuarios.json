@@ -30,5 +30,13 @@
   "genero": "mujer",
   "email": "h@gmail.com",
   "password": "$2a$10$3/3fM9lQApYKyXBo5JqHnONwR1/7N7G.tcxik5d4Att3QmmqfkjDa"
+ },
+ {
+  "id": 5,
+  "nombre": "Valentin Alonso",
+  "fecha": "2002-01-26",
+  "genero": "hombre",
+  "email": "alonsovalen6@gmail.com",
+  "password": "$2a$10$1FULoWUzylrQxqqzT45v5.7p/dqEMMKx7A5WIVw04GN5D3qT7ZnJK"
  }
 ]

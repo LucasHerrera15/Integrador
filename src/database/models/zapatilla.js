@@ -1,4 +1,4 @@
-function zapatillasData (sequelize, DataTypes){
+function zapatillaData (sequelize, DataTypes){
     
     alias = 'zapatilla';
 
@@ -19,5 +19,23 @@ function zapatillasData (sequelize, DataTypes){
 
     const zapatillas = sequelize.define(alias,cols,config);
 
+    zapatillas.assiociate = function(models){
+        zapatillas.belongsToMany(models.usuarios, {
+            as: "usuarios",
+            through: "venta",
+            foreingKey: "zapatillaFK",
+            otherKey: "u-vendedorFK",
+            otherKey: "u-compradorFK",
+            timestamps: false
+        });
+        zapatillas.belongsTo(models.marca, {
+            as: "marca",
+            foreingKey: "marcaFK",
+            timestamps: false
+        });
+    }
+
     return zapatillas;
 }
+
+module.exports= zapatillaData;

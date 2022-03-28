@@ -11,5 +11,16 @@ function marcaData (sequelize, DataTypes){
 
     const marcas = sequelize.define(alias,cols,config);
 
+    marca.assiociate = function(models){
+        marca.hasMany(models.zapatilla, {
+            as: "zapatillas",
+            foreingKey: "marcaFK",
+            timestamps: false
+        })
+    }
+
+
     return marcas;
 }
+
+module.exports = marcaData;
