@@ -11,8 +11,8 @@ function marcaData (sequelize, DataTypes){
 
     const marcas = sequelize.define(alias,cols,config);
 
-    marca.assiociate = function(models){
-        marca.hasMany(models.zapatilla, {
+    marcas.assiociate = function(models){
+        marcas.hasMany(models.zapatilla, {
             as: "zapatillas",
             foreingKey: "marcaFK",
             timestamps: false

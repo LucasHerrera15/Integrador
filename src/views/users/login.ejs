@@ -25,10 +25,10 @@
                         </div>
                         <div class="mb-3 ">
                             <label for="exampleInputEmail1" class="form-label label labelLogin">E-mail</label>
-                            <% if(locals.errors && errors.email) {%>
-                                <p> <%=error.email %> </p>
+                            <input type="email" name="email" class="form-control" placeholder="Ejemplo@gmail.com" id="exampleInputEmail1" aria-describedby="emailHelp" required value="<%= locals.old && old.email %>">
+                            <% if(locals.errors && errors.email) {%>    
+                               <div><%=errors.email.msg %></div> 
                             <%}%>
-                            <input type="email" name="email" class="form-control" placeholder="Ejemplo@gmail.com" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                     </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label label labelLogin">Contraseña</label>

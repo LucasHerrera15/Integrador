@@ -13,6 +13,7 @@ const {body, validationResult} = require('express-validator')
 const methodOverride =  require('method-override'); // Para poder usar los métodos PUT y DELETE
 
 
+
 const publicPath = path.resolve(__dirname, './public');
 const viewsPath = path.resolve(__dirname, './views');
 app.use(express.static(publicPath) );
@@ -21,10 +22,14 @@ app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el 
 app.set('view engine', 'ejs');
 app.set('views', './src/views');
 app.use(session({
-    secret:"deluxeSneakers",
+    secret:"deluxeSneakersGrupo3",
     resave: false,
     saveUninitialized: false
 }));
+
+// Middlewares de app
+const usuarioLogeadoNavbar = require('./src/middlewares/usuarioLogeadoNavbar');
+app.use(usuarioLogeadoNavbar);
 
 app.use(bodyParser.urlencoded({ extended: false }))
 

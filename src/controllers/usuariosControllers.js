@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { validationResult }= require('express-validator');
 const bcrypt = require('bcryptjs')
-const db = require('../database/models');
+/* const db = require('../database/models'); */
 
 
 const usersFilePath = path.join(__dirname, '../database/dataUsuarios.json');
@@ -18,9 +18,33 @@ const usuariosControllers =
     },
     
     procesoLogin: (req, res) => {
-        console.log(req.body.email)
+
         let errors = validationResult(req);
-        let usuarios = users;
+        
+
+        let userToLogin = db.usuario.findOne({
+            where: {
+                email: req.body.email
+            }
+        }).then 
+        if (userToLogin) {
+            let passwordCheck = bcrypt.compareSync(req.body.contrasenia, userToLogin.contrasenia);
+            if(passwordCheck){
+                delete userToLogin.contrasenia;
+                req.session.usuarioLogeado = userToLogin;
+                return res.redirect('/users/perfil')
+            }
+            return res.render('/users/login', {
+                errors: {
+                    email: {
+                        msg: 'Los datos ingresados son incorrectos'
+                    }
+                }
+            })
+        }
+
+
+       /*  let usuarios = users;
 
         if(errors.isEmpty()){
             for(let i = 0; i < users.length; i++){
@@ -35,7 +59,16 @@ const usuariosControllers =
             res.render('login', {errors: errors.mapped(), old: req.body})
         }
         req.session.usuarioLogueado = usuarioParaLoguearse;
-        res.redirect ('/')
+        res.redirect ('/') */
+    },
+    perfil: (req, res) => {
+        res.render('perfil',{
+            usuario : req.session.usuarioLogeado
+        });
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect('/');
     },
     index:(req, res) => {
         res.render("index");
