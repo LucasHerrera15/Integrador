@@ -1,4 +1,3 @@
-
 const mainRoutes = require('./src/routes/mainRoutes');
 const usuariosRoutes = require('./src/routes/usuariosRoutes');
 const productosRoutes = require('./src/routes/productosRoutes');

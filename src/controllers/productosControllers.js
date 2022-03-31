@@ -1,12 +1,4 @@
-const fs = require('fs');
-const path = require('path');
-const db = require('../database/models');
-
-const productsFilePath = path.join(__dirname, '../database/dataProductos.json');
-const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
+const db = require('../database/models') 
 
 
 const productosControllers =
@@ -52,14 +44,20 @@ const productosControllers =
 		}
 		productos.push(productoNuevo)
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(productos,null,' '));
+		db.zapatilla.create({
+			where: {
+				id: nuevoID
+			}
+		}).then((resultado)=>{
+			res.redirect('/');
+		})
 
-		res.redirect('/');
+		
 	},
 
     editarProducto: (req, res) => {
         let idProductoSeleccionado = req.params.id;
-		/* let productoSeleccionado;
+		let productoSeleccionado;
 
 		for (let p of productos){
 
@@ -67,10 +65,11 @@ const productosControllers =
 				productoSeleccionado=p;
 				break;
 			}
-		} */
+
 		res.render('products/editarProducto',{idProductoSeleccionado});
 		console.log(idProductoSeleccionado)
-    },
+    }
+	},
 
     guardarEdicion: (req, res) => {
         let idProducto = req.params.id;
@@ -89,7 +88,13 @@ const productosControllers =
 			}
 		}
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(productos,null,' '));
+		db.zapatilla.update({
+			where: {
+				id: idProducto
+			}
+		}).then((resultado)=>{
+			{console.log(resultado)}
+		})
 
 	    res.redirect('/detalleProducto');
     },  
@@ -102,17 +107,18 @@ const productosControllers =
 			return element.id!=idProductoSeleccionado;
 		})
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(products2,null,' '));
+		db.zapatilla.destroy({
+			where: {
+				id: products2
+			}
+		}).then((resultado)=>{
+			{console.log(resultado)}
+		})
 
 	    res.redirect('/');
 
 
     },
-	
-    updateProducto: (req, res) => {
-        res.render('products/updateProducto');
-    },
-
 }
 
 module.exports = productosControllers

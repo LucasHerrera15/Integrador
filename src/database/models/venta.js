@@ -1,4 +1,4 @@
-function ventaData (sequelize, DataTypes){
+ function ventaData (sequelize, DataTypes){
     
     alias = 'venta';
 
@@ -28,4 +28,4 @@ function ventaData (sequelize, DataTypes){
     return venta;
 }
 
-module.exports = ventaData;
+module.exports = ventaData; 
