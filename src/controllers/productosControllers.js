@@ -52,14 +52,20 @@ const productosControllers =
 		}
 		productos.push(productoNuevo)
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(productos,null,' '));
+		db.zapatilla.create({
+			where: {
+				id: nuevoID
+			}
+		}).then((resultado)=>{
+			res.redirect('/');
+		})
 
-		res.redirect('/');
+		
 	},
 
     editarProducto: (req, res) => {
         let idProductoSeleccionado = req.params.id;
-		/* let productoSeleccionado;
+		let productoSeleccionado;
 
 		for (let p of productos){
 
@@ -67,10 +73,11 @@ const productosControllers =
 				productoSeleccionado=p;
 				break;
 			}
-		} */
+
 		res.render('products/editarProducto',{idProductoSeleccionado});
 		console.log(idProductoSeleccionado)
-    },
+    }
+	},
 
     guardarEdicion: (req, res) => {
         let idProducto = req.params.id;
@@ -89,7 +96,13 @@ const productosControllers =
 			}
 		}
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(productos,null,' '));
+		db.zapatilla.update({
+			where: {
+				id: idProducto
+			}
+		}).then((resultado)=>{
+			{console.log(resultado)}
+		})
 
 	    res.redirect('/detalleProducto');
     },  
@@ -102,17 +115,18 @@ const productosControllers =
 			return element.id!=idProductoSeleccionado;
 		})
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(products2,null,' '));
+		db.zapatilla.destroy({
+			where: {
+				id: products2
+			}
+		}).then((resultado)=>{
+			{console.log(resultado)}
+		})
 
 	    res.redirect('/');
 
 
     },
-	
-    updateProducto: (req, res) => {
-        res.render('products/updateProducto');
-    },
-
 }
 
 module.exports = productosControllers

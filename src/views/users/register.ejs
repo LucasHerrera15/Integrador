@@ -15,19 +15,19 @@
   <%- include('../partials/header')%>
   <main>
     <div class="banner"></div>
-      <form class="formreg" action="./register" method="POST">
+      <form class="formreg" id="formulario-registro" action="./register" method="POST">
         <h2 id="registrate">Registrate</h2>
         <div class="formulario">
           <label for="nombre">Nombre y Apellido</label>
-          <input type="text" name="nombre" required >
+          <input type="text" name="nombre" id="nombre" required >
         </div>
         <div class="formulario">
-          <label for="fecha">Fecha de Nacimiento</label>
-          <input type="date" name="fecha" value="2002-01-26" max="30-12-2003" min="30-12-1910" required>
+          <label for="fecha">Edad</label>
+          <input type="number" id="edad" name="fecha" min="18" max="110" required>
         </div>
         <div class="formulario">
           <label for="genero">Genero</label>
-          <select name="genero">
+          <select name="genero" id="genero">
             <option value="hombre">Hombre</option>
             <option value="mujer">Mujer</option>
             <option value="otro">Otro</option>
@@ -45,6 +45,8 @@
           <input id="boton-registro" class="btn btn-primary btn-lg" type="submit" value="Registrar" required>
         </div>
       </form>
+
+      <script src="../../../public/js/registerValidation.js"></script>
   </main>
   <%- include('../partials/footer')%>
 </body>

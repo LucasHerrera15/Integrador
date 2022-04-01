@@ -1,15 +1,6 @@
-const fs = require('fs');
-const path = require('path');
 const { validationResult }= require('express-validator');
 const bcrypt = require('bcryptjs')
 /* const db = require('../database/models'); */
-
-
-const usersFilePath = path.join(__dirname, '../database/dataUsuarios.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
 
 const usuariosControllers =
 {
@@ -82,20 +73,18 @@ const usuariosControllers =
     
         let nuevoID=(users[users.length-1].id)+1 
 		
-		let newUser = {
-			id: nuevoID,
-			nombre: req.body.nombre,
-			fecha: req.body.fecha,
-			genero: req.body.genero,
-			email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),		
-		}
-		users.push(newUser)
-
-		fs.writeFileSync(usersFilePath, JSON.stringify(users,null,' ')); 
-        console.log(req.body)
-
-		res.redirect('./login'); 
+        db.usuarios.create({
+			where: {
+                id: nuevoID,
+                nombre: req.body.nombre,
+                fecha: req.body.fecha,
+                genero: req.body.genero,
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password, 10),		
+		    }
+		}).then((resultados)=>{
+			res.redirect('/login');
+		}) 
     }
 }
 

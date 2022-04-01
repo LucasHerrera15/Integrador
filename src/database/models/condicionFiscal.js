@@ -21,4 +21,4 @@ function condicionFiscalData (sequelize, DataTypes){
     return condicionFiscal;
 }
 
-module.exports=condicionFiscalData;
+module.exports = condicionFiscalData;

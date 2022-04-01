@@ -23,4 +23,4 @@ function facturaData (sequelize, DataTypes){
     return factura;
 }
 
-module.exports= facturaData;
+module.exports = facturaData;
