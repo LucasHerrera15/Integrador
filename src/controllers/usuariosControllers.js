@@ -1,6 +1,6 @@
 const { validationResult }= require('express-validator');
 const bcrypt = require('bcryptjs')
-/* const db = require('../database/models'); */
+const db = require('../database/models');
 
 const usuariosControllers =
 {
@@ -23,6 +23,10 @@ const usuariosControllers =
             if(passwordCheck){
                 delete userToLogin.contrasenia;
                 req.session.usuarioLogeado = userToLogin;
+
+                if(req.body.rememberUser){
+                    res.cookie('usuarioEmail', req.body.email, {maxAge: (1000 * 60) * 2})
+                }
                 return res.redirect('/users/perfil')
             }
             return res.render('/users/login', {

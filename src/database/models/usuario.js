@@ -3,7 +3,7 @@ function usuarioData (sequelize, DataTypes){
     alias = 'usuario';
 
     cols = {
-        id: {type: DataTypes.INTEGER},
+        id: {type: DataTypes.INTEGER, primaryKey: true, autoincrement: true},
         nombreCompleto: {type: DataTypes.STRING(50)},
         fechaNaciemento: {type: DataTypes.INTEGER},
         email: {type: DataTypes.STRING(50)},
