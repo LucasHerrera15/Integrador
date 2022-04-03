@@ -3,7 +3,7 @@ function marcaData (sequelize, DataTypes){
     alias = 'marca';
 
     cols = {
-        id: {type: DataTypes.INTEGER},
+        id: {type: DataTypes.INTEGER, primaryKey: true},
         nombreMarca: {type: DataTypes.STRING(50)}
     }
 

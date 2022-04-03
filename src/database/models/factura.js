@@ -3,7 +3,7 @@ function facturaData (sequelize, DataTypes){
     alias = 'factura';
 
     cols = {
-        id: {type: DataTypes.INTEGER},
+        id: {type: DataTypes.INTEGER, primaryKey: true},
         total: {type:DataTypes.INTEGER},
         fechaCompra: {type:DataTypes.DATE}
     }

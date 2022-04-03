@@ -3,7 +3,7 @@ function condicionFiscalData (sequelize, DataTypes){
     alias = 'condicionFiscal';
 
     cols = {
-        id: {type: DataTypes.INTEGER},
+        id: {type: DataTypes.INTEGER, primaryKey: true},
         tipo: {type:DataTypes.STRING(50)}
     }
 
