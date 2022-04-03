@@ -3,7 +3,7 @@
     alias = 'venta';
 
     cols = {
-        id: {type: DataTypes.INTEGER, primaryKey: true},
+        id: {type: DataTypes.INTEGER, primaryKey: true, autoincrement: true},
         u_compradorFK: {type: DataTypes.INTEGER},
         u_vendedorFK: {type: DataTypes.INTEGER},
         zapatillaFK: {type: DataTypes.INTEGER},

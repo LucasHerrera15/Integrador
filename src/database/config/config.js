@@ -24,6 +24,10 @@ module.exports = {
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
+<<<<<<< HEAD
  
 }
 
+=======
+}
+>>>>>>> c7bc6fa2889851ba7d66e014baac687b1ee255d9
