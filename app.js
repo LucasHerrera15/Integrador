@@ -31,9 +31,9 @@ app.use(session({
 app.use(cookies());
 
 // Middlewares de app
-const usuarioLogeadoNavbar = require('./src/middlewares/usuarioLogeadoNavbar');
+/* const usuarioLogeadoNavbar = require('./src/middlewares/usuarioLogeadoNavbar');
 app.use(usuarioLogeadoNavbar);
-
+ */
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // Rutas 
