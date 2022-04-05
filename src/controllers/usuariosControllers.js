@@ -72,19 +72,18 @@ const usuariosControllers =
 
     crear_usuario: (req, res) => {
 
-    
-        let nuevoID=(users[users.length-1].id)+1 
-		
-        db.usuarios.create({
-			where: {
-                id: nuevoID,
-                nombre: req.body.nombre,
+        db.Usuario.create({
+                nombreCompleto: req.body.nombre,
+                nombreUsuario: req.body.usuario,
+                fotoPerfil: req.body.imagenperfil,
                 fecha: req.body.fecha,
+                telefono: req.body.telefono,
+                domicilio: req.body.domicilio,
                 genero: req.body.genero,
                 email: req.body.email,
-                password: bcrypt.hashSync(req.body.password, 10),		
+                contrasenia: req.body.password,		
 		    }
-		}).then((resultados)=>{
+		).then((resultados)=>{
 			res.redirect('/login');
 		}) 
     }

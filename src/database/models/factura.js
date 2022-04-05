@@ -8,7 +8,7 @@ function facturaData (sequelize, DataTypes){
         fechaCompra: {type:DataTypes.DATE}
     }
 
-    config = {camelCase: false, timestamps: false};
+    config = {camelCase: false, timestamps: false, freezeTableName:true};
 
     const factura = sequelize.define(alias,cols,config);
 

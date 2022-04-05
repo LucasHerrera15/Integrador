@@ -3,6 +3,7 @@ const usuariosControllers = require('./../controllers/usuariosControllers');
 const middlewares = require('./../middlewares/middlewares');
 const checkUsuarioLogeado = require('../middlewares/checkUsuarioLogeado');
 const autenticadorLogeo = require('../middlewares/autenticadorLogeo');
+const validateRegister = require('../middlewares/registroVerificacion')
 
 const express = require('express');
 const { body } = require('express-validator');
@@ -17,7 +18,7 @@ router.post('/login', /* validadorLogin, checkUsuarioLogeado,  */usuariosControl
 
 router.get('/register',/* checkUsuarioLogeado */ usuariosControllers.register);
 
-router.post('/register',usuariosControllers.crear_usuario);
+router.post('/register',validateRegister, usuariosControllers.crear_usuario);
 
 router.get ('/perfil', usuariosControllers.perfil);
 

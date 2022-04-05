@@ -14,6 +14,15 @@ https://www.solodeportes.com.ar/
 https://www.adidas.com.ar/  
 https://stockx.com/
 
+Tecnologías utilizadas: 
+-JavaScript.
+-NodeJS.
+-HTML y CSS.
+-Express.
+-MySQL
+-Sequelize 
+-EJS.
+
 Nosotros somos...
 
 Lucas Herrera, 20 años, de Buenos Aires, Argentina. Estudiante de "Digital House".

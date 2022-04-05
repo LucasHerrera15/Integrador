@@ -1,9 +1,9 @@
 function usuarioData (sequelize, DataTypes){
     
-    alias = 'usuario';
+    alias = 'Usuario';
 
     cols = {
-        id: {type: DataTypes.INTEGER, primaryKey: true, autoincrement: true},
+        id: {type: DataTypes.INTEGER, primaryKey: true, autoincrement: true, null:false},
         nombreCompleto: {type: DataTypes.STRING(50)},
         fechaNacimiento: {type: DataTypes.INTEGER},
         email: {type: DataTypes.STRING(50)},
@@ -15,12 +15,12 @@ function usuarioData (sequelize, DataTypes){
         condicionFiscalFK: {type: DataTypes.INTEGER}
     }
 
-    config = {camelCase: false, timestamps: false};
+    config = {camelCase: false, timestamps: false, freezeTableName:true};
 
-    const usuarios = sequelize.define(alias,cols,config);
+    const Usuario = sequelize.define(alias,cols,config);
     
-    usuarios.assiociate = function(models){
-        usuarios.belongsTo(models.zapatilla, {
+    Usuario.assiociate = function(models){
+        Usuario.belongsTo(models.zapatilla, {
             as: "zapatillas",
             through: "venta",
             foreingKey: "u_compradorFK",
@@ -28,7 +28,7 @@ function usuarioData (sequelize, DataTypes){
             otherKey: "zapatillaFK",
             timestamps: false
         });
-        usuarios.belongsTo(models.condicionFiscal, {
+        Usuario.belongsTo(models.condicionFiscal, {
             as: "condicionFiscal",
             foreingKey: "condicionFiscalFK",
             timestamps: false
@@ -36,7 +36,7 @@ function usuarioData (sequelize, DataTypes){
     }
 
 
-    return usuarios;
+    return Usuario;
 }
 
 module.exports = usuarioData;

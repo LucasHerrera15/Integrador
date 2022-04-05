@@ -4,9 +4,6 @@ function validar_email( email )
     return regex.test(email) ? true : false;
 }
 
-
-
-
 let btn = document.getElementById("boton-registro");
 
 btn.addEventListener("click",function(e){
@@ -18,10 +15,14 @@ btn.addEventListener("click",function(e){
     let edad = document.getElementById("edad");
     let email = document.getElementById("email");
     let password = document.getElementById("password");
+    let telefono = document.getElementById("telefono");
+    let usuario = document.getElementById("usuario");
+    let password2 = document.getElementById("password2");
 
-    if ((name.value.length <2)|| (name.value.length >30)){
+
+    if ((name.value.length < 2) || (name.value.length >30)){
         alert("El nombre es incorrecto");
-        return;
+            return;
     }
 
     if ((edad.value < 18) || (edad.value > 110)){
@@ -31,9 +32,8 @@ btn.addEventListener("click",function(e){
 
     if (isNaN(edad.value)){
         alert("El dato es incorrecto");
-        return
+            return
     }
-    
     if(validar_email(email.value) )
     {
         alert("El email es correcto");
@@ -41,14 +41,27 @@ btn.addEventListener("click",function(e){
     else
     {
         alert("El email es incorrecto");
+            return;
+    }
+
+    if(password.value.length < 8){
+        alert("La contraseña es incorrecta")
         return;
     }
 
-    if (password.value <8){
-        alert("La contraseña es demasiado corta");
+    if(password2.value != password.value){
+        alert("Las contraseñas deben ser iguales")
+    }
+    if((telefono.value.length < 8) && (telefono.value.length > 11)){
+        alert("El telefono es incorrecto")
+        return;
+    }
+
+    if(usuario.value.length > 15){
+        alert("El usuario es incorrecto")
         return
     }
     
-    formulario.onsubmit();
+    formulario.submit();
 
 })

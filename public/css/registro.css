@@ -21,6 +21,44 @@
     align-items: center;
     margin-bottom: 10%;
 }
+.input-crear{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: black;
+}
+.subir-archivo{
+    margin-bottom: 3%;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .subir-archivo::before {
+    background-color: #FF9100;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    padding: 5px;
+    content: 'Seleccionar imagen de perfil'; 
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+  .subir-archivo input[type="file"] {
+    opacity: 0;
+    width: 100%;
+    display: inline-block;
+    border-radius: 25px;
+    border-color: #FF9100;
+  }
+  .subir-archivo input[type="file"]:hover{
+      cursor: pointer;
+  }
 .formulario{
     margin-bottom: 1%;
     width: 50%;  
@@ -31,7 +69,13 @@ div input{
     border-radius: 5px;
     padding-left: 6px;
 }
+div input:focus {
+	border: 4px solid #FF9100;
+	outline: none;
+	box-shadow: 3px 0px 30px rgb(255, 99, 2);
+}
 label{
+    color: #FF9100;
     font-weight: bold;
     padding-right: 20px;
 }
@@ -39,7 +83,71 @@ label{
     margin-top: 100px;
     color: #FF9100;
 }
+.formulario__validacion-estado {
+	position: relative;
+	right: 40px;
+	bottom: 0px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 1;
+}
+.formulario__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+.formulario__input-error-activo {
+	display: block;
+}
+.formulario__checkbox {
+	margin-right: 10px;
+}
+.formulario__mensaje {
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+.formulario__mensaje-activo {
+	display: block;
+}
 
+.formulario__mensaje p {
+	margin: 0;
+}
+.formulario__mensaje-exito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block;
+}
+.formulario-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario-incorrecto .formulario label {
+	color: #bb2929;
+}
+
+.formulariog-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario-incorrecto .formulario input {
+	border: 3px solid #bb2929;
+}
+@media (min-width: 426px){
+    .input-crear{
+        padding: 5px;
+    }
+}
 @media (max-width: 768px){
     label{
         font-size: 14px;

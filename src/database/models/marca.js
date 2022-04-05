@@ -7,7 +7,7 @@ function marcaData (sequelize, DataTypes){
         nombreMarca: {type: DataTypes.STRING(50)}
     }
 
-    config = {camelCase: false, timestamps: false};
+    config = {camelCase: false, timestamps: false, freezeTableName:true};
 
     const marcas = sequelize.define(alias,cols,config);
 
