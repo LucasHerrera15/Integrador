@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/LucasHerrera15/Integrador#readme",
   "dependencies": {
+    "@popperjs/core": "^2.11.4",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.2",
     "bootstrap": "^5.1.3",

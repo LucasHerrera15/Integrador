@@ -5,7 +5,7 @@ function usuarioData (sequelize, DataTypes){
     cols = {
         id: {type: DataTypes.INTEGER, primaryKey: true, autoincrement: true},
         nombreCompleto: {type: DataTypes.STRING(50)},
-        fechaNaciemento: {type: DataTypes.INTEGER},
+        fechaNacimiento: {type: DataTypes.INTEGER},
         email: {type: DataTypes.STRING(50)},
         contrasenia: {type: DataTypes.STRING(50)},
         domicilio: {type: DataTypes.DATE},

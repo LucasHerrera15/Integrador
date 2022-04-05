@@ -19,7 +19,7 @@ router.get('/register',/* checkUsuarioLogeado */ usuariosControllers.register);
 
 router.post('/register',usuariosControllers.crear_usuario);
 
-router.get ('/perfil', /* autenticadorLogeo, */ usuariosControllers.perfil);
+router.get ('/perfil', usuariosControllers.perfil);
 
 router.get('/logout', usuariosControllers.logout);
 

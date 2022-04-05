@@ -11,15 +11,15 @@ const usuariosControllers =
     procesoLogin: (req, res) => {
 
         let errors = validationResult(req);
-        
-
-        let userToLogin = db.usuario.findOne({
+        console.log(req.body)
+      
+        let userToLogin = db.usuario.findAll({
             where: {
                 email: req.body.email
             }
         }).then 
         if (userToLogin) {
-            let passwordCheck = bcrypt.compareSync(req.body.contrasenia, userToLogin.contrasenia);
+            let passwordCheck = bcrypt.compareSync(req.body.password, userToLogin.contrasenia);
             if(passwordCheck){
                 delete userToLogin.contrasenia;
                 req.session.usuarioLogeado = userToLogin;
@@ -37,8 +37,6 @@ const usuariosControllers =
                 }
             })
         }
-
-
        /*  let usuarios = users;
 
         if(errors.isEmpty()){
@@ -57,8 +55,8 @@ const usuariosControllers =
         res.redirect ('/') */
     },
     perfil: (req, res) => {
-        res.render('perfil',{
-            usuario : req.session.usuarioLogeado
+        res.render('users/perfil', {
+            user : req.session.usuarioLogeado
         });
     },
     logout: (req, res) => {
