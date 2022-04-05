@@ -3,21 +3,17 @@ function condicionFiscalData (sequelize, DataTypes){
     alias = 'condicionFiscal';
 
     cols = {
-<<<<<<< HEAD
-        id: {type: DataTypes.INTEGER, primaryKey: true},
-=======
         id: {type: DataTypes.INTEGER, primaryKey: true, autoincrement: true},
->>>>>>> c7bc6fa2889851ba7d66e014baac687b1ee255d9
-        tipo: {type:DataTypes.STRING(50)}
+        tipo: {type:DataTypes.STRING(50), null:true}
     }
 
-    config = {camelCase: false, timestamps: false};
+    config = {camelCase: false, timestamps: false, freezeTableName:true};
 
     const condicionFiscal = sequelize.define(alias,cols,config);
 
     condicionFiscal.assiociate = function(models){
-        condicionFiscal.hasMany(models.usuario, {
-            as: "usuarios",
+        condicionFiscal.hasMany(models.Usuario, {
+            as: "Usuario",
             foreingKey: "condicionFiscalFK",
             timestamps: false
         })

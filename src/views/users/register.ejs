@@ -15,16 +15,29 @@
   <%- include('../partials/header')%>
   <main>
     <div class="banner"></div>
-      <form class="formreg" id="formulario-registro" action="./register" method="POST">
+      <form class="formreg" id="formulario-registro" action="./register" method="POST" enctype="multipart/form-data">
         <h2 id="registrate">Registrate</h2>
+
         <div class="formulario">
           <label for="nombre">Nombre y Apellido</label>
           <input type="text" name="nombre" id="nombre" required >
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
+        <p class="formulario__input-error">El nombre es incorrecto.</p>
+        <div class="formulario">
+          <label for="usuario">Nombre de usuario</label>
+          <input type="text" name="usuario" id="usuario" required>
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">El usuario solo puede contener numeros, letras y guion bajo.</p>
+
         <div class="formulario">
           <label for="fecha">Edad</label>
-          <input type="number" id="edad" name="fecha" min="18" max="110" required>
+          <input type="number" id="edad" name="fecha" min="18" max="100" required>
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
+        <p class="formulario__input-error">La edad debe ser mayor a 18 años y menor a 100.</p>
+
         <div class="formulario">
           <label for="genero">Genero</label>
           <select name="genero" id="genero">
@@ -33,21 +46,53 @@
             <option value="otro">Otro</option>
           </select>
         </div>
+
+        <div class="formulario">
+          <label for="direccion">Domicilio</label>
+          <input type="text" name="domcilio" id="domicilio" required>
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          <p class="formulario__input-error">El domicilio debe tener minimo 2 numeros y maximo 5.</p>
+        </div>
+        
+
+        <div class="formulario">
+          <label for="telefono">Telefono</label>
+          <input type="number" name="telefono" id="telefono" placeholder="4491234567" required>
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+
         <div class="formulario">
           <label for="email">Dirección de Email</label>
           <input type="email" name="email" id="email" required>
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
+        <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+
         <div class="formulario">
           <label for="password">Contraseña</label>
           <input type="password" name="password" id="password" required>
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
+        <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+
+        <div class="formulario">
+          <label for="password">Repetir contraseña</label>
+          <input type="password" name="password2" id="password2" required>
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+
+        <div class="subir-archivo" id="src-file1" >
+          <input class="input-crear" type="file" name="imagenperfil">
+        </div>
+
         <div class="boton">
           <input id="boton-registro" class="btn btn-primary btn-lg" type="submit" value="Registrar" required>
         </div>
       </form>
-
-      <script src="../../../public/js/registerValidation.js"></script>
+  
   </main>
   <%- include('../partials/footer')%>
+  <script src="../../../public/js/registerValidation.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@
         facturaFK: {type: DataTypes.INTEGER},
     }
 
-    config = {camelCase: false, timestamps: false};
+    config = {camelCase: false, timestamps: false, freezeTableName:true};
 
     const venta = sequelize.define(alias,cols,config);
 

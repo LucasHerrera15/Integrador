@@ -15,13 +15,13 @@ function zapatillaData (sequelize, DataTypes){
         marcaFK: {type: DataTypes.INTEGER}
     }
 
-    config = {camelCase: false, timestamps: false};
+    config = {camelCase: false, timestamps: false, freezeTableName:true};
 
     const zapatillas = sequelize.define(alias,cols,config);
 
     zapatillas.assiociate = function(models){
-        zapatillas.belongsToMany(models.usuarios, {
-            as: "usuarios",
+        zapatillas.belongsToMany(models.Usuario, {
+            as: "Usuario",
             through: "venta",
             foreingKey: "zapatillaFK",
             otherKey: "u-vendedorFK",
