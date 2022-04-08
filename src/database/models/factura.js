@@ -1,6 +1,6 @@
 function facturaData (sequelize, DataTypes){
     
-    alias = 'factura';
+    alias = 'Factura';
 
     cols = {
         id: {type: DataTypes.INTEGER, primaryKey: true, autoincrement: true},
@@ -10,17 +10,17 @@ function facturaData (sequelize, DataTypes){
 
     config = {camelCase: false, timestamps: false, freezeTableName:true};
 
-    const factura = sequelize.define(alias,cols,config);
+    const Factura = sequelize.define(alias,cols,config);
 
-    factura.assiociate = function(models){
-        factura.hasMany(models.venta, {
+    Factura.assiociate = function(models){
+        Factura.hasMany(models.venta, {
             as: "venta",
             foreingKey: "facturaFK",
             timestamps: false
         })
     }
 
-    return factura;
+    return Factura;
 }
 
 module.exports = facturaData;

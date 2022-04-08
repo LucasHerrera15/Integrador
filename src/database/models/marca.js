@@ -1,6 +1,6 @@
 function marcaData (sequelize, DataTypes){
     
-    alias = 'marca';
+    alias = 'Marca';
 
     cols = {
         id: {type: DataTypes.INTEGER, primaryKey: true, autoincrement: true},
@@ -9,10 +9,10 @@ function marcaData (sequelize, DataTypes){
 
     config = {camelCase: false, timestamps: false, freezeTableName:true};
 
-    const marcas = sequelize.define(alias,cols,config);
+    const Marca = sequelize.define(alias,cols,config);
 
-    marcas.assiociate = function(models){
-        marcas.hasMany(models.zapatilla, {
+    Marca.assiociate = function(models){
+        Marca.hasMany(models.zapatilla, {
             as: "zapatillas",
             foreingKey: "marcaFK",
             timestamps: false
@@ -20,7 +20,7 @@ function marcaData (sequelize, DataTypes){
     }
 
 
-    return marcas;
+    return Marca;
 }
 
 module.exports = marcaData;

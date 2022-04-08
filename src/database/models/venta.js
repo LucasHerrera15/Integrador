@@ -1,6 +1,6 @@
  function ventaData (sequelize, DataTypes){
     
-    alias = 'venta';
+    alias = 'Venta';
 
     cols = {
         id: {type: DataTypes.INTEGER, primaryKey: true, autoincrement: true},
@@ -15,17 +15,17 @@
 
     config = {camelCase: false, timestamps: false, freezeTableName:true};
 
-    const venta = sequelize.define(alias,cols,config);
+    const Venta = sequelize.define(alias,cols,config);
 
-    venta.assiociate = function(models){
-        venta.belongsTo(models.factura, {
+    Venta.assiociate = function(models){
+        Venta.belongsTo(models.factura, {
             as: "factura",
             foreingKey: "facturaFK",
             timestamps: false
         })
     }
     
-    return venta;
+    return Venta;
 }
 
 module.exports = ventaData; 

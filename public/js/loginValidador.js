@@ -11,7 +11,7 @@ window.addEventListener('load', function (){
         let emailValido = expReg.test (emai.value);
         if(campoEmail.value ==''){
             errores.push('Debes escribir un E-mail');
-        } else ( emailValido == false){
+        } else if ( emailValido == false){
             erorres.push('Debes ingresar un correo válido')
         }
         

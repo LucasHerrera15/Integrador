@@ -71,21 +71,21 @@ const usuariosControllers =
     },
 
     crear_usuario: (req, res) => {
-
+        let contrasenia = bcrypt.hash(req.body.contrasenia, 10)
         db.Usuario.create({
                 nombreCompleto: req.body.nombre,
-                nombreUsuario: req.body.usuario,
-                fotoPerfil: req.body.imagenperfil,
-                fecha: req.body.fecha,
-                telefono: req.body.telefono,
-                domicilio: req.body.domicilio,
-                genero: req.body.genero,
+                fechaNacimiento: req.body.fecha,
                 email: req.body.email,
-                contrasenia: req.body.password,		
+                contrasenia: contrasenia,
+                nombreUsuario: req.body.usuario,
+                domicilio: req.body.domicilio,
+                telefono: req.body.telefono,
+                condicionFiscalFK: 1
 		    }
-		).then((resultados)=>{
-			res.redirect('/login');
-		}) 
+		)
+        .then(function(){
+            res.redirect('/login')
+        })
     }
 }
 
