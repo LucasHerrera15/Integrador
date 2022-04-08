@@ -12,13 +12,12 @@ const usuariosControllers =
 
         let errors = validationResult(req);
         console.log(req.body)
-      
-        let userToLogin = db.usuario.findAll({
-            where: {
-                email: req.body.email
-            }
-        }).then 
-        if (userToLogin) {
+
+        db.Usuario.findAll()
+        .then((userToLogin) =>{ 
+            console.log(userToLogin)
+            console.log(userToLogin.email)
+            if (userToLogin) {
             let passwordCheck = bcrypt.compareSync(req.body.password, userToLogin.contrasenia);
             if(passwordCheck){
                 delete userToLogin.contrasenia;
@@ -37,6 +36,16 @@ const usuariosControllers =
                 }
             })
         }
+
+        } ) 
+      
+        let userToLogin = db.Usuario.findOne({
+             where: {
+                email: req.body.email
+            }
+        }).then 
+       
+        
        /*  let usuarios = users;
 
         if(errors.isEmpty()){
