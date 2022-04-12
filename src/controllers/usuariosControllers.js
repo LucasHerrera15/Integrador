@@ -80,7 +80,7 @@ const usuariosControllers =
                 nombreUsuario: req.body.usuario,
                 domicilio: req.body.domicilio,
                 telefono: req.body.telefono,
-                condicionFiscalFK: 1
+                condicionFiscalFK: req.body.condicionFiscal
 		    }
 		)
         .then(function(){
