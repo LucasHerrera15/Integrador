@@ -38,6 +38,8 @@ btn.addEventListener("click",function(e){
         alert("El dato es incorrecto");
             return
     }
+
+
     if(validar_email(email.value) )
     {
         

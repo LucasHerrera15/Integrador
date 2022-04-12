@@ -71,7 +71,7 @@ const usuariosControllers =
     },
 
     crear_usuario: (req, res) => {
-        let contrasenia = bcrypt.hash(req.body.contrasenia, 10)
+        let contrasenia = bcrypt.hashSync(req.body.contrasenia, 10)
         db.Usuario.create({
                 nombreCompleto: req.body.nombre,
                 fechaNacimiento: req.body.fecha,
@@ -80,7 +80,7 @@ const usuariosControllers =
                 nombreUsuario: req.body.usuario,
                 domicilio: req.body.domicilio,
                 telefono: req.body.telefono,
-                condicionFiscalFK: req.body.condicionFiscal
+                condicionFiscalFK: req.body.condicionFiscal,
 		    }
 		)
         .then(function(){
