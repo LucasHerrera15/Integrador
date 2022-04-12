@@ -64,6 +64,9 @@ const productosControllers =
 	},
 
     editarProducto: (req, res) => {
+
+		db.zapatilla.findOne()
+
         let idProductoSeleccionado = req.params.id;
 		let productoSeleccionado;
 

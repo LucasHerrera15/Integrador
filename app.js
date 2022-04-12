@@ -2,6 +2,7 @@
 const mainRoutes = require('./src/routes/mainRoutes');
 const usuariosRoutes = require('./src/routes/usuariosRoutes');
 const productosRoutes = require('./src/routes/productosRoutes');
+const apiRoutes = require('./src/routes/apiRoutes');
 
 
                 
@@ -34,14 +35,15 @@ app.use(session({
 app.use(cookies());
 
 // Middlewares de app
-/* const usuarioLogeadoNavbar = require('./src/middlewares/usuarioLogeadoNavbar');
-app.use(usuarioLogeadoNavbar);
- */
+const userLogedNavbar = require('./src/middlewares/userLogedNavBar');
+app.use(userLogedNavbar);
+
 
 // Rutas 
 app.use('/', mainRoutes);
 app.use('/users', usuariosRoutes);
 app.use('/products', productosRoutes);
+app.use('/api', apiRoutes)
 
 // Puerto
 app.listen(process.env.PORT || 3000, function() {

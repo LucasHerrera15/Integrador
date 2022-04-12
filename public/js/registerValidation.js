@@ -4,6 +4,9 @@ function validar_email( email )
     return regex.test(email) ? true : false;
 }
 
+const db = require('../database/models');
+
+
 let btn = document.getElementById("boton-registro");
 
 btn.addEventListener("click",function(e){
@@ -24,8 +27,6 @@ btn.addEventListener("click",function(e){
 
     if ((name.value.length < 2) || (name.value.length > 30)){
         alert("El nombre es incorrecto");
-        document.getElementById('usuario-div').classList.remove('formulario__input-error')
-        document.getElementById('usuario-div').classList.add('formulario__input-error-activo')
             return;
     }
 
@@ -39,6 +40,19 @@ btn.addEventListener("click",function(e){
             return
     }
 
+    db.usuario.findAll({
+        where:{
+            email
+        } 
+    })
+    .then((emails)=>{
+        console.log(emails)
+
+
+
+    })
+
+
 
     if(validar_email(email.value) )
     {
@@ -51,15 +65,11 @@ btn.addEventListener("click",function(e){
     }
 
     if(password.value.length < 8){
-        document.getElementById('contraseña-div').classList.remove('formulario__input-error')
-        document.getElementById('contraseña-div').classList.add('formulario__input-error-activo')
         alert("La contraseña es incorrecta")
         return;
     }
 
     if(password2.value != password.value){
-        document.getElementById('contraseña-div').classList.remove('formulario__input-error')
-        document.getElementById('contraseña-div').classList.add('formulario__input-error-activo')
         alert("Las contraseñas deben ser iguales")
         return;
     }
@@ -72,8 +82,6 @@ btn.addEventListener("click",function(e){
         alert("El usuario es incorrecto")
         return
     }
-    
-    /* if((condicionFiscal.value ==! "consumidor final") || (consumidor finalvalue ==! "condicion fiscal")) */
     
     formulario.submit();
 

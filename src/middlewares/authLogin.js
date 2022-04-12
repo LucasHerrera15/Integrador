@@ -1,7 +1,7 @@
 function autenticadorLogeo(req, res, next){
     if(!req.session.usuarioLogeado){
-        return res.redirect('login')
+        return res.redirect('/users/login')
     }
-    next;
+    next();
 };
 module.exports = autenticadorLogeo;

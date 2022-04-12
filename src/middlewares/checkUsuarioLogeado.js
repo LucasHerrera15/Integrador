@@ -1,7 +1,7 @@
-/* function checkUsuarioLogeado(req, res, next){
+function checkUsuarioLogeado(req, res, next){
     if(req.session.usuarioLogeado){
-        return res.redirect('perfil')
+        return res.redirect('/users/perfil')
     }
-    next;
+    next();
 };
-module.exports = usuarioLogeado; */
+module.exports = checkUsuarioLogeado;

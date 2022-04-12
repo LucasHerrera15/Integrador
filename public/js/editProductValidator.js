@@ -1,18 +1,16 @@
-const e = require("express");
-
 window.addEventListener('load', function (){
-    let formulario = document.querySelector('form.login');
+    let formulario = document.querySelector('form.editProduct');
     formulario.addEventListener('submit', function(e){
         
         let errores = [];
         
         let campoEmail = document.querySelector('input.email');
         let expReg = /^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,63}$/i
-        let emailValido = expReg.test (emai.value);
+        let emailValido = expReg.test (email.value);
         if(campoEmail.value ==''){
-            errores.push('Debes escribir un E-mail');
+           alert('Debes escribir un E-mail');
         } else if ( emailValido == false){
-            erorres.push('Debes ingresar un correo válido')
+            errores.push('Debes ingresar un correo válido')
         }
         
         let campoPassword = document.querySelector('input.password');
@@ -28,5 +26,7 @@ window.addEventListener('load', function (){
                 ulErrores.innerHTML +=  '<li>' + errores[i] + '</li>' 
             }
         }
+        formulario.submit();
     })
+    
 })
