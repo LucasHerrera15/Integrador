@@ -64,14 +64,18 @@ const usuariosControllers =
     },
 
     crear_usuario: (req, res) => {
+        let contrasenia = bcrypt.hashSync(req.body.contrasenia, 10);
 
         db.Usuario.create({
                 nombreCompleto: req.body.nombre,
+                fechaNacimiento: req.body.fecha,
+                email: req.body.email,
+                contrasenia: contrasenia,
                 nombreUsuario: req.body.usuario,
-                fotoPerfil: req.body.imagenperfil,
-                fecha: req.body.fecha,
+                domicilio: req.body.domicilio,
                 telefono: req.body.telefono,
-                condicionFiscalFK: req.body.condicionFiscal
+                /* fotoPerfil: req.body.imagenperfil, */
+                condicionFiscalFK: req.body.condicionFiscal,
 		    }
 		).then((resultados)=>{
 			res.redirect('/users/login');
