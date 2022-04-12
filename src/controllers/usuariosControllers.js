@@ -74,7 +74,7 @@ const usuariosControllers =
                 condicionFiscalFK: req.body.condicionFiscal
 		    }
 		).then((resultados)=>{
-			res.redirect('/login');
+			res.redirect('/users/login');
 		}) 
     }
 }
