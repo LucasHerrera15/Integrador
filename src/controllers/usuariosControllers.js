@@ -71,10 +71,7 @@ const usuariosControllers =
                 fotoPerfil: req.body.imagenperfil,
                 fecha: req.body.fecha,
                 telefono: req.body.telefono,
-                domicilio: req.body.domicilio,
-                genero: req.body.genero,
-                email: req.body.email,
-                contrasenia: req.body.password,		
+                condicionFiscalFK: req.body.condicionFiscal
 		    }
 		).then((resultados)=>{
 			res.redirect('/login');

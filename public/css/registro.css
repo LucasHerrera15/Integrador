@@ -92,16 +92,16 @@ label{
 	opacity: 1;
 }
 .formulario__input-error {
-	font-size: 12px;
-	margin-bottom: 0;
 	display: none;
 }
 .formulario__input-error-activo {
 	display: block;
+    text-align: start;
+    font-size: 12px;
+    color: #bb2929;
+	margin-bottom: 0;
 }
-.formulario__checkbox {
-	margin-right: 10px;
-}
+
 .formulario__mensaje {
 	height: 45px;
 	line-height: 45px;
