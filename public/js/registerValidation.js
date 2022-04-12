@@ -8,7 +8,9 @@ let btn = document.getElementById("boton-registro");
 
 btn.addEventListener("click",function(e){
 
+
     e.preventDefault();
+
     
     let formulario = document.getElementById("formulario-registro")
     let name = document.getElementById("nombre");
@@ -25,7 +27,7 @@ btn.addEventListener("click",function(e){
             return;
     }
 
-    if ((edad.value < 18) || (edad.value > 110)){
+    if ((edad.value < 18) || (edad.value > 100)){
         alert("La edad es incorrecta");
         return;
     }
@@ -36,7 +38,7 @@ btn.addEventListener("click",function(e){
     }
     if(validar_email(email.value) )
     {
-        alert("El email es correcto");
+        
     }
     else
     {
@@ -51,6 +53,7 @@ btn.addEventListener("click",function(e){
 
     if(password2.value != password.value){
         alert("Las contraseñas deben ser iguales")
+        return;
     }
     if((telefono.value.length < 8) && (telefono.value.length > 11)){
         alert("El telefono es incorrecto")

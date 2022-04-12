@@ -17,10 +17,10 @@ function zapatillaData (sequelize, DataTypes){
 
     config = {camelCase: false, timestamps: false, freezeTableName:true};
 
-    const zapatillas = sequelize.define(alias,cols,config);
+    const Zapatilla = sequelize.define(alias,cols,config);
 
-    zapatillas.assiociate = function(models){
-        zapatillas.belongsToMany(models.Usuario, {
+    Zapatilla.assiociate = function(models){
+        Zapatilla.belongsToMany(models.Usuario, {
             as: "Usuario",
             through: "venta",
             foreingKey: "zapatillaFK",
@@ -28,14 +28,14 @@ function zapatillaData (sequelize, DataTypes){
             otherKey: "u-compradorFK",
             timestamps: false
         });
-        zapatillas.belongsTo(models.marca, {
+        Zapatilla.belongsTo(models.marca, {
             as: "marca",
             foreingKey: "marcaFK",
             timestamps: false
         });
     }
 
-    return zapatillas;
+    return Zapatilla;
 }
 
 module.exports= zapatillaData;

@@ -1,6 +1,6 @@
 function condicionFiscalData (sequelize, DataTypes){
     
-    alias = 'condicionFiscal';
+    alias = 'CondicionFiscal';
 
     cols = {
         id: {type: DataTypes.INTEGER, primaryKey: true, autoincrement: true},
@@ -9,16 +9,16 @@ function condicionFiscalData (sequelize, DataTypes){
 
     config = {camelCase: false, timestamps: false, freezeTableName:true};
 
-    const condicionFiscal = sequelize.define(alias,cols,config);
+    const CondicionFiscal = sequelize.define(alias,cols,config);
 
-    condicionFiscal.assiociate = function(models){
-        condicionFiscal.hasMany(models.Usuario, {
+    CondicionFiscal.assiociate = function(models){
+        CondicionFiscal.hasMany(models.Usuario, {
             as: "Usuario",
             foreingKey: "condicionFiscalFK",
             timestamps: false
         })
     }
-    return condicionFiscal;
+    return CondicionFiscal;
 }
 
 module.exports = condicionFiscalData;

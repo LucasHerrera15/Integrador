@@ -20,7 +20,7 @@
                     <div id="fondoLogin">
                         <div id="solapa">
                             <div class="loginPalabra linea">Iniciar sesión</div> 
-                            <a href="/users/register" class="subrayado"><div class="loginPalabra">Registrate</div></a>
+                            <a href="/users/register" class="subrayado"><div class="loginPalabra espacioRegistro">Registrate</div></a>
                         </div>
                         <div class="errores">
                             <ul></ul>
@@ -29,12 +29,15 @@
                             <label for="exampleInputEmail1" class="form-label label labelLogin">E-mail</label>
                             <input type="email" name="email" class="form-control emails" placeholder="Ejemplo@gmail.com" id="exampleInputEmail1" aria-describedby="emailHelp" required value="<%= locals.old && old.email %>">
                             <% if(locals.errors && errors.email) {%>    
-                               <div><%=errors.email.msg %></div> 
+                               <div id="error"><%=errors.email.msg %></div> 
                             <%}%>
                     </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label label labelLogin">Contraseña</label>
                             <input type="password" name="password" class="form-control password" placeholder="•••••••••••" id="exampleInputPassword1" required>
+                            <% if(locals.errors && errors.password) {%>    
+                                <div id="error"><%=errors.password.msg %></div> 
+                             <%}%>
                             <label for="" class="olvidasteContra"><a href="#" id="olvidasteLetra"> Olvidaste tu contraseña?</a></label>
                         </div>
                         <div class="mb-3 form-check">

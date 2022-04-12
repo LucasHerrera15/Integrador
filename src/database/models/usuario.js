@@ -3,16 +3,16 @@ function usuarioData (sequelize, DataTypes){
     alias = 'Usuario';
 
     cols = {
-        id: {type: DataTypes.INTEGER, primaryKey: true, autoincrement: true, null:false},
+        id: {type: DataTypes.INTEGER, primaryKey: true, autoincrement: true},
         nombreCompleto: {type: DataTypes.STRING(50)},
-        fechaNacimiento: {type: DataTypes.DATE},
+        fechaNacimiento: {type: DataTypes.STRING(50)},
         email: {type: DataTypes.STRING(50)},
         contrasenia: {type: DataTypes.STRING(50)},
-        domicilio: {type: DataTypes.STRING(100)},
+        domicilio: {type: DataTypes.STRING(50)},
         nombreUsuario: {type: DataTypes.STRING(50)},
         telefono: {type: DataTypes.STRING(50)},
         fotoPerfil: {type: DataTypes.STRING(50)},
-        condicionFiscalFK: {type: DataTypes.INTEGER}
+        condicionFiscalFK: {type: DataTypes.STRING(50)}
     }
 
     config = {camelCase: false, timestamps: false, freezeTableName:true};
@@ -24,12 +24,12 @@ function usuarioData (sequelize, DataTypes){
             as: "zapatillas",
             through: "venta",
             foreingKey: "u_compradorFK",
-            foreingKey: "u_vendedorFK",
+            otherKey: "u_vendedorFK",
             otherKey: "zapatillaFK",
             timestamps: false
         });
         Usuario.belongsTo(models.condicionFiscal, {
-            as: "condicionFiscal",
+            as: "CondicionFiscal",
             foreingKey: "condicionFiscalFK",
             timestamps: false
         })

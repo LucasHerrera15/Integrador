@@ -10,60 +10,44 @@ const usuariosControllers =
     
     procesoLogin: (req, res) => {
 
-        let errors = validationResult(req);
-        console.log(req.body)
+        const { email, password } = req.body;
 
-        db.Usuario.findAll()
-        .then((userToLogin) =>{ 
-            console.log(userToLogin)
-            console.log(userToLogin.email)
-            if (userToLogin) {
-            let passwordCheck = bcrypt.compareSync(req.body.password, userToLogin.contrasenia);
+        db.Usuario.findOne({
+            where: {
+                email
+            }
+        }).then((userToLogin) =>{ 
+             if (userToLogin){
+            let passwordCheck = bcrypt.compareSync(password, userToLogin.contrasenia);
             if(passwordCheck){
                 delete userToLogin.contrasenia;
                 req.session.usuarioLogeado = userToLogin;
 
                 if(req.body.rememberUser){
-                    res.cookie('usuarioEmail', req.body.email, {maxAge: (1000 * 60) * 2})
+                    res.cookie('usuarioEmail', email, {maxAge: (1000 * 60) * 2})
                 }
                 return res.redirect('/users/perfil')
             }
-            return res.render('/users/login', {
+            return res.render('users/login', {
+                errors: {
+                    password: {
+                        msg: 'Contraseña incorrecta.'
+                    }
+                }
+            })
+        }else {
+            return res.render('users/login', {
                 errors: {
                     email: {
-                        msg: 'Los datos ingresados son incorrectos'
+                        msg: 'El E-mail no está registrado.'
                     }
                 }
             })
         }
-
-        } ) 
-      
-        let userToLogin = db.Usuario.findOne({
-             where: {
-                email: req.body.email
-            }
-        }).then 
-       
-        
-       /*  let usuarios = users;
-
-        if(errors.isEmpty()){
-            for(let i = 0; i < users.length; i++){
-                if(usuarios[i].email == req.body.email){
-                    if (usuarios[i].password == req.body.password){
-                        var usuarioParaLoguearse = usuarios[i];
-                        break;
-                    }
-                }
-            }
-        }else{
-            res.render('login', {errors: errors.mapped(), old: req.body})
-        }
-        req.session.usuarioLogueado = usuarioParaLoguearse;
-        res.redirect ('/') */
+     })
     },
     perfil: (req, res) => {
+        console.log(req.session)
         res.render('users/perfil', {
             user : req.session.usuarioLogeado
         });

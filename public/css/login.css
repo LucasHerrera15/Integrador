@@ -40,6 +40,9 @@ body{
     border-right: 1px solid gray;
     padding-right: 15px;
 }
+.espacioRegistro{
+    padding-left: 15px;
+}
 .loginPalabra{
     font-family: 'Secular One', sans-serif;
     font-weight: 900;
@@ -48,8 +51,7 @@ body{
 }
 #solapa{
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    justify-content: center;
 }
 .subrayado{
     text-decoration: none;
@@ -88,6 +90,9 @@ body{
     font-size: 10px;
     text-decoration: none;
     margin-bottom: 10px;
+}
+#error{
+    color: red;
 }
 @media (max-width: 980px){
     html, body{

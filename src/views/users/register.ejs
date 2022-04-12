@@ -15,7 +15,7 @@
   <%- include('../partials/header')%>
   <main>
     <div class="banner"></div>
-      <form class="formreg" id="formulario-registro" action="./register" method="POST" enctype="multipart/form-data">
+      <form class="formreg" id="formulario-registro" action="./register" method="POST" >
         <h2 id="registrate">Registrate</h2>
 
         <div class="formulario">
@@ -63,6 +63,12 @@
         <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
 
         <div class="formulario">
+          <label for="condicion">Condicion fiscal</label>
+          <input type="text" name="condicionFiscal" id="condicionFiscal" required>
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+
+        <div class="formulario">
           <label for="email">Dirección de Email</label>
           <input type="email" name="email" id="email" required>
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
@@ -82,9 +88,9 @@
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
 
-        <div class="subir-archivo" id="src-file1" >
+        <!-- <div class="subir-archivo" id="src-file1" >
           <input class="input-crear" type="file" name="imagenperfil">
-        </div>
+        </div> -->
 
         <div class="boton">
           <input id="boton-registro" class="btn btn-primary btn-lg" type="submit" value="Registrar" required>
@@ -93,6 +99,6 @@
   
   </main>
   <%- include('../partials/footer')%>
-  <script src="../../../public/js/registerValidation.js"></script>
+  <script src="/js/registerValidation.js"></script>
 </body>
 </html>
