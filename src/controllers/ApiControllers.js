@@ -34,15 +34,6 @@ const apiController = {
                     data: product
                 })
             })
-        },
-        emails: (req, res) => {
-            db.Usuario.findAll()
-            .then(emails => {
-                return res.json({
-                    total: emails.length,
-                    data: emails
-                })
-                }
-            )}
+        }
 }
 module.exports = apiController;

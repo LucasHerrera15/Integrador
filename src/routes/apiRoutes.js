@@ -11,6 +11,4 @@ router.get('/listaProductos', apiControllers.productsList);
 
 router.get('/listaProductos/:id', apiControllers.product);
 
-router.get('/listaEmail', apiControllers.emails);
-
 module.exports = router;

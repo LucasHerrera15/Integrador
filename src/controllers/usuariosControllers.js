@@ -9,7 +9,6 @@ const usuariosControllers =
     },
     
     procesoLogin: (req, res) => {
-
         const { email, password } = req.body;
 
         db.Usuario.findOne({
@@ -24,7 +23,7 @@ const usuariosControllers =
                 req.session.usuarioLogeado = userToLogin;
 
                 if(req.body.rememberUser){
-                    res.cookie('usuarioEmail', email, {maxAge: (1000 * 60) * 2})
+                    res.cookie('usuarioEmail', email, {maxAge: 900000})
                 }
                 return res.redirect('/users/perfil')
             }
@@ -47,12 +46,12 @@ const usuariosControllers =
      })
     },
     perfil: (req, res) => {
-        console.log(req.session)
         res.render('users/perfil', {
             user : req.session.usuarioLogeado
         });
     },
     logout: (req, res) => {
+        res.clearCookie('userEmail')
         req.session.destroy();
         return res.redirect('/');
     },
@@ -64,7 +63,7 @@ const usuariosControllers =
     },
 
     crear_usuario: (req, res) => {
-        let contrasenia = bcrypt.hashSync(req.body.contrasenia, 10);
+        let contrasenia = bcrypt.hash(req.body.password, 10);
 
         db.Usuario.create({
                 nombreCompleto: req.body.nombre,

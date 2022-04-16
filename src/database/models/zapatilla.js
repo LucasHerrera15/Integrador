@@ -1,13 +1,13 @@
 function zapatillaData (sequelize, DataTypes){
     
-    alias = 'zapatilla';
+    alias = 'Zapatilla';
 
     cols = {
-        id: {type: DataTypes.INTEGER, primaryKey: true, autoincrement: true},
-        modelo: {type: DataTypes.STRING(50)},
+        id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+        modelo: {type: DataTypes.STRING(200)},
         talle: {type: DataTypes.STRING(50)},
         precio: {type: DataTypes.STRING(50)},
-        descuento: {type: DataTypes.STRING(50)},
+        descuento: {type: DataTypes.STRING(50), allowNull: true},
         fechaCreacion: {type: DataTypes.DATE},
         descripcion: {type: DataTypes.STRING (100)},
         stock: {type: DataTypes.BOOLEAN},
