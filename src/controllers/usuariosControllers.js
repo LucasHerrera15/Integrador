@@ -64,7 +64,62 @@ const usuariosControllers =
     },
 
     crear_usuario: (req, res) => {
-        let contrasenia = bcrypt.hashSync(req.body.contrasenia, 10);
+
+        let fotoPerfil
+
+        if (req.file) {
+            fotoPerfil = req.file.filename;
+        } else {
+            fotoPerfil = 'imagenPerfilDefault.png';
+        };
+     
+        db.Usuario.findOne({
+            where: {
+                email : req.body.email
+            }
+        }).then((userToRegister) =>{
+            if(userToRegister == req.body.email){
+                return res.render('users/register', {
+                    errors: {
+                        email: {
+                            msg: 'El email ya esta en uso.'
+                        }
+                    }
+                })
+            }
+        })
+        db.Usuario.findOne({
+            where: {
+                nombreUsuario : req.body.usuario
+            }
+        }).then((userToRegister) =>{
+            if(userToRegister == req.body.usuario){
+                return res.render('users/register', {
+                    errors: {
+                        nombreUsuario: {
+                            msg: 'El usuario ya esta en uso.'
+                        }
+                    }
+                })
+            }
+        })
+        db.Usuario.findOne({
+            where: {
+                telefono : req.body.telefono
+            }
+        }).then((userToRegister) =>{
+            if(userToRegister == req.body.telefono){
+                return res.render('users/register', {
+                    errors: {
+                        telefono: {
+                            msg: 'El telefono ya esta en uso.'
+                        }
+                    }
+                })
+            }
+        })
+        
+        let contrasenia = bcrypt.hashSync(req.body.password, 10);
 
         db.Usuario.create({
                 nombreCompleto: req.body.nombre,
@@ -74,11 +129,11 @@ const usuariosControllers =
                 nombreUsuario: req.body.usuario,
                 domicilio: req.body.domicilio,
                 telefono: req.body.telefono,
-                /* fotoPerfil: req.body.imagenperfil, */
+                fotoPerfil: fotoPerfil,
                 condicionFiscalFK: req.body.condicionFiscal,
 		    }
 		).then((resultados)=>{
-			res.redirect('/login');
+			res.redirect('/users/login');
 		}) 
     }
 }

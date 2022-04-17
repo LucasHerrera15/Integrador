@@ -13,7 +13,7 @@
 #boton-registro{
     background-color: #FF9100;
     border-color: #FF9100;
-    border-radius: 25px;
+    border-radius: 5px;
 }
 .formreg{
     display: flex;
@@ -39,7 +39,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 25px;
+    border-radius: 5px;
     padding: 5px;
     content: 'Seleccionar imagen de perfil'; 
     position: absolute;
@@ -53,7 +53,7 @@
     opacity: 0;
     width: 100%;
     display: inline-block;
-    border-radius: 25px;
+    border-radius: 5px;
     border-color: #FF9100;
   }
   .subir-archivo input[type="file"]:hover{
@@ -83,66 +83,14 @@ label{
     margin-top: 100px;
     color: #FF9100;
 }
-.formulario__validacion-estado {
-	position: relative;
-	right: 40px;
-	bottom: 0px;
-	z-index: 100;
-	font-size: 16px;
-	opacity: 1;
+
+.green{
+    color: #9c9;
 }
-.formulario__input-error {
-	display: none;
-}
-.formulario__input-error-activo {
-	display: block;
-    text-align: start;
-    font-size: 12px;
-    color: #bb2929;
-	margin-bottom: 0;
+.red{
+    color: rgb(194, 33, 33);
 }
 
-.formulario__mensaje {
-	height: 45px;
-	line-height: 45px;
-	background: #F66060;
-	padding: 0 15px;
-	border-radius: 3px;
-	display: none;
-}
-.formulario__mensaje-activo {
-	display: block;
-}
-
-.formulario__mensaje p {
-	margin: 0;
-}
-.formulario__mensaje-exito {
-	font-size: 14px;
-	color: #119200;
-	display: none;
-}
-
-.formulario__mensaje-exito-activo {
-	display: block;
-}
-.formulario-correcto .formulario__validacion-estado {
-	color: #1ed12d;
-	opacity: 1;
-}
-
-.formulario-incorrecto .formulario label {
-	color: #bb2929;
-}
-
-.formulariog-incorrecto .formulario__validacion-estado {
-	color: #bb2929;
-	opacity: 1;
-}
-
-.formulario-incorrecto .formulario input {
-	border: 3px solid #bb2929;
-}
 @media (min-width: 426px){
     .input-crear{
         padding: 5px;
