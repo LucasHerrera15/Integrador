@@ -1,0 +1,44 @@
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+.borde{
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 50px 100px;
+}
+#titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    font-family: 'Secular One', sans-serif;
+    font-weight: 900;
+    color: #FF9100;
+    font-size: 25px;
+}
+.subtitulos{
+    font-family: 'Secular One', sans-serif;
+    font-weight: 900;
+    color: #004AAD;
+}
+#botonSubmit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -8,7 +8,6 @@ const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
-
 const productosControllers =
 {
     carrito: (req, res) => {
@@ -30,85 +29,104 @@ const productosControllers =
 
     listadoProducto: (req, res) => {
         res.render('products/listadoProducto', {p: productos});
-    },
+    }, 
 
     creacionProducto: (req, res) => {
-        res.render('products/creacionProducto');
+		db.Marca.findAll()
+		.then((allMarcas) =>{
+			console.log(allMarcas)
+			res.render('products/creacionProducto', {allMarcas: allMarcas})
+		})
+        /* res.render('products/creacionProducto'); */
     },
 
     crear: (req, res) => {
-		
-		let nuevoID=(productos[productos.length-1].id)+1 
-		
-		let productoNuevo = {
-			id: nuevoID,
-			name: req.body.producto,
-			description: req.body.descripcion,
-			price: req.body.precio,
-			discount: req.body.descuento,
-            talle: req.body.talle,
-			image: req.file.filename,
-			category: "En stock"		
-		}
-		productos.push(productoNuevo)
+		const {modelo, talle, precio, descripcion, descuento} = req.body
 
-		db.zapatilla.create({
-			where: {
-				id: nuevoID
-			}
-		}).then((resultado)=>{
+		
+		let date = new Date();
+		db.Zapatilla.create({
+			modelo,
+			talle,
+			precio,
+			descuento,
+			fechaCreacion: date.toISOString(),
+			descripcion,
+			stock:  true,
+			imagen: req.files[0].filename,
+			marcaFK: 1
+		}).then((productCreated)=>{
 			res.redirect('/');
-		})
-
-		
+		})  
 	},
 
     editarProducto: (req, res) => {
-
-		db.zapatilla.findOne()
-
-        let idProductoSeleccionado = req.params.id;
-		let productoSeleccionado;
-
-		for (let p of productos){
-
-			if(p.id==idProductoSeleccionado){
-				productoSeleccionado=p;
-				break;
-			}
-
-		res.render('products/editarProducto',{idProductoSeleccionado});
-		console.log(idProductoSeleccionado)
-    }
+		const {id} = req.params
+		db.Zapatilla.findByPk(
+			id
+		).then((productEdit => {
+			res.render('products/editarProducto', {productEdit : productEdit});
+		}))
 	},
 
     guardarEdicion: (req, res) => {
-        let idProducto = req.params.id;
-        let datos = req.body;
-
-        for(let p of productos){
-            if(p.id==idProducto){
-				p.nombre = datos.nombre;
-                p.descripcion = datos.descripcion;
-                p.imagen = datos.imagen;
-				p.precio = datos.precio;
-                p.talle = datos.talle
-				p.descuento = datos.descuento;
-				p.estado = datos.estado
-				break;
-			}
-		}
-
-		db.zapatilla.update({
+	   const {modelo, talle, precio, descripcion, descuento} = req.body
+	   let date = new Date();
+		db.Zapatilla.update({
+			modelo,
+			talle,
+			precio,
+			descuento,
+			fechaCreacion: date.toISOString(),
+			descripcion,
+			stock:  true,
+			imagen: req.files[0].filename,
+			marcaFK: 1
+		},{
 			where: {
-				id: idProducto
+				id : req.params.id
 			}
-		}).then((resultado)=>{
-			{console.log(resultado)}
+		}).then((productEdited)=>{
+			 res.redirect('/');
 		})
-
-	    res.redirect('/detalleProducto');
     },  
+	agregarMarca: (req, res) => {
+		res.render("products/crearMarca");
+	},
+	guardarNuevaMarca: (req, res) => {
+		console.log(req.body)
+		db.Marca.findOne({
+			where: {
+				nombreMarca: req.body.nombreMarca
+			}
+		}).then((nuevaMarca) =>{
+			if(nuevaMarca){
+				return res.render('products/creacionProducto', {
+					errors: {
+						marca: {
+							msg: 'Esta marca ya existe.'
+						}
+					}
+				})
+			} else {
+				db.Marca.create({
+					nombreMarca: req.body.nombreMarca
+				}).then((marcaCreada) =>{
+					db.Marca.findAll()
+					.then((allMarcas) =>{
+						console.log(allMarcas)
+						res.render('products/creacionProducto', {allMarcas: allMarcas})
+				})
+				})
+			}
+		})
+	},
+	listaMarcas: (req, res) => {
+		db.Marca.findAll()
+		.then((allMarcas) =>{
+			res.render('products/creacionProducto', {allMarcas: allMarcas})
+		})
+	},
 
     eliminarProducto:(req, res) => {
 

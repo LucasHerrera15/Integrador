@@ -1,89 +1,48 @@
-*{
-    margin: 0;
-    padding: o;
-    color: #FFB000;
-}
-#titulo-crear{
-    font-size: 16px;
-    text-align: center;
-    margin-top: 4%;
-}
-.creacionProducto{
-    margin: 0 5% 5%;
-}
-.form-crear{
-    margin-top: 5%;
+main{
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    justify-content: space-evenly;
-    line-height: 25px;
 }
-.input-crear{
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    color: black;
-}
-#btn-enviar-crear{
-    margin-top: 3%;
-    background-color: #FF9100;
-    border-radius: 25px;
-    border-color: #FF9100;
-    padding: 5px;
-    color: black;
-}
-#btn-enviar-crear:hover{
-    cursor: pointer;
-}
-.subir-archivo{
-    margin-top: 3%;
-    position: relative;
-    display: inline-block;
-  }
-  
-  .subir-archivo::before {
-    background-color: #FF9100;
-    color: black;
+body{
     display: flex;
-    justify-content: center;
     align-items: center;
-    border-radius: 25px;
-    padding: 5px;
-    content: 'Seleccionar imagen del producto'; 
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-  }
-  
-  .subir-archivo input[type="file"] {
-    opacity: 0;
+    justify-content: center;
+    flex-direction: column;
+}
+#contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     width: 100%;
-    display: inline-block;
-    border-radius: 25px;
-    border-color: #FF9100;
-  }
-  .subir-archivo input[type="file"]:hover{
-      cursor: pointer;
-  }
-
-  @media (min-width: 426px){
-    #titulo-crear{
-        font-size: 24px;
-    }
-    label{
-        font-size: 20px;
-    }
-    .creacionProducto{
-        margin: 0 15% 5%;
-    }
-    .input-crear{
-        padding: 5px;
-    }
-  }
-  @media (min-width: 426px){
-      .creacionProducto{
-          margin: 0 25% 5%;
-      }
-  }
+}
+.borde{
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 50px 100px;
+}
+#titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    font-family: 'Secular One', sans-serif;
+    font-weight: 900;
+    color: #FF9100;
+    font-size: 25px;
+}
+.subtitulos{
+    font-family: 'Secular One', sans-serif;
+    font-weight: 900;
+    color: #004AAD;
+}
+#botonSubmit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#error{
+    color: red;
+    font-size: small;
+}

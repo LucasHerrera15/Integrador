@@ -4,57 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../css/style.css" rel="stylesheet">
     <link href="../css/creacionProducto.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="../css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Creación de Producto</title>
 </head>
 <body>
+  <main>
     <%- include('../partials/header') %>
-    <main>
-        <div class="banner"></div>
-        <div class="creacionProducto">
-            <h1 id="titulo-crear">CREAR NUEVO PRODUCTO</h1>
-            <form class="form-crear" action="../products/creacionProducto" method="post" enctype="multipart/form-data"> 
-                <label>Nombre del producto</label>
-                <input class="input-crear" type="text" name="producto">
-                <label>Descripcion del producto</label>
-                <textarea class="input-crear" name="descripcion" maxlength="120" minlength="10" required></textarea>
-                <label>Precio</label>
-                <input class="input-crear" type="number" name="precio" min="0" max="100">
-                <label>Descuento</label>
-                <input class="input-crear" type="number" name="descuento" min="0" max="100">
-                <label>Talles del producto</label>
-                <select class="input-crear" name="talle">
-                    <option value="36">36</option>
-                    <option value="36.5">36.5</option>
-                    <option value="37">37</option>
-                    <option value="37.5">37.5</option>
-                    <option value="38">38</option>
-                    <option value="38.5">38.5</option>
-                    <option value="39">39</option>
-                    <option value="39.5">39.5</option>
-                    <option value="40">40</option>
-                    <option value="40.5">40.5</option>
-                    <option value="41">41</option>
-                    <option value="41.5">41.5</option>
-                    <option value="42">42</option>
-                    <option value="42.5">42.5</option>
-                    <option value="43">43</option>
-                    <option value="43.5">43.5</option>
-                    <option value="44">44</option>
-                </select>
-                <div class="subir-archivo" id="src-file1" >
-                    <input class="input-crear" type="file" name="imagenproducto">
-                </div>
+    <div id="contenedor">
+        <form class="borde" action="./creacionProducto" method="POST" enctype="multipart/form-data">
+          <div id="titulo"> Crea tu producto</div>
+            <div class="mb-3">
+              <label class="form-label subtitulos">Nombre del Producto</label>
+              <input type="text" class="form-control" placeholder="Nike Retro 4" name="modelo" required> 
+            </div>
+            <div class="row">
+              <div class="col">
+                <label  class="form-label subtitulos">Marca</label>
+                <% if(locals.errors && errors.marca) 
+                {%><div id="error"><%=errors.marca.msg %></div> 
+                <%}%>
+                <div><select name="marca" class="form-control" id="">
+                  <% for (let marca of allMarcas)
+                  { %> <option> <%= marca.nombreMarca %> </option>
 
-                <button id="btn-enviar-crear" type="submit">Crear</button>
-            </form>
-        </div>
-    </main>
-    <%- include('../partials/footer') %>
+                  <% } %>
+                  </select></div>
+                <label for="" class="nombreMarca"><a href="./crearMarca" > Crea una nueva Marca</a></label>
+              </div>
+              <div class="col">
+                <label  class="form-label subtitulos">Talle</label>
+                <input type="number" class="form-control" placeholder="40,5" name="talle" required>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col">
+                <label  class="form-label subtitulos">Precio</label>
+                <input type="number" class="form-control" placeholder="$ 20.000" name="precio" required>
+              </div>
+              <div class="col">
+                <label  class="form-label subtitulos">Descuento</label>
+                <input type="number" class="form-control" placeholder="10%"  name="descuento">
+              </div>
+            </div>
+            <br>
+            <div class="subtitulos"> Subi una imagen de tu producto</div>
+            <div class="input-group mb-3 col-sm">
+                <input type="file" class="form-control" id="inputGroupFile02" name="productFile" name="error" required multiple>
+                <label class="input-group-text subtitulos" for="inputGroupFile02">Subir imagen</label>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label subtitulos">Descripción</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Descripción del producto" rows="3" name="descripcion" required></textarea>
+              </div>
+              <br>
+            <div id="botonSubmit"> <button type="submit" class="btn btn-primary">Crear producto</button></div>
+          </form>
+    </div>
+    <%- include('../partials/footer')%>
+  </main>
+
 </body>
 </html>

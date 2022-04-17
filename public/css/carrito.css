@@ -1,105 +1,56 @@
-.contenedor-carrito{
-    margin: 4% 0% 4%;
-    padding: 1rem;
-    background-color: #D1E1F6;
-}
-.contenedor-carrito h2{
-    color: #FFB000;
-    margin-left: 10px;
-}
-.cada-producto-carrito{
-    margin: 0 10px 0px;
-}
-.producto-carrito{
+body{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-    border-top: #FFB000 solid;
+    justify-content: center;
+    flex-direction: column;
 }
-.informacion-producto{
+#contenedor{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    font-size: 100%;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
 }
-.precio i{
-    margin-top: 1.4%;
-}
-.imagen-carrito{
-    width: 15%;
-    height: 10%;
-}
-#total{
+#fondo{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    width: 50%;
 }
-#total-compra{
-    text-align: center;
-    color: #FFB000;
-    margin-top: 0;
-    font-size: 24px;
-    padding: 5px;
+.borde{
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    /* padding: 50px 100px; */
 }
-.precio-total{
-    font-size: 24px;
-    align-items: center;
-    padding: 5px;
+#titulo{
+    padding-bottom: 10px;
+    font-family: 'Secular One', sans-serif;
+    font-weight: 900;
+    color: #FF9100;
+    font-size: 25px;
+    border-bottom: 1px solid black;
+    width: 100%;
 }
-#comprar{
-    margin-top: 2em;
-    background-color: #FFB000;
-    border-radius: 25px;
-    border: none;
-    padding: 1em;
-    font-size: 18px;
-}
-#comprar:hover{
-    cursor: pointer;
-    opacity: 0.6;
-}
-.compra-carrito{
+#productCarrito{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    width: 100%;
+    
+   
+}
+.subtitulos{
+    font-family: 'Secular One', sans-serif;
+    font-weight: 900;
+    color: #004AAD;
+}
+#botonSubmit{
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
-
-@media (min-width: 425px){
-    .contenedor-carrito h2{
-        font-size: 26px;
-    }
-    .informacion p{
-        font-size: 18px;
-    }
-    .precio p{
-        font-size: 18px;
-    }
-    .precio i{
-        size: 18px;
-    }
-}
-@media (min-width: 768px){
-    .contenedor-carrito{
-        margin: 4% 15% 4%;
-        padding: 1.5%;
-    }
-    .informacion p{
-        font-size: 20px;
-    }
-    .precio p{
-        font-size: 20px;
-        padding: 20px;
-    }
-    .precio i{
-        size: 20px;
-    }
-    .informacion{
-        display: flex;
-        align-items: center;
-    }
-    .talle-carrito{
-        padding: 20px;
-        font-size: 20px;
-    }
+#text{
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
 }

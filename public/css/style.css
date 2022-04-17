@@ -145,6 +145,9 @@ h4{
     margin: 2%;
     border-radius: 2px;
 }
+#sinPadding{
+    padding: 0;
+}
 @media (min-width: 425px){
     .productos{
         width: 45%;
