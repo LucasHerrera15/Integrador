@@ -13,11 +13,11 @@ const router = express.Router();
 
 
 const multerDiskStorage = multer.diskStorage({
-    destination: function(req, file, cb) {       // request, archivo y callback que almacena archivo en destino
-     cb(null, path.join(__dirname,'../public/images/users'));    // Ruta donde almacenamos el archivo
+    destination: function(req, file, cb) {
+     cb(null, path.join(__dirname,'../public/images/users'));    
     },
-    filename: function(req, file, cb) {          // request, archivo y callback que almacena archivo en destino
-     let imageName = Date.now() + path.extname(file.originalname);   // milisegundos y extensión de archivo original
+    filename: function(req, file, cb) {      
+     let imageName = Date.now() + path.extname(file.originalname);   
      cb(null, imageName);         
     }
 });
