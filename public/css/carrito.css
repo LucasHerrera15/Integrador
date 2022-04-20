@@ -24,20 +24,18 @@ body{
     /* padding: 50px 100px; */
 }
 #titulo{
-    padding-bottom: 10px;
     font-family: 'Secular One', sans-serif;
     font-weight: 900;
     color: #FF9100;
     font-size: 25px;
-    border-bottom: 1px solid black;
+    border-bottom: 3px solid #004AAD;
     width: 100%;
 }
 #productCarrito{
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    
-   
+    border-bottom: #e0e0e0 1px solid;
 }
 .subtitulos{
     font-family: 'Secular One', sans-serif;

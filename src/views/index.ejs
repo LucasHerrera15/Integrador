@@ -20,34 +20,34 @@
         </div>
         <div class="contenedor__productos">
             <article class="productos">
-                <a href="./products/detalleProducto/:id"><img class="imagenes" src="/images/adidas-yeezy-boost350br.jpg"></a>
+                <a href="./products/detalleProducto/<%= productIndex.id %>"><img class="imagenes" src="/images/products/<%= productIndex.imagen %>"></a>
                 <div class="descripcion">
                     <div class="informacion-precio">
                         <i class="fas fa-dollar-sign"></i>
-                        <p class="precio">150</p>
+                        <p class="precio"><%= productIndex.precio %></p>
                     </div>
                     <div class="envio">
                         <i class="fas fa-truck"></i>
                         <p>Envío gratis</p>
                     </div>
                     <div class="nombre-producto">
-                        <p>Adidas yeezy boost BR</p>
+                        <p><%= productIndex.modelo %></p>
                     </div>
                 </div>
             </article>
             <article class="productos">
-                <a href="/producto.html"><img class="imagenes" src="/images/adidas-negras-blancas.jpg"></a>
+                <a href="./products/detalleProducto/<%= productIndex.id %>"><img class="imagenes" src="/images/products/<%= productIndex.imagen %>"></a>
                 <div class="descripcion">
                     <div class="informacion-precio">
                         <i class="fas fa-dollar-sign"></i>
-                        <p class="precio">208</p>
+                        <p class="precio"><%= productIndex.precio - ((productIndex.precio * productIndex.descuento) / 100) %></p>
                     </div>
                     <div class="envio">
                         <i class="fas fa-truck"></i>
                         <p>Envío gratis</p>
                     </div>
                     <div class="nombre-producto">
-                        <p>Adidas yeezy boost BR</p>
+                        <p><%= productIndex.modelo %></p>
                     </div>
                 </div>
             </article>

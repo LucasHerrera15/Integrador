@@ -1,8 +1,16 @@
+const db = require('../database/models');
+
 
 const mainControllers =
 {
     index: (req, res) => {
-        res.render('index')
+        
+        db.Zapatilla.findOne(
+        ).then((productIndex) => {
+            console.log(productIndex);
+         res.render('index', {productIndex: productIndex})   
+        })
+        
     }
 }
 

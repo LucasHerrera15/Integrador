@@ -18,37 +18,33 @@
     <main>
         <div class="banner"></div>
         <div class="nombre-producto">
-            <h2 id="titulo-producto"><%=productos.name%></h2> 
+            <h2 id="titulo-producto"> <%= productSelected.modelo %> </h2> 
         </div>
         <div class="contenedor-general">
             <div class="contenedor-producto">
                 <div class="detalle-producto">
-                    <img class="imagenes" src="/images/products/<%=productos.image%>">
+                    <img class="imagenes" src="/images/products/<%= productSelected.imagen %>">
                     <p class="detlle-producto-descripcion">
-                        <%= productos.description%>
+                        <%= productSelected.descripcion %>
                     </p>
-                </div>
-                <div class="talle-producto">
-                    <label for="talle">Talle</label>
-                    <%= productos.talle%>
                 </div>
                 <div class="informacion-producto">
                     <div class="precio-producto">
                         <i class="fas fa-dollar-sign"></i>
-                        <p><%= productos.price%></p>
+                        <p> <%= productSelected.precio %></p>
                     </div>
                     <div class="descuento-producto">
-                        <p><%= productos.discount%>%</p>
+                        <p><%= productSelected.descuento %></p>
                     </div>
                     <div class="precio-total-producto">
                         <i class="fas fa-dollar-sign"></i>
-                        <p><%= productos.price - (productos.price * productos.discount / 100) %></p>
+                        <p> <%= productSelected.precio - ((productSelected.precio * productSelected.descuento) / 100) %></p>
                     </div>
                 </div>
             </div>
             <div class="accion-producto">
                 <div class="stock-producto">
-                    <p><%= productos.category%></p>
+                    <p> <%= productSelected.stock %></p>
                 </div>
                 <div class="acciones-producto">
                     <div class="cuotas-producto">
@@ -68,9 +64,9 @@
                         </form>
                     </div>
                     <div>
-                        <a href="./editarProducto/<%= productos.id%>"  class="compra-producto" name="botonEditar">EDITAR PRODUCTO</a>
+                        <a href="/products/edit/<%= productSelected.id %>"  class="compra-producto" name="botonEditar">EDITAR PRODUCTO</a>
                     <div>
-                        <form action="/products/delete/<%= productos.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                        <form action="/products/delete/ method="POST" style="display: inline-flex">
 							<button type="submit" class="action-button delete">ELIMINAR</button>
 						</form>        
             </div>
