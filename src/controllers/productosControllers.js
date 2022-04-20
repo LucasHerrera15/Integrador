@@ -14,19 +14,14 @@ const productosControllers =
         res.render('products/carrito');
     },
     detalleProducto: (req, res) => {
-        let idProductoSeleccionado = req.params.id;
-		let productoSeleccionado;
-
-		for (let p of productos){
-
-			if(p.id==idProductoSeleccionado){
-				productoSeleccionado=p;
-				break;
-			}
-		}
-        res.render('products/detalleProducto', {productos: productoSeleccionado});
-    },
-
+		const {id} = req.params;
+		db.Zapatilla.findByPk(
+			id
+		).then((productSelected) => {
+			console.log(productSelected)
+			return res.render('products/detalleProducto', {productSelected : productSelected})
+		})
+	},
     listadoProducto: (req, res) => {
         res.render('products/listadoProducto', {p: productos});
     }, 
@@ -34,7 +29,6 @@ const productosControllers =
     creacionProducto: (req, res) => {
 		db.Marca.findAll()
 		.then((allMarcas) =>{
-			console.log(allMarcas)
 			res.render('products/creacionProducto', {allMarcas: allMarcas})
 		})
         /* res.render('products/creacionProducto'); */
@@ -94,7 +88,6 @@ const productosControllers =
 		res.render("products/crearMarca");
 	},
 	guardarNuevaMarca: (req, res) => {
-		console.log(req.body)
 		db.Marca.findOne({
 			where: {
 				nombreMarca: req.body.nombreMarca
@@ -114,7 +107,6 @@ const productosControllers =
 				}).then((marcaCreada) =>{
 					db.Marca.findAll()
 					.then((allMarcas) =>{
-						console.log(allMarcas)
 						res.render('products/creacionProducto', {allMarcas: allMarcas})
 				})
 				})
@@ -141,7 +133,7 @@ const productosControllers =
 				id: products2
 			}
 		}).then((resultado)=>{
-			{console.log(resultado)}
+			{}
 		})
 
 	    res.redirect('/');

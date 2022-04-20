@@ -9,9 +9,10 @@ const usuariosControllers =
     },
     
     procesoLogin: (req, res) => {
+        let errors = validationResult(req);
         const { email, password } = req.body;
 
-        db.Usuario.findOne({
+            db.Usuario.findOne({
             where: {
                 email
             }

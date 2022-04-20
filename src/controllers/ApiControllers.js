@@ -25,15 +25,18 @@ const apiController = {
                 total: products.length,
                 data: products
             })
-            }
-        )},
-        product: (req, res) => {
+            })
+    },
+    product: (req, res) => {
             db.Zapatilla.findByPk(req.params.id)
             .then(product => {
                 return res.json({
                     data: product
                 })
             })
-        }
+    },
+    productMarca: (req, send) => {
+        db.Marca.findAll()
+    }
 }
 module.exports = apiController;
