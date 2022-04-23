@@ -7,7 +7,6 @@ const mainControllers =
         
         db.Zapatilla.findOne(
         ).then((productIndex) => {
-            console.log(productIndex);
          res.render('index', {productIndex: productIndex})   
         })
         

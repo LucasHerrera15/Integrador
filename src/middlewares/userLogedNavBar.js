@@ -1,7 +1,12 @@
 const db = require('../database/models');
 function usuarioLogeadoNavbar(req, res, next){
     res.locals.isLogged = false;
-    let emailCookie = req.cookies.usuarioEmail;
+    
+    if(req.session && req.session.usuarioLogeado){
+        res.locals.isLogged = true;
+        res.locals.userLogged = req.session.usuarioLogeado
+
+        let emailCookie = req.cookies.usuarioEmail;
 
     db.Usuario.findOne({
         where: {
@@ -12,9 +17,6 @@ function usuarioLogeadoNavbar(req, res, next){
             req.session.usuarioLogeado = usuarioCookie;
         }
     })
-    if(req.session && req.session.usuarioLogeado){
-        res.locals.isLogged = true;
-        res.locals.userLogged = req.session.usuarioLogeado
     }
 
     next();

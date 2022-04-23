@@ -7,11 +7,10 @@ const password = document.getElementById("password");
 const telefono = document.getElementById("telefono");
 const usuario = document.getElementById("usuario");
 const password2 = document.getElementById("password2");
+const resultado = document.querySelector("resultado")
+const btn = document.getElementById("boton-registro");
 
-
-let btn = document.getElementById("boton-registro");
-
-btn.addEventListener("click",function(e){
+btn.addEventListener("click",(e)=>{
 
     e.preventDefault();
     let error = validarCampos();
@@ -23,6 +22,9 @@ btn.addEventListener("click",function(e){
         resultado.classList.add("green")
         resultado.classList.remove("red")
     }
+
+    
+    formulario.submit();
 })
 
 
@@ -34,8 +36,8 @@ const validarCampos = ()=>{
         return error;
     } else if (email.value.length < 5 ||
                email.value.length > 40 ||
-               email.indexOf("@") == -1 ||
-               email.indexOf(".") == -1 ) {
+               email.value.indexOf("@") == -1 ||
+               email.value.indexOf(".") == -1 ) {
         error[0] = true;
         error[1] = "El e-mail no es valido";
         return error;
@@ -46,19 +48,19 @@ const validarCampos = ()=>{
     } else if(password.value.length < 8){
         error[0] = true;
         error[1] = "La contraseña es invalida";
-        return;
+        return error;
     } else if(password2.value =! password.value){
         error[0] = true;
         error[1] = "Las contraseñas deben ser iguales";
-        return;
+        return error;
     } else if(usuario.value.length < 3 || usuario.value.length > 30){
         error[0] = true;
         error[1] = "El nombre de usuario es invalido";
-        return;
+        return error;
     } else if(telefono.value.length < 8 || telefono.value.length > 14){
         error[0] = true;
         error[1] = "El numero telefonico es invalido";
-        return;
+        return error;
     }
     error[0] = false;
     return
@@ -66,4 +68,4 @@ const validarCampos = ()=>{
 
 
 
-    formulario.submit();
+  

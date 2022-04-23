@@ -2,18 +2,20 @@
     margin: 0px;
     padding: 0px;
 }
-
+.main{
+    background-color: rgb(245, 245, 245);
+}
 .contenedor__footer {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    
     width: 100%;
     bottom: 0;
     background-color: #90AACB;
-    font-size: 12px;
+    font-size: 6px;
     text-align: center;
+    margin: 0;
 }
 
 .redes {
@@ -40,7 +42,7 @@
 }
 .banner {
     margin-top: 100px;
-    height: 70px;
+    height: 200px;
     width: 100%;
     animation: banner 10s infinite linear alternate;
     background-size: 100% 100%;
@@ -50,34 +52,36 @@
 
     0%,
     10% {
-        background-image: url(../images/banner.jpg);
+        background-image: url(../images/banner/bannermobile.png);
     }
 
     15%,
     25% {
-        background-image: url(../images/banner1.jpg);
+        background-image: url(../images/banner/banner2mobile.png);
     }
 
     30%,
     40% {
-        background-image: url(../images/banner2.jpg);
+        background-image: url(../images/banner/banner3mobile.png);
     }
 
     45%,
     55% {
-        background-image: url(../images/banner3.jpg);
+        background-image: url(../images/banner/banner4mobile.jpg);
     }
 
     60%,
     70% {
-        background-image: url(../images/banner4.jpg);
+        background-image: url(../images/banner/banner5mobile.jpg);
     }
 
     75%,
     100% {
-        background-image: url(../images/banner5.jpg);
+        background-image: url(../images/banner/banner2mobile.png);
     }
 }
+
+
 
 .imagenes {
     width: 100%;
@@ -171,10 +175,13 @@
     margin-left: 2%;
     font-size: 1.5em;
 }
-
-h4 {
+#seguinos{
+    color: black;
+}
+#copyrigth{
     margin-bottom: 0 !important;
     color: #D1E1F6;
+    opacity: 0.2;
 }
 
 .contenedor__productos {
@@ -202,11 +209,48 @@ h4 {
     .banner {
         height: 140px;
     }
+
+    
+   
 }
 
 @media (min-width: 768px) {
     .banner {
-        height: 350px;
+        height: 300px;
+    }
+
+
+    @keyframes banner {
+
+        0%,
+        10% {
+            background-image: url(../images/banner/banner1.jpg);
+        }
+    
+        15%,
+        25% {
+            background-image: url(../images/banner/banner2desktop.png);
+        }
+    
+        30%,
+        40% {
+            background-image: url(../images/banner/banner3.jpg);
+        }
+    
+        45%,
+        55% {
+            background-image: url(../images/banner/banner4.jpg);
+        }
+    
+        60%,
+        70% {
+            background-image: url(../images/banner/banner2desktop.png);
+        }
+    
+        75%,
+        100% {
+            background-image: url(../images/banner/banner3.jpg);
+        }
     }
 
     .contenedor__header {
@@ -244,6 +288,10 @@ h4 {
     .navigation a i {
         margin-left: 4px;
     }
+    #los-buscados{
+        margin-left: 12%;
+        font-size: 2em;
+    }
 
     .contenedor__productos {
         margin-left: 10%;
@@ -275,7 +323,7 @@ h4 {
 
 @media (min-width: 1024px) {
     h3 {
-        font-size: 1.8em;
+        font-size: 2em;
     }
 
     .contenedor__footer {

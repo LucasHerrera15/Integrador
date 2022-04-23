@@ -35,8 +35,10 @@ app.use(session({
 app.use(cookies());
 
 // Middlewares de app
-const userLogedNavbar = require('./src/middlewares/userLogedNavBar');
+/* const userLogedNavbar = require('./src/middlewares/userLogedNavBar');
 app.use(userLogedNavbar);
+const authCookies= require('./src/middlewares/authCookies');
+app.use(authCookies) */
 
 
 // Rutas 
