@@ -1,9 +1,11 @@
 * {
     margin: 0px;
     padding: 0px;
+    font-family: 'Secular one', sans-serif;
 }
 .main{
     background-color: rgb(245, 245, 245);
+    font-family: 'Secular one', sans-serif;
 }
 .contenedor__footer {
     display: flex;
@@ -25,12 +27,14 @@
 
 .redes h4 {
     color: black;
+    font-family: 'Secular one', sans-serif;
 }
 
 .copyright {
     display: flex;
     align-items: center;
     padding: 12px;
+    font-family: 'Secular one', sans-serif;
 }
 
 .header {
@@ -114,6 +118,7 @@
 .descripcion p {
     font-size: 1rem;
     padding-left: 5px;
+    font-family: 'Secular one', sans-serif;
 }
 
 .informacion-precio i {
@@ -148,7 +153,7 @@
 .buscador {
     width: 100%;
     padding: 1%;
-    border-radius: 2px;
+    border-radius: 4px;
     border-color: #90AACB;
 }
 
@@ -174,9 +179,11 @@
     margin-top: 100px;
     margin-left: 2%;
     font-size: 1.5em;
+    font-family: 'Secular one', sans-serif;
 }
 #seguinos{
     color: black;
+    font-family: 'Secular one', sans-serif;
 }
 #copyrigth{
     margin-bottom: 0 !important;
@@ -194,7 +201,7 @@
     border: black solid 1px;
     width: 95%;
     margin: 2%;
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
 #sinPadding {
@@ -277,6 +284,7 @@
         padding: 12px;
         font-size: 14px;
         transition-delay: 0.1s;
+        font-family: 'Secular one', sans-serif;
     }
 
     .navigation a:hover {
@@ -310,14 +318,17 @@
     h3 {
         margin-left: 11.5%;
         font-size: 1.6em;
+        font-family: 'Secular one', sans-serif;
     }
 
     .redes {
         font-size: 1.5em;
+        font-family: 'Secular one', sans-serif;
     }
 
     .copyright {
         font-size: 1.5em;
+        font-family: 'Secular one', sans-serif;
     }
 }
 

@@ -65,7 +65,14 @@ const usuariosControllers =
 
     crear_usuario: (req, res) => {
         let contrasenia = bcrypt.hash(req.body.password, 10);
-
+        let fotoperfil = guardarFoto
+        function guardarFoto(){
+        if(req.file.imagenusers !== undefined){
+            return (logoSinFondo.png)
+        } else{
+            return(req.file.imagenusers)
+        }
+    }
         db.Usuario.create({
                 nombreCompleto: req.body.nombre,
                 fechaNacimiento: req.body.fecha,
@@ -74,7 +81,7 @@ const usuariosControllers =
                 nombreUsuario: req.body.usuario,
                 domicilio: req.body.domicilio,
                 telefono: req.body.telefono,
-                fotoPerfil: fotoPerfil,
+                fotoPerfil: fotoperfil,
                 condicionFiscalFK: req.body.condicionFiscal,
 		    }
 		).then((resultados)=>{

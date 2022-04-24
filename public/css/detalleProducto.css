@@ -1,5 +1,7 @@
-html{
-    height: 100%;
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Secular one', sans-serif;
 }
 #nombreProducto{
     color: #FF9100;

@@ -1,3 +1,9 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Secular one', sans-serif;
+}
+
 #registro{
     display: flex;
     flex-direction: column;

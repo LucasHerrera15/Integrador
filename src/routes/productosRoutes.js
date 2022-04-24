@@ -16,10 +16,10 @@ router.get('/listadoProducto', productosControllers.listadoProducto);
 
 router.get('/creacionProducto', loginToCreate, productosControllers.creacionProducto);
 
-router.post('/creacionProducto', uploadFile.array('imagenproducto') ,productosControllers.crear); 
+router.post('/creacionProducto', uploadFile.array('productFile') ,productosControllers.crear); 
 
 router.get('/edit/:id', productosControllers.editarProducto);
-router.put('/edit/:id', uploadFile.array('imagenproducto'), productosControllers.guardarEdicion);
+router.put('/edit/:id', uploadFile.array('productFile'), productosControllers.guardarEdicion);
 
 router.get('/crearMarca', productosControllers.agregarMarca);
 router.post('/crearMarca', productosControllers.guardarNuevaMarca);
