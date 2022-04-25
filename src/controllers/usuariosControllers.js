@@ -8,11 +8,11 @@ const usuariosControllers =
         res.render('users/login');
     },
     
-    procesoLogin: (req, res) => {
+    procesoLogin: async (req, res) => {
         let errors = validationResult(req);
         const { email, password } = req.body;
 
-            db.Usuario.findOne({
+        let buscarUsuario = await db.Usuario.findOne({
             where: {
                 email
             }
@@ -22,11 +22,14 @@ const usuariosControllers =
             if(passwordCheck){
                 delete userToLogin.contrasenia;
                 req.session.usuarioLogeado = userToLogin;
-
+                console.log('Antes de cookies', req.body);
                 if(req.body.rememberUser){
                     res.cookie('usuarioEmail', email, {maxAge: 900000})
+                    console.log("Despues del cookies",req.body.rememberUser)
                 }
-                return res.redirect('/users/perfil')
+                console.log(req.session.usuarioLogeado)
+                console.log(req.cookies)
+                return res.redirect('/')
             }
             return res.render('users/login', {
                 errors: {

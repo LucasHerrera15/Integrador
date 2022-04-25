@@ -5,7 +5,7 @@ const mainControllers =
 {
     index: (req, res) => {
         
-        db.Zapatilla.findOne(
+        db.Zapatilla.findAll(
         ).then((productIndex) => {
          res.render('index', {productIndex: productIndex})   
         })

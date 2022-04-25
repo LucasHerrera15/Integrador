@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
-const sharp = require('sharp')
+/* const sharp = require('sharp') */
 const productsFilePath = path.join(__dirname, '../database/dataProductos.json');
 const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -36,8 +36,8 @@ const productosControllers =
 
     crear: (req, res) => {
 		const {modelo, talle, precio, descripcion, descuento} = req.body
-		sharp(req.file.path)
-		.jpeg({quality: 50}).toFile(req.file.destination + 'imagenproducto')
+		/* sharp(req.file.path)
+		.jpeg({quality: 50}).toFile(req.file.destination + 'imagenproducto') */
 
 		
 		let date = new Date();

@@ -1,17 +1,19 @@
 const db = require('../database/models');
 
-async function authCookieMiddleware(req, res, next){
-    
-    let users = await db.Usuario.findAll().then(result => { return result })
+function authCookies(req, res, next){
+    if(req.cookies.emailCookie){
+      let emailCookie = req.cookies.usuarioEmail;
 
-    if(req.cookies.usuarioEmail != undefined && req.session.usuarioLogeado == undefined){
-        for(let i = 0; i < users.length; i++){
-            if(req.cookies.usuarioEmail == users[i].email){
-                req.session.usuarioLogeado = users[i].email
-            }
+    db.Usuario.findOne({
+        where: {
+            email: emailCookie
         }
+    }).then((usuarioCookie) =>{
+        if(usuarioCookie){
+            req.session.usuarioLogeado = usuarioCookie;
+        }
+    })  
     }
     next();
-}
-
-module.exports = authCookieMiddleware;
+};
+module.exports = authCookies;
