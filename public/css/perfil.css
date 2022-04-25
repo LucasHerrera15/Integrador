@@ -1,6 +1,9 @@
-body{
-    background-color: #FAFAFA !important;
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Secular one', sans-serif;
 }
+
 #contenedor{
     display: flex;
     justify-content: center;

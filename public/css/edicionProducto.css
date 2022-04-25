@@ -1,3 +1,8 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Secular one', sans-serif;
+}
 main{
     display: flex;
     align-items: center;

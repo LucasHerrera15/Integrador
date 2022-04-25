@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/registro.css">
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/registro.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/registro.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>Registro</title>
@@ -17,77 +17,52 @@
     <div class="banner"></div>
       <form class="formreg" id="formulario-registro" action="./register" method="POST" enctype="multipart/form-data">
         <h2 id="registrate">Registrate</h2>
-
         <div class="formulario">
           <label for="nombre">Nombre y Apellido</label>
-          <input type="text" name="nombre" id="nombre" required >
-          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          <input type="text" name="nombre" id="nombre" placeholder="Gaston Molinari" required >
         </div>
-        <p class="formulario__input-error">El nombre es incorrecto.</p>
+
         <div class="formulario" id="usuario-div">
           <label for="usuario">Nombre de usuario</label>
-          <input type="text" name="usuario" id="usuario" required>
-          <i class="formulario__validacion-estado fas fa-times-circle"></i>
-          <p class="formulario__input-error">El usuario solo puede contener numeros, letras y guion bajo.</p>
+          <input type="text" name="usuario" id="usuario" placeholder="Gaston23" required>
         </div>
 
         <div class="formulario">
           <label for="fecha">Edad</label>
-          <input type="number" id="edad" name="fecha" min="18" max="100" required>
-          <i class="formulario__validacion-estado fas fa-times-circle"></i>
-        </div>
-        <p class="formulario__input-error">La edad debe ser mayor a 18 años y menor a 100.</p>
-
-        <div class="formulario">
-          <label for="genero">Genero</label>
-          <select name="genero" id="genero">
-            <option value="hombre">Hombre</option>
-            <option value="mujer">Mujer</option>
-            <option value="otro">Otro</option>
-          </select>
+          <input type="number" id="edad" name="fecha" min="18" max="100" placeholder="32" required>
         </div>
 
+       
         <div class="formulario">
           <label for="direccion">Domicilio</label>
-          <input type="text" name="domcilio" id="domicilio" required>
-          <i class="formulario__validacion-estado fas fa-times-circle"></i>
-          <p class="formulario__input-error">El domicilio debe tener minimo 2 numeros y maximo 5.</p>
+          <input type="text" name="domicilio" id="domicilio" placeholder="Guamini 212" required>
         </div>
         
 
         <div class="formulario">
-          <label for="telefono">Telefono</label>
+          <label for="telefono">Teléfono</label>
           <input type="number" name="telefono" id="telefono" placeholder="4491234567" required>
-          <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
-        <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
 
         <div class="formulario">
           <label for="condicion">Condicion fiscal</label>
-          <input type="text" name="condicionFiscal" id="condicionFiscal" required>
-          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          <input type="text" name="condicionFiscal" id="condicionFiscal" placeholder="4491234567" required>
         </div>
 
         <div class="formulario">
           <label for="email">Dirección de Email</label>
-          <input type="email" name="email" id="email" required>
-          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          <input type="email" name="email" id="email" placeholder="dxSneakers@gmail.com" required>
         </div>
-        <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
 
         <div class="formulario" id="contraseña-div">
           <label for="password">Contraseña</label>
-          <input type="password" name="password" id="password" required>
-          <i class="formulario__validacion-estado fas fa-times-circle"></i>
-          <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+          <input type="password" name="password" id="password" placeholder="*********" required>
         </div>
         
 
         <div class="formulario" id="contraseña-div">
           <label for="password">Repetir contraseña</label>
-          <input type="password" name="password2" id="password2" required>
-          <i class="formulario__validacion-estado fas fa-times-circle"></i>
-          <p class="formulario__input-error">Las contraseñas tienen que ser iguales.</p>
+          <input type="password" name="password2" id="password2" placeholder="*********" required>
         </div>
 
         <div class="subir-archivo" id="src-file1" >
@@ -95,12 +70,13 @@
         </div>
 
         <div class="boton">
-          <input id="boton-registro" class="btn btn-primary btn-lg" type="submit" value="Registrar" required>
+          <input id="boton-registro" class="btn btn-primary btn-lg" type="submit" value="Registrarse" required>
         </div>
+
+        <div class="resultado"></div>
       </form>
-  
+      <script src="/js/registerValidation.js"></script>
   </main>
   <%- include('../partials/footer')%>
-  <script src="/js/registerValidation.js"></script>
 </body>
 </html>

@@ -12,7 +12,6 @@ function usuarioData (sequelize, DataTypes){
         nombreUsuario: {type: DataTypes.STRING(50)},
         telefono: {type: DataTypes.STRING(50)},
         fotoPerfil: {type: DataTypes.STRING(50)},
-        condicionFiscalFK: {type: DataTypes.STRING(50)}
     }
 
     config = {camelCase: false, timestamps: false, freezeTableName:true};
@@ -28,9 +27,9 @@ function usuarioData (sequelize, DataTypes){
             otherKey: "zapatillaFK",
             timestamps: false
         });
-        Usuario.belongsTo(models.condicionFiscal, {
-            as: "CondicionFiscal",
-            foreingKey: "condicionFiscalFK",
+        Usuario.hasMany(models.zapatilla, {
+            as: "zapatillas",
+            foreingKey: "UsuarioFK",
             timestamps: false
         })
     }

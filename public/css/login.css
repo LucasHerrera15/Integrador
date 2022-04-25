@@ -1,28 +1,16 @@
-body{
-    background-color: #FAFAFA !important;
+* {
+    margin: 0 auto;
+    padding: 0px;
+    font-family: 'Secular one', sans-serif;
 }
-#tituloHeader{
-    font-size: 50px;
-    font-family: 'Staatliches', cursive;
-    color: #004AAD;
-    text-shadow: black 1px 1px 1px ;
-}
-#contenedor{
+
+#conteiner{
     display: flex;
     justify-content: center;
-    height: 100vh;
+    margin: 100px 100px;
 
 }
-#inicio{
-    display: flex;
-    justify-content: center;
-}
-#logo{
-    display: flex;
-    justify-content: center;
-    height: 150px;
-    width: 150px;    
-}
+
 #form{
     display: flex;
     justify-content: center;

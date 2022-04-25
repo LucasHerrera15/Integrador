@@ -33,6 +33,11 @@ function zapatillaData (sequelize, DataTypes){
             foreingKey: "marcaFK",
             timestamps: false
         });
+        Zapatilla.belongsTo(models.Usuario, {
+            as: "Usuario",
+            foreingKey: "usuarioFK",
+            timestamps: false
+        });
     }
 
     return Zapatilla;

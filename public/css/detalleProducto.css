@@ -1,70 +1,85 @@
-html{
-    height: 100%;
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Secular one', sans-serif;
 }
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100%;
-}
-#contenedor{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-#productContenedor{
-    border: 3px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 50px 100px;
-    display: flex;
-    flex-direction: row;
-    
-}
-#productName{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Secular One', sans-serif;
-    font-weight: 900;
+#nombreProducto{
     color: #FF9100;
     font-size: 25px;
+    font-weight: 900;
+    font-family: 'Secular one', sans-serif;
+}
 
+#contenedor{
+    width: 70%;
+    margin: 5% 15% 5% 15%;
+}
+#productContenedor{
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+#productName{
+    margin: 3% 2% 2% 3% ;
 }
 #productImg{
-    border: 1px solid black;
-    height: 250px;
-    width: 250px;
+    width: 100%;
+
 }
-#productInfo{
-    border: 1px solid red;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-family: 'Secular One', sans-serif;
-    font-weight: 900;
-    color: #004AAD;
-    font-size:large;
-    padding: 50px;
+.info{
+    color: #FF9100;
+    margin-bottom: 2%;
 }
-.productInfo{
-    border: #e0e0e0 solid 1px;
+#precio{
+    font-weight: 800;
 }
 #infoContenedor{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    border: blue 1px solid;
+  margin: 2%;
 }
 #actionContenedor{
-    border: yellow 1px solid;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    margin-top: 2%;
 }
-#descripcion{
-    display: flex;
-    flex-direction: column;
+
+#carrito a{
+    color: #FF9100;
+    text-decoration: none;
+    margin-left: 3%;
+}
+
+@media (min-width: 500px) {
+    #contenedor{
+        width: 80%;
+        margin: 5% 10% 10% 10%;
+    }
+    #productContenedor{
+        display: flex;
+        flex-direction: row;
+    }
+    #infoContenedor{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #productName{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 768px){
+    .info{
+        margin-bottom: 5%;
+        font-size: 20px;
+    }
+    #precio{
+        font-size: 25px;
+    }
+    #carrito a{
+        font-size: 25px;
+    }
+    #iconoCarrito{
+        margin-left: 1%;
+        font-size: 25px;
+    }
 }
