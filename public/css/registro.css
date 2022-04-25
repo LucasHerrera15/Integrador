@@ -93,14 +93,18 @@ label{
     color: #004AAD;
     font-size: 20px;
 }
-
+.resultado{
+    margin-top: 2%;
+    font-family: 'Secular One', sans-serif;
+    font-size: 20px;
+}
 .green{
     color: #9c9;
-    font-size: 12px;
+    font-size: 20px;
 }
 .red{
     color: rgb(194, 33, 33);
-    font-size: 12px;
+    font-size: 20px;
 
 }
 

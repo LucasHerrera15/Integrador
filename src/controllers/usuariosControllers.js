@@ -64,24 +64,17 @@ const usuariosControllers =
     },
 
     crear_usuario: (req, res) => {
-        let contrasenia = bcrypt.hash(req.body.password, 10);
-        let fotoperfil = guardarFoto
-        function guardarFoto(){
-        if(req.file.imagenusers !== undefined){
-            return (logoSinFondo.png)
-        } else{
-            return(req.file.imagenusers)
-        }
-    }
+       const contrasenia = bcrypt.hashSync(req.body.password, 10)
+
         db.Usuario.create({
                 nombreCompleto: req.body.nombre,
                 fechaNacimiento: req.body.fecha,
                 email: req.body.email,
                 contrasenia: contrasenia,
-                nombreUsuario: req.body.usuario,
                 domicilio: req.body.domicilio,
+                nombreUsuario: req.body.usuario,
                 telefono: req.body.telefono,
-                fotoPerfil: fotoperfil,
+                fotoPerfil: req.file,
                 condicionFiscalFK: req.body.condicionFiscal,
 		    }
 		).then((resultados)=>{

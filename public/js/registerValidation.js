@@ -1,6 +1,6 @@
 
 const formulario = document.getElementById("formulario-registro")
-const name = document.getElementById("nombre");
+const nombre = document.getElementById("nombre");
 const edad = document.getElementById("edad");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
@@ -19,16 +19,17 @@ btn.addEventListener("click",(e)=>{
         resultado.classList.add("red")
     } else{
         resultado.innerHTML = "Registrado correctamente";
-        resultado.classList.remove("red")
         resultado.classList.add("green")
+        resultado.classList.remove("red")
+        formulario.submit()
     } 
-    formulario.onsubmit()   
 })
+
 
 
 const validarCampos = ()=>{
     let error = [];
-    if (name.value.length < 5 || name.value.length > 40) {
+    if (nombre.value.length < 5 || nombre.value.length > 40) {
         error[0] = true;
         error[1] = "El nombre no es valido";
         return error;
@@ -36,7 +37,7 @@ const validarCampos = ()=>{
         error[0] = true;
         error[1] = "El nombre de usuario es invalido";
         return error;
-    }  else if (edad.value < 18 || edad.value > 100){
+    } else if (edad.value < 18 || edad.value > 100){
         error[0] = true;
         error[1] = "La edad debe ser mayor a 18 años y menor a 100";
         return error
@@ -44,7 +45,7 @@ const validarCampos = ()=>{
         error[0] = true;
         error[1] = "El numero telefonico es invalido";
         return error;
-    }else if (email.value.length < 5 ||
+    } else if (email.value.length < 5 ||
         email.value.length > 40 ||
         email.value.indexOf("@") == -1 ||
         email.value.indexOf(".") == -1 ) {
@@ -61,7 +62,7 @@ const validarCampos = ()=>{
         return error;
     } 
     error[0] = false;
-    return
+    return error
 } 
 
 
