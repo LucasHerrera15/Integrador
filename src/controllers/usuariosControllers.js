@@ -74,8 +74,7 @@ const usuariosControllers =
                 domicilio: req.body.domicilio,
                 nombreUsuario: req.body.usuario,
                 telefono: req.body.telefono,
-                fotoPerfil: req.file,
-                condicionFiscalFK: req.body.condicionFiscal,
+                fotoPerfil: req.file.filename,
 		    }
 		).then((resultados)=>{
 			res.redirect('/users/login');
