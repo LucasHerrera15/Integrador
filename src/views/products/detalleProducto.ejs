@@ -41,6 +41,12 @@
                         <a href="/products/edit/<%= productSelected.id %>">Edita tu producto</a>
                     </div>
                 </button>
+                <form  action="/products/eliminarProducto/<%= productSelected.id %>?_method=DELETE" method="POST">
+                    <div id="carrito">
+                        <button type=" submit" class="btn btn-primary">Elimina tu producto</button>
+                        <input type="hidden" name="productId" value="<%= productSelected.id %>"> 
+                    </div>
+                </form>
                 <% } %>
         </div>
     </div>

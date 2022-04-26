@@ -50,6 +50,16 @@ const productosControllers =
 					}); 
 		}
     },
+	eliminarCarrito: (req, res) =>{
+		const id = req.body.carritoId;
+		db.Carrito.destroy({
+			where : {
+				id: id
+			}
+		}).then((carritoEliminado)=>{
+			res.redirect('/')
+		})
+	},
     detalleProducto: (req, res) => {
 		const {id} = req.params;
 		db.Zapatilla.findByPk(
@@ -73,7 +83,6 @@ const productosControllers =
 		let errors = validationResult(req);
 		const {modelo, marca, talle, precio, descripcion, descuento} = req.body
 		const {id}= req.session.usuarioLogeado
-		console.log('req.session a ver si tiene id', id);
 		let date = new Date();
 		/* if(errors.isEmpty()){ */
 			db.Zapatilla.create({
@@ -163,26 +172,27 @@ const productosControllers =
 			res.render('products/creacionProducto', {allMarcas: allMarcas})
 		})
 	},
+	usuarioProductos : (req, res) => {
+		const {id} = req.session.usuarioLogeado;
+		db.Zapatilla.findAll({
+			where: {
+				usuarioFK: id
+			}
+		})
+		.then((usuarioProducts) => {
+			res.render('products/usuarioProductos', {usuarioProducts: usuarioProducts})
+		})
+	},
 
     eliminarProducto:(req, res) => {
-
-		let idProductoSeleccionado = req.params.id;
-
-		let products2 = productos.filter(function(element){
-			return element.id!=idProductoSeleccionado;
-		})
-
-		db.zapatilla.destroy({
-			where: {
-				id: products2
+		const id = req.body.productId;
+		db.Zapatilla.destroy({
+			where : {
+				id: id
 			}
-		}).then((resultado)=>{
-			{}
+		}).then((productEliminado)=>{
+			res.redirect('/')
 		})
-
-	    res.redirect('/');
-
-
     },
 	search:(req,res) =>{
 		db.Zapatilla.findAll({

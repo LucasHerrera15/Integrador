@@ -47,6 +47,6 @@ app.use('/products', productosRoutes);
 app.use('/api', apiRoutes)
 
 // Puerto
-app.listen(process.env.PORT || 3000, function() {
+app.listen(process.env.PORT || 3001, function() {
     console.log("Servidor corriendo");
 })

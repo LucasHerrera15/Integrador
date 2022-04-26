@@ -28,6 +28,10 @@
                 <div id="productTalle"> <%= carritoFinished[i].talle %></div>
                 <div id="productStock"><input id="cantidad" type="number" value="<%= carritoFinished[i].cantidad %>"></div>
                 <div id="productPrice"> $<%= carritoFinished[i].precio %></div>
+                <form action="/products/eliminarCarrito/<%= carritoFinished[i].id %>?_method=DELETE" method="POST">
+                    <button type=" submit" class="btn btn-primary">Eliminar</button>
+                        <input type="hidden" name="carritoId" value="<%= carritoFinished[i].id %>"> 
+                </form>
             </div>
             <%}%>
             <% } else { %>
