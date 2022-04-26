@@ -1,7 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
+<<<<<<< HEAD
 const { validationResult }= require('express-validator');
+=======
+/* const sharp = require('sharp'); */
+const { Console } = require('console');
+>>>>>>> 772c04e70c2e7762e7a3840d286c0f7f4c776890
 const productsFilePath = path.join(__dirname, '../database/dataProductos.json');
 const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -167,6 +172,20 @@ const productosControllers =
 
 
     },
+	search:(req,res) =>{
+		db.Zapatilla.findAll({
+			where: {
+				modelo: {
+					[db.Sequelize.Op.like]: `%${req.body.buscar}%`
+				}
+			},
+			order: [
+				['modelo', 'DESC']
+			]
+		}).then((productSelected)=>{
+		return res.render('products/productSearch', {productSelected : productSelected})
+	})
+	},
 }
 
 module.exports = productosControllers

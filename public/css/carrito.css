@@ -4,6 +4,11 @@
     justify-content: center;
     flex-direction: column;
 } */
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Secular one', sans-serif;
+}
 #contenedor{
     display: flex;
     align-items: center;

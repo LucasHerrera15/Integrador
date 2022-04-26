@@ -14,11 +14,11 @@
     margin-bottom: 10%; 
 }
 .borde{
+    width: 100%;
     border: 1px solid #e0e0e0;
     border-radius: 5px;
     padding: 50px 100px;
 }
-
 #titulo{
     text-align: center;
     margin-top: 4%;
@@ -44,5 +44,46 @@
     font-size: small;
 }
 .nombreMarca{
-    margin-left: 5%;
+    margin-top: 2%;
+}
+.subir-archivo{
+    margin-bottom: 2%;
+    position: relative;
+    display: inline-block;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%
+  }
+  
+  .subir-archivo::before {
+    background-color: #004AAD;;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px;
+    content: 'Seleccionar imagen de perfil'; 
+    position: absolute;
+    left: 17px;
+    right: 17px;
+    top: 0;
+    bottom: 0;
+  }
+  
+  .subir-archivo input[type="file"] {
+    opacity: 0;
+    width: 90%;
+    display: inline-block;
+    border-radius: 5px;
+    border-color: #004AAD;;
+  }
+  .subir-archivo input[type="file"]:hover{
+      cursor: pointer;
+  }
+
+  @media (min-width: 715px){
+    .borde{
+        width: 50%;
+    }
 }

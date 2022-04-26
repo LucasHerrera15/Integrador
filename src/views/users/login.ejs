@@ -10,11 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script defer src="/js/loginValidador.js"></script>
     <title>Login</title>
 </head>
 <body> 
     <%- include('../partials/header') %>
     <main>
+<<<<<<< HEAD
     <div class="banner"></div>
     <div id="conteiner">
         <div id="inicio">
@@ -33,27 +35,47 @@
                             <% if(locals.errors && errors.email) {%>    
                                <div id="error"> <ul><%=errors.email.msg %></ul></div> 
                             <%}%>
+=======
+    <div class="banner"></div>  
+        <div id="conteiner">
+            <form id="form" class="login" action="./login" method="POST">            
+                <div id="solapa">
+                    <div class="loginPalabra linea">Iniciar sesión</div> 
+                        <a href="/users/register" class="subrayado"><div class="loginPalabra espacioRegistro">Registrate</div></a>
+>>>>>>> 772c04e70c2e7762e7a3840d286c0f7f4c776890
                     </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label label labelLogin">Contraseña</label>
-                            <input type="password" name="password" class="form-control password" placeholder="•••••••••••" id="exampleInputPassword1" required>
-                            <% if(locals.errors && errors.password) {%>    
-                                <div id="error"><%=errors.password.msg %></div> 
-                             <%}%>
-                            <label for="" class="olvidasteContra"><a href="#" id="olvidasteLetra"> Olvidaste tu contraseña?</a></label>
-                        </div>
-                        <div class="mb-3 form-check">
-                                <div class="recuerdame">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="rememberUser">
-                                    <label class="form-check-label letra" for="exampleCheck1">Recuérdame</label>
-                                </div>
-                        </div>
-                        <div class="enviarLogin"><button type="submit" class="btn btn-primary colorBoton">Iniciar sesión</button></div>
+                    <div class="errores">
+                        <ul></ul>
                     </div>
+                    <div class="mb-3 ">
+                        <label for="exampleInputEmail1" class="form-label label labelLogin">E-mail</label>
+                        <input type="email" name="email" class="form-control emails" placeholder="Ejemplo@gmail.com" id="exampleInputEmail1" aria-describedby="emailHelp" required value="<%= locals.old && old.email %>">
+                        <% if(locals.errors && errors.email) {%>    
+                            <div id="error"><%=errors.email.msg %></div> 
+                        <%}%>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label label labelLogin">Contraseña</label>
+                        <input type="password" name="password" class="form-control password" placeholder="•••••••••••" id="exampleInputPassword1" required>
+                        <% if(locals.errors && errors.password) {%>    
+                            <div id="error"><%=errors.password.msg %></div> 
+                        <%}%>
+                        <label for="" class="olvidasteContra"><a href="#" id="olvidasteLetra"> ¿Olvidaste tu contraseña?</a></label>
+                    </div>
+                    <div class="mb-3 form-check">
+                            <div class="recuerdame">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="rememberUser">
+                                <label class="form-check-label letra" for="exampleCheck1">Recuérdame</label>
+                            </div>
+                    </div>
+                    <div class="enviarLogin"><button type="submit" class="btn btn-primary colorBoton">Iniciar sesión</button></div>
                 </form>
                 <script src="./js/loginValidator.js"></script>
             </div>
+<<<<<<< HEAD
         </div>
+=======
+>>>>>>> 772c04e70c2e7762e7a3840d286c0f7f4c776890
     </main>
     <%- include('../partials/footer') %>
 </body>

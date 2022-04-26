@@ -34,5 +34,7 @@ router.get('/obtenerMarcas', productosControllers.listaMarcas);
 
 router.delete('/:id', productosControllers.eliminarProducto);
 
+router.post('/search', productosControllers.search)
+
 
 module.exports = router;

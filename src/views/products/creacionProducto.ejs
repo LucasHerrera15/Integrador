@@ -28,22 +28,24 @@
               <% if(locals.errors && errors.marca) 
               {%><div id="error"><%=errors.marca.msg %></div> 
               <%}%>
-            </div>
-            <div class="input">
               <select name="marca" class="form-control" id="">
                <% for (let marca of allMarcas)
                 { %> <option value="<%= marca.id %>"> <%= marca.nombreMarca %> </option>
                 <% } %> 
               </select>
-            </div>
             <label for="" class="nombreMarca"><a href="./crearMarca" > Crea una nueva Marca</a></label>
+            </div>
             <div class="input">
               <label  class="form-label subtitulos">Talle</label>
               <input type="number" class="form-control" placeholder="40,5" name="talle" required>
             </div>
+<<<<<<< HEAD
             <br>
             <div class="row">
             <div class="col">
+=======
+            <div class="input">
+>>>>>>> 772c04e70c2e7762e7a3840d286c0f7f4c776890
               <label  class="form-label subtitulos">Precio</label>
               <input type="number" class="form-control" placeholder="$ 20.000" name="precio" required>
             </div>
@@ -51,6 +53,7 @@
               <label  class="form-label subtitulos">Descuento</label>
               <input type="number" class="form-control" placeholder="10%"  name="descuento">
             </div>
+<<<<<<< HEAD
           </div>
             <br>
             <div class="subtitulos"> Subi una imagen de tu producto</div>
@@ -63,6 +66,15 @@
                 <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Descripción del producto" rows="3" name="descripcion" required></textarea>
               </div>
               <br>
+=======
+            <div class="subir-archivo"> 
+                <input type="file" class="input-crear" id="inputGroupFile02" name="productFile" name="error" required multiple>
+            </div>
+            <div class="input">
+              <label for="exampleFormControlTextarea1" class="form-label subtitulos">Descripción</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Descripción del producto" rows="3" name="descripcion" required></textarea>
+            </div>
+>>>>>>> 772c04e70c2e7762e7a3840d286c0f7f4c776890
             <div id="botonSubmit"> <button type="submit" class="btn btn-primary">Crear producto</button></div>
           </form>
     </div>

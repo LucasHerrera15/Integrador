@@ -95,27 +95,32 @@
 .descripcion {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-content: center;
     align-items: center;
-    margin: 1em 10px 1em;
+    height: 33.3%;
+    text-align: center;
 }
-
-.informacion-precio {
+#informacion-precio {
     display: flex;
     align-items: center;
     justify-content: stretch;
-    margin-bottom: 0.5em;
 }
 
-.envio {
+#envio {
     display: flex;
     align-items: center;
     justify-content: stretch;
-    margin-bottom: 0.5em;
+}
+#nombre-producto{
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
 }
 
 .descripcion p {
-    font-size: 1rem;
+    color: #FF9100;
+    font-size: 12px;
     padding-left: 5px;
     font-family: 'Secular one', sans-serif;
 }
@@ -161,10 +166,6 @@
     text-align: center;
 }
 
-.navigation {
-    display: none;
-}
-
 #logo {
     width: 100px;
 }
@@ -175,9 +176,10 @@
 
 #los-buscados {
     color: #FF9100;
+    font-weight: 400;
     margin-top: 100px;
     margin-left: 2%;
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-family: 'Secular one', sans-serif;
 }
 #seguinos{
@@ -204,9 +206,11 @@
 }
 
 #sinPadding {
-    padding: 0;
+    padding: 5px;
 }
-
+#image{
+    margin-right: 10px;
+}
 @media (min-width: 425px) {
     .productos {
         width: 45%;
@@ -215,17 +219,11 @@
     .banner {
         height: 140px;
     }
-
-    
-   
 }
-
-@media (min-width: 768px) {
+@media (min-width: 874px) {
     .banner {
         height: 300px;
     }
-
-
     @keyframes banner {
 
         0%,
@@ -258,7 +256,9 @@
             background-image: url(../images/banner/banner3.jpg);
         }
     }
-
+    .descripcion p{
+        font-size: 16px;
+    }
     .contenedor__header {
         flex-direction: row;
     }
@@ -269,31 +269,6 @@
 
     .barra__busqueda {
         width: 45%;
-    }
-
-    .navigation {
-        display: flex;
-        text-align: center;
-        margin-right: 1%;
-    }
-
-    .navigation a {
-        color: black;
-        text-decoration: none;
-        padding: 12px;
-        font-size: 14px;
-        transition-delay: 0.1s;
-        font-family: 'Secular one', sans-serif;
-    }
-
-    .navigation a:hover {
-        cursor: pointer;
-        background-color: #1D3E6B;
-        color: white;
-    }
-
-    .navigation a i {
-        margin-left: 4px;
     }
     #los-buscados{
         margin-left: 12%;
