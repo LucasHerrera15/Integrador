@@ -16,7 +16,7 @@
                     <% if (locals.isLogged) { %> 
                     <div class="btn-group">
                         <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                           <a href="/user/perfil" id="sinPadding"><img src="/images/imagenPerfilDefault.png" alt="mdo" width="32" height="32" class="rounded-circle"></a> 
+                           <a href="/user/perfil" id="sinPadding"><img src="/images/users/<%= locals.userLogged.fotoPerfil %>" alt="mdo" width="32" height="32" class="rounded-circle"></a> 
                          <%= locals.userLogged.nombreUsuario %>
                         </button>
                         <ul class="dropdown-menu">

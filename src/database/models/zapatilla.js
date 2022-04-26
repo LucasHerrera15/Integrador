@@ -12,7 +12,8 @@ function zapatillaData (sequelize, DataTypes){
         descripcion: {type: DataTypes.STRING (100)},
         stock: {type: DataTypes.BOOLEAN},
         imagen: {type: DataTypes.STRING(50)},
-        marcaFK: {type: DataTypes.INTEGER}
+        marcaFK: {type: DataTypes.INTEGER},
+        usuarioFK: {type: DataTypes.INTEGER}
     }
 
     config = {camelCase: false, timestamps: false, freezeTableName:true};
@@ -36,6 +37,11 @@ function zapatillaData (sequelize, DataTypes){
         Zapatilla.belongsTo(models.Usuario, {
             as: "Usuario",
             foreingKey: "usuarioFK",
+            timestamps: false
+        });
+        Zapatilla.hasMany(models.Carrito,{
+            as: "Carrito",
+            foreingKey: "zapatillaFK",
             timestamps: false
         });
     }

@@ -12,7 +12,7 @@ window.addEventListener('load', function (){
            alert('Debes escribir un E-mail');
         } else if ( emailValido == false){
             errores.push('Debes ingresar un correo válido')
-        }
+        } 
         
         let campoPassword = document.querySelector('input.password');
         if(campoPassword == ''){
@@ -23,11 +23,12 @@ window.addEventListener('load', function (){
             e.preventDefault();
             
             let ulErrores = document.querySelector('div.errores ul');
-            for (let i = 0; i < errores.length; i++){
-                ulErrores.innerHTML +=  '<li>' + errores[i] + '</li>' 
+                for(let i = 0; i < errores.length; i++){
+                    ulErrores.innerHTML += '<li>' + errores[i] + '</li>'
+                }
             }
-        }
-        formulario.submit();
-    })
+        })
     
-})
+        formulario.submit();
+    
+    })

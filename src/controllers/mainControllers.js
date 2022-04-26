@@ -8,7 +8,7 @@ const mainControllers =
         db.Zapatilla.findAll(
         ).then((productIndex) => {
          res.render('index', {productIndex: productIndex})   
-        })
+        }) 
         
     }
 }

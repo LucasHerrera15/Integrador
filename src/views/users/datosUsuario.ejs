@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <title>Perfil</title>
+    <title>Mis datos</title>
 </head>
 <body>
     <%- include('../partials/header') %>
@@ -19,15 +19,14 @@
         <div id="contenedor">
             <div id="borde">
                 <div id="contenedorPerfil">
-                    <div id="fotoPerfil"><img src="/images/users/<%= user.fotoPerfil %>" id="imagenPerfil"></div>
+                    <div id="fotoPerfil"><img src="/images/imagenPerfilDefault.png" id="imagenPerfil"></div>
                     <div id="nombreUsuario"><%= user.nombreUsuario %></div>
                 </div>
                 <div id="contenedorBotones" >
-                    <a href="#" class="botones letra">Edita tu perfil</a>
-                    <a href="/users/datosUsuario" class="botones letra">Mis datos</a>
-                    <a href="#" class="botones letra">Facturación</a>
-                    <a href="#" class="botones letra">Mis compras</a>
-                    <a href="#" class="botones letra">Mis ventas</a>
+                    <div class="botones letra"> Email: <%= user.email %> </div> 
+                    <div class="botones letra">Nombre Completo: <%= user.nombreCompleto %> </div> 
+                    <div class="botones letra">Nombre de usuario: <%= user.nombreUsuario %> </div> 
+                    <div class="botones letra">Domicilio : <%= user.domicilio %> </div>
                 </div>
             </div>
         </div>

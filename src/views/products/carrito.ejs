@@ -17,17 +17,17 @@
     <main>
     <div class="banner"></div>
     <div id="contenedor">
+        <% for(let i = 0; i <= allProducts.length ; i++){ %>
         <div id="fondo" class="borde">
             <div id="titulo">Carrito de compras</div>
             <div id="productCarrito">
-                <div id="productImage"> Imagen</div>
-                <div id="productName"> Nombre del producto</div>
-                <div id="productStock"> Cantidad </div>
-                <div id="productPrice"> Precio</div>
-
+                <div class="productImage"> <img class="productImage" src="/images/products/<%= allProducts[i].imagen %>"></div>
+                <div id="productName"> <%= allProducts[i].modelo %></div>
+                <div id="productStock"><input id="cantidad" type="number" value="1"></div>
+                <div id="productPrice"> $<%= allProducts[i].precio %></div>
             </div>
-
         </div>
+        <%}%>
     </div>
     </main>
     <%- include('../partials/footer') %>

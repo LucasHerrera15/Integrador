@@ -11,17 +11,14 @@
     margin-top: 10%;
     margin-left: 5%;
     margin-right: 5%;
-    margin-bottom: 10%;
+    margin-bottom: 10%; 
 }
 .borde{
     border: 1px solid #e0e0e0;
     border-radius: 5px;
+    padding: 50px 100px;
 }
-.input{
-    width: 9    0%;
-    margin-left: 5%;
-    margin-right: 5%;
-}
+
 #titulo{
     text-align: center;
     margin-top: 4%;

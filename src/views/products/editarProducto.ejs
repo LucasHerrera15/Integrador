@@ -25,10 +25,6 @@
             </div>
             <div class="row">
               <div class="col">
-                <label  class="form-label subtitulos">Marca</label>
-                <input type="text" class="form-control" value="<%= productEdit.marcaFK %>" name="marca">
-              </div>
-              <div class="col">
                 <label  class="form-label subtitulos">Talle</label>
                 <input type="number" class="form-control" value="<%= productEdit.talle %>" name="talle">
               </div>
@@ -49,9 +45,6 @@
               <div class="input-group mb-3 col-sm">
                 <input type="file" class="form-control" id="inputGroupFile02" name="productFile" value="<%= productEdit.imagen %>" multiple rq>
                 <label class="input-group-text subtitulos" for="inputGroupFile02">Subir imagen</label>
-              </div>
-              <div id="productImage" style="border: 1px solid red;">
-                <img src="<%= productEdit.imagen %>" />
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label subtitulos">Descripción</label>

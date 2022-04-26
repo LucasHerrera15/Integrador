@@ -29,9 +29,14 @@
             </div>
         </div>
         <div id="actionContenedor">
-            <div id="carrito"><i class="fas fa-shopping-cart" style="color: orange;" id="iconoCarrito"></i><a href="/products/carrito">Añadir al carrito</a></div>
-            <% if (locals.isLogged) { %>
-                <div id="carrito"><a href="/products/edit/<%= productSelected.id %>">Edita tu producto</a></div>
+            <form action="../carrito" method="POST">
+                <div id="carrito">
+                    <button type=" submit" class="btn btn-primary">Añadir al carrito</button>
+                    <input type="hidden" name="productId" value="<%= productSelected.id %>"> 
+                </div>
+            </form>
+            <% if (productSelected.usuarioFK === locals.userLogged?.id) { %>
+                <div class="carrito"><a href="/products/edit/<%= productSelected.id %>">Edita tu producto</a></div>
                 <% } %>
         </div>
     </div>

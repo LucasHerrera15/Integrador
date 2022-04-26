@@ -31,7 +31,7 @@
                             <label for="exampleInputEmail1" class="form-label label labelLogin">E-mail</label>
                             <input type="email" name="email" class="form-control emails" placeholder="Ejemplo@gmail.com" id="exampleInputEmail1" aria-describedby="emailHelp" required value="<%= locals.old && old.email %>">
                             <% if(locals.errors && errors.email) {%>    
-                               <div id="error"><%=errors.email.msg %></div> 
+                               <div id="error"> <ul><%=errors.email.msg %></ul></div> 
                             <%}%>
                     </div>
                         <div class="mb-3">
@@ -51,9 +51,9 @@
                         <div class="enviarLogin"><button type="submit" class="btn btn-primary colorBoton">Iniciar sesión</button></div>
                     </div>
                 </form>
+                <script src="./js/loginValidator.js"></script>
             </div>
         </div>
-        <script src="/js/loginValidador.js"></script>
     </main>
     <%- include('../partials/footer') %>
 </body>

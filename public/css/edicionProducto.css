@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0px;
     padding: 0px;
     font-family: 'Secular one', sans-serif;
@@ -14,7 +14,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
+} */
 #box{
     display: flex;
     align-items: center;

@@ -31,9 +31,9 @@
             </div>
             <div class="input">
               <select name="marca" class="form-control" id="">
-                <% for (let marca of allMarcas)
-                { %> <option> <%= marca.nombreMarca %> </option>
-                <% } %>
+               <% for (let marca of allMarcas)
+                { %> <option value="<%= marca.id %>"> <%= marca.nombreMarca %> </option>
+                <% } %> 
               </select>
             </div>
             <label for="" class="nombreMarca"><a href="./crearMarca" > Crea una nueva Marca</a></label>
@@ -42,14 +42,16 @@
               <input type="number" class="form-control" placeholder="40,5" name="talle" required>
             </div>
             <br>
-            <div class="input">
+            <div class="row">
+            <div class="col">
               <label  class="form-label subtitulos">Precio</label>
               <input type="number" class="form-control" placeholder="$ 20.000" name="precio" required>
             </div>
-            <div class="input">
+            <div class="col">
               <label  class="form-label subtitulos">Descuento</label>
               <input type="number" class="form-control" placeholder="10%"  name="descuento">
             </div>
+          </div>
             <br>
             <div class="subtitulos"> Subi una imagen de tu producto</div>
             <div class="input-group input">

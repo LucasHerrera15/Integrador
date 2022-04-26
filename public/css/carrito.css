@@ -1,14 +1,9 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Secular one', sans-serif;
-}
-body{
+/* body{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
+} */
 #contenedor{
     display: flex;
     align-items: center;
@@ -56,4 +51,11 @@ body{
     display: flex;
     justify-content: start;
     align-items: flex-start;
+}
+.productImage{
+    width: 200px;
+    height: 200px;
+}
+#cantidad{
+    border-radius: 10px;
 }
