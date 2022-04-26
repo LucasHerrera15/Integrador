@@ -3,12 +3,6 @@
     padding: 0px;
     font-family: 'Secular one', sans-serif;
 }
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
 #contenedor{
     display: flex;
     align-items: center;

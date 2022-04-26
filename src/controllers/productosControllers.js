@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
-/* const sharp = require('sharp') */
+/* const sharp = require('sharp'); */
+const { Console } = require('console');
 const productsFilePath = path.join(__dirname, '../database/dataProductos.json');
 const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -35,11 +36,17 @@ const productosControllers =
     },
 
     crear: (req, res) => {
-		const {modelo, talle, precio, descripcion, descuento} = req.body
-		/* sharp(req.file.path)
-		.jpeg({quality: 50}).toFile(req.file.destination + 'imagenproducto') */
-
-		
+		const {modelo,marca, talle, precio, descripcion, descuento} = req.body
+		db.Marca.id.findOne({
+			where:{
+				nombreMarca: marca
+			}
+		}).then((resultado) =>{
+			marca = resultado
+		})
+		const {id} = req.session.usuarioLogeado.id
+		/* sharp(req.files[0].filename)
+		.jpeg({quality: 50}).toFile(req.files[0].destination + 'imagenproducto') */
 		let date = new Date();
 		db.Zapatilla.create({
 			modelo,
@@ -50,7 +57,8 @@ const productosControllers =
 			descripcion,
 			stock:  true,
 			imagen: req.files[0].filename,
-			marcaFK: 1
+			marcaFK: marca,
+			usuarioFK: id
 		}).then((productCreated)=>{
 			res.redirect('/');
 		})  
@@ -142,6 +150,20 @@ const productosControllers =
 
 
     },
+	search:(req,res) =>{
+		db.Zapatilla.findAll({
+			where: {
+				modelo: {
+					[db.Sequelize.Op.like]: `%${req.body.buscar}%`
+				}
+			},
+			order: [
+				['modelo', 'DESC']
+			]
+		}).then((productSelected)=>{
+		return res.render('products/productSearch', {productSelected : productSelected})
+	})
+	},
 }
 
 module.exports = productosControllers

@@ -1,0 +1,73 @@
+.navigation {
+    display: flex;
+    text-align: center;
+}
+.navigation ul{
+    margin-bottom: 0;
+}
+
+.navigation a {
+    color: black;
+    text-decoration: none;
+    padding: 12px;
+    font-size: 14px;
+    transition-delay: 0.1s;
+    font-family: 'Secular one', sans-serif;
+}
+
+.navigation a:hover {
+    cursor: pointer;
+    background-color: #1D3E6B;
+    color: white;
+}
+.navigation a i {
+    margin-left: 4px;
+}
+#perfilEscritorio{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.perfil-mobile{
+    display: none;
+}
+@media (max-width: 873px){
+.navigation {
+    flex-direction: column;
+    align-items: center;
+    background-color: #1D3E6B;
+    position: fixed;
+    right: 0;
+    top: 100px;
+    width: 100%;
+    padding: 40px 0;
+
+    height: calc(60% - 100px);
+
+    right: 0;
+    transition: right 0.3s;
+}
+.navigation ul {
+    display: flex;
+    flex-direction: column;
+}
+.navigation ul a{
+    text-align: left;
+    padding: 2px;
+    margin-bottom: 12%;
+    color: #FF9100;
+    font-size: 18px;
+}
+.navigation ul a:hover{
+    cursor: pointer;
+    background-color: #23497d;
+    transition: 0.5s;
+}
+.navigation ul a i {
+    padding: 5px;
+}
+.navigation_visible{
+    right: 100%;
+}
+}

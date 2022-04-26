@@ -9,15 +9,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 1px solid #e0e0e0;
-    height: 100vh;
-    width: 100%;
+    margin: 10% 10%;
 }
 #contenedorPerfil{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 10px;
 }
 #imagenPerfil{
     width: 100px;
@@ -30,14 +28,17 @@
     flex-direction: column;
 }
 .botones{
-    border-bottom: 1px solid gray;
+    border-bottom: 2px solid #004AAD;
     padding: 15px;
+    width: 100%;
     font-family: 'Secular One', sans-serif;
 }
 #borde{
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 50px 100px;
+    border: 1px solid #004AAD;
+    border-radius: 4px;
+    padding: 50px;
+    width: 100%;
+    box-shadow: 2px 2px 2px 2px rgba(0, 74, 173, 0.3)
 }
 #nombreUsuario{
     font-family: 'Secular One', sans-serif;
@@ -48,6 +49,32 @@
     font-family: 'Secular One', sans-serif;
     font-weight: 900;
     color: #FF9100;
-    font-size: 25px;
+    font-size: 14px;
     text-decoration: none;
+    text-align: center;
+}
+
+@media (min-width: 600px) {
+    
+    #borde{
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .botones{
+        width: 50%;
+    }
+    .letra {
+        font-size: 18px;
+    }
+}
+@media (min-width: 1200px) {
+    #borde{
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+    .letra {
+        font-size: 24px;
+    }
 }

@@ -19,7 +19,7 @@
         <div id="contenedor">
             <div id="borde">
                 <div id="contenedorPerfil">
-                    <div id="fotoPerfil"><img src="/images/imagenPerfilDefault.png" id="imagenPerfil"></div>
+                    <div id="fotoPerfil"><img src="/images/users/<%= locals.userLogged.fotoPerfil %>" width="32" height="32" class="rounded-circle" id="imagen"></div>
                     <div id="nombreUsuario"><%= user.nombreUsuario %></div>
                 </div>
                 <div id="contenedorBotones" >
@@ -28,6 +28,7 @@
                     <a href="#" class="botones letra">Facturación</a>
                     <a href="#" class="botones letra">Mis compras</a>
                     <a href="#" class="botones letra">Mis ventas</a>
+                    <a href="/users/logout" class="botones letra">Cerrar sesión</a>
                 </div>
             </div>
         </div>
