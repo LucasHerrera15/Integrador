@@ -95,25 +95,15 @@
 .descripcion {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-content: center;
     align-items: center;
     height: 33.3%;
     text-align: center;
 }
-#informacion-precio {
+.informacion {
     display: flex;
-    align-items: center;
-    justify-content: stretch;
-}
-
-#envio {
-    display: flex;
-    align-items: center;
-    justify-content: stretch;
-}
-#nombre-producto{
-    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: stretch;
 }
@@ -125,16 +115,10 @@
     font-family: 'Secular one', sans-serif;
 }
 
-.informacion-precio i {
+.informacion i {
     size: 1rem;
     color: #FFB000;
 }
-
-.envio i {
-    size: 1rem;
-    color: #FFB000;
-}
-
 .contenedor__header {
     display: flex;
     flex-direction: row-reverse;
@@ -162,6 +146,7 @@
 }
 
 .menu__icon {
+    display: block;
     width: 10%;
     text-align: center;
 }
@@ -180,6 +165,14 @@
     margin-top: 100px;
     margin-left: 2%;
     font-size: 1.4em;
+    font-family: 'Secular one', sans-serif;
+}
+#buscando{
+    color: #FF9100;
+    font-weight: 400;
+    margin-top: 100px;
+    margin-left: 2%;
+    font-size: 1em;
     font-family: 'Secular one', sans-serif;
 }
 #seguinos{
@@ -204,7 +197,9 @@
     margin: 2%;
     border-radius: 4px;
 }
-
+p{
+    margin-bottom: 0!important;
+}
 #sinPadding {
     padding: 5px;
 }
@@ -218,6 +213,9 @@
 
     .banner {
         height: 140px;
+    }
+    #buscando{
+        font-size: 1.4em;
     }
 }
 @media (min-width: 874px) {
@@ -271,6 +269,10 @@
         width: 45%;
     }
     #los-buscados{
+        margin-left: 12%;
+        font-size: 2em;
+    }
+    #buscando{
         margin-left: 12%;
         font-size: 2em;
     }

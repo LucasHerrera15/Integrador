@@ -16,10 +16,9 @@
     <%- include('../partials/header') %>
     <main>
     <div class="banner"></div>
-        <div id="contenedor">
             <div id="borde">
                 <div id="contenedorPerfil">
-                    <div id="fotoPerfil"><img src="/images/users/<%= user.fotoPerfil %>" id="imagenPerfil"></div>
+                    <div id="fotoPerfil"><img src="/images/users/<%= user.fotoPerfil %>" id="imagenPerfil" width="32" height="32" class="rounded-circle"></div>
                     <div id="nombreUsuario"><%= user.nombreUsuario %></div>
                 </div>
                 <div id="contenedorBotones" >
@@ -31,7 +30,6 @@
                     <a href="/users/logout" class="botones letra">Cerrar sesión</a>
                 </div>
             </div>
-        </div>
     </main>
     <%- include('../partials/footer')%>
 </body>
