@@ -70,7 +70,7 @@ const productosControllers =
     },
 
     crear: (req, res) => {
-		let errors = validationResult(req);
+/* 		let errors = validationResult(req); */
 		const {modelo, marca, talle, precio, descripcion, descuento} = req.body
 		const {id}= req.session.usuarioLogeado
 		console.log('req.session a ver si tiene id', id);
@@ -196,8 +196,9 @@ const productosControllers =
 			]
 		}).then((productSelected)=>{
 		return res.render('products/productSearch', {productSelected : productSelected})
-	})
+		})
 	},
 }
+
 
 module.exports = productosControllers
