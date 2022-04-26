@@ -1,12 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
-<<<<<<< HEAD
-const { validationResult }= require('express-validator');
-=======
 /* const sharp = require('sharp'); */
 const { Console } = require('console');
->>>>>>> 772c04e70c2e7762e7a3840d286c0f7f4c776890
 const productsFilePath = path.join(__dirname, '../database/dataProductos.json');
 const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -16,27 +12,43 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const productosControllers =
 {
     carrito: (req, res) => {
-		const id = req.body.productId;
-		db.Zapatilla.findByPk(
-			id
-		).then((productSelected) =>{
-			console.log(productSelected);
-			db.Carrito.create({
-				usuarioFK: productSelected.usuarioFK,
-				zapatillaFK: productSelected.id
-			}).then((carritoCreated) =>{
-				console.log(carritoCreated);
-				const {id}= req.session.usuarioLogeado
-				db.Carrito.findAll({
-					 include: [
-						{ association: 'zapatillaFK', where: {usuarioFK: id} }
-					]
-				}).then((carritoFinished) =>{
-					console.log('A ver si funca', carritoFinished);
-				}); 
-				/* res.render('products/carrito', {carritoFinished: carritoFinished});	 */
+		if(req.body.productId){
+
+			const id = req.body.productId;
+			db.Zapatilla.findByPk(
+				id
+			).then((productSelected) =>{
+				db.Carrito.create({
+					usuarioFK: productSelected.usuarioFK,
+					zapatillaFK: productSelected.id,
+					modelo: productSelected.modelo,
+					imagen: productSelected.imagen,
+					precio: productSelected.precio, 
+					talle: productSelected.talle,
+					cantidad: 1
+				}).then((carritoCreated) =>{
+					const {id}= req.session.usuarioLogeado
+					db.Carrito.findAll( 
+						{where : { 
+							usuarioFK : id
+						}
+					})
+					.then((carritoFinished) =>{
+						res.render('products/carrito', {carritoFinished: carritoFinished});	
+					}); 
+					})
 				})
-			})
+		} else {
+			const {id}= req.session.usuarioLogeado
+					db.Carrito.findAll( 
+						{where : { 
+							usuarioFK : id
+						}
+					})
+					.then((carritoFinished) =>{
+						res.render('products/carrito', {carritoFinished: carritoFinished});	
+					}); 
+		}
     },
     detalleProducto: (req, res) => {
 		const {id} = req.params;

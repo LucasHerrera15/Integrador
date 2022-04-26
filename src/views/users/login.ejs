@@ -16,7 +16,6 @@
 <body> 
     <%- include('../partials/header') %>
     <main>
-<<<<<<< HEAD
     <div class="banner"></div>
     <div id="conteiner">
         <div id="inicio">
@@ -35,24 +34,6 @@
                             <% if(locals.errors && errors.email) {%>    
                                <div id="error"> <ul><%=errors.email.msg %></ul></div> 
                             <%}%>
-=======
-    <div class="banner"></div>  
-        <div id="conteiner">
-            <form id="form" class="login" action="./login" method="POST">            
-                <div id="solapa">
-                    <div class="loginPalabra linea">Iniciar sesión</div> 
-                        <a href="/users/register" class="subrayado"><div class="loginPalabra espacioRegistro">Registrate</div></a>
->>>>>>> 772c04e70c2e7762e7a3840d286c0f7f4c776890
-                    </div>
-                    <div class="errores">
-                        <ul></ul>
-                    </div>
-                    <div class="mb-3 ">
-                        <label for="exampleInputEmail1" class="form-label label labelLogin">E-mail</label>
-                        <input type="email" name="email" class="form-control emails" placeholder="Ejemplo@gmail.com" id="exampleInputEmail1" aria-describedby="emailHelp" required value="<%= locals.old && old.email %>">
-                        <% if(locals.errors && errors.email) {%>    
-                            <div id="error"><%=errors.email.msg %></div> 
-                        <%}%>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label label labelLogin">Contraseña</label>
@@ -72,10 +53,7 @@
                 </form>
                 <script src="./js/loginValidator.js"></script>
             </div>
-<<<<<<< HEAD
         </div>
-=======
->>>>>>> 772c04e70c2e7762e7a3840d286c0f7f4c776890
     </main>
     <%- include('../partials/footer') %>
 </body>

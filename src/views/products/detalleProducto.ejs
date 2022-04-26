@@ -36,7 +36,11 @@
                 </div>
             </form>
             <% if (productSelected.usuarioFK === locals.userLogged?.id) { %>
-                <div class="carrito"><a href="/products/edit/<%= productSelected.id %>">Edita tu producto</a></div>
+                <button type=" submit" class="btn btn-primary">
+                    <div class="carrito">
+                        <a href="/products/edit/<%= productSelected.id %>">Edita tu producto</a>
+                    </div>
+                </button>
                 <% } %>
         </div>
     </div>

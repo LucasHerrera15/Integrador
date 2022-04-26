@@ -45,70 +45,24 @@
             <h3 id="los-buscados">Ofertas</h3>
         </div>
         <div class="contenedor__productos">
+            <% for(let i = 0; i <= 3; i++){ %>
             <article class="productos">
-                <a href="/producto.html"><img class="imagenes" src="/images/newbalance-550.jpg"></a>
+                <a href="./products/detalleProducto/<%= productIndex[i].id%>"><img class="imagenes" src="/images/products/<%= productIndex[i].imagen %>"></a>
                 <div class="descripcion">
                     <div class="informacion-precio">
                         <i class="fas fa-dollar-sign"></i>
-                        <p class="precio">273</p>
+                        <p class="precio"><%= productIndex[i].precio %></p>
                     </div>
                     <div class="envio">
                         <i class="fas fa-truck"></i>
                         <p>Envío gratis</p>
                     </div>
                     <div class="nombre-producto">
-                        <p>Adidas yeezy boost BR</p>
+                        <p><%= productIndex[i].modelo %></p>
                     </div>
                 </div>
             </article>
-            <article class="productos">
-                <a href="/producto.html"><img class="imagenes" src="/images/newbalance-aime-leon-dore.png"></a>
-                <div class="descripcion">
-                    <div class="informacion-precio">
-                        <i class="fas fa-dollar-sign"></i>
-                        <p class="precio">118</p>
-                    </div>
-                    <div class="envio">
-                        <i class="fas fa-truck"></i>
-                        <p>Envío gratis</p>
-                    </div>
-                    <div class="nombre-producto">
-                        <p>Adidas yeezy boost BR</p>
-                    </div>
-                </div>
-            </article>
-            <article class="productos">
-                <a href="/producto.html"><img class="imagenes" src="/images/nike-hacky-sack.jpg"></a>
-                <div class="descripcion">                   
-                    <div class="informacion-precio">
-                        <i class="fas fa-dollar-sign"></i>
-                        <p class="precio">139</p>
-                    </div>
-                    <div class="envio">
-                        <i class="fas fa-truck"></i>
-                        <p>Envío gratis</p>
-                    </div>
-                    <div class="nombre-producto">
-                        <p>Adidas yeezy boost BR</p>
-                    </div>
-                </div>
-            </article>
-            <article class="productos">
-                <a href="/producto.html"><img class="imagenes" src="/images/nike-lowa.jpg"></a>
-                <div class="descripcion">
-                    <div class="informacion-precio">
-                        <i class="fas fa-dollar-sign"></i>
-                        <p class="precio">199</p>
-                    </div>
-                    <div class="envio">
-                        <i class="fas fa-truck"></i>
-                        <p>Envío gratis</p>
-                    </div>
-                    <div class="nombre-producto">
-                        <p>Adidas yeezy boost BR</p>
-                    </div>
-                </div>
-            </article>
+            <%}%>
         </div>
     </main>
     <%- include('partials/footer') %>
