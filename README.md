@@ -29,6 +29,4 @@ Lucas Herrera, 20 años, de Buenos Aires, Argentina. Estudiante de "Digital Hous
 
 Valentin Alonso, 19 años, de Capital Federal, Argentina. Estudiante de "Digital House".
 
-Angel Garay, 38 años, de Mendoza, Argentina. Estudiante de "Digital House".
-
 Nuestro tablero de trabajo es https://trello.com/b/VX7lq8j6/proyecto-integrador-deluxesneakers
