@@ -18,41 +18,34 @@
     <div class="banner"></div>
     <div id="box">
         <form class="borde editProduct" action="./<%= productEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-          <div id="titulo">Edita tu producto</div>
-            <div class="mb-3">
-              <label class="form-label subtitulos">Nombre del Producto</label>
-              <input type="text" class="form-control" value="<%= productEdit.modelo %>" name="modelo" >
+        <div id="titulo">Edita tu producto</div>
+          <div class="div">
+            <label class="form-label subtitulos">Nombre del Producto</label>
+            <input type="text" class="form-control" value="<%= productEdit.modelo %>" name="modelo" >
+          </div>
+          <div class="div">
+            <label  class="form-label subtitulos">Talle</label>
+            <input type="number" class="form-control" value="<%= productEdit.talle %>" name="talle">
+          </div>
+          <div class="div">
+            <div class="col">
+              <label  class="form-label subtitulos">Precio</label>
+              <input type="number" class="form-control" placeholder="$ 20.000" name="precio"  value="<%= productEdit.precio %>" required>
             </div>
-            <div class="row">
-              <div class="col">
-                <label  class="form-label subtitulos">Talle</label>
-                <input type="number" class="form-control" value="<%= productEdit.talle %>" name="talle">
-              </div>
+            <div class="col">
+              <label  class="form-label subtitulos">Descuento</label>
+              <input type="number" class="form-control" placeholder="10%"  value="<%= productEdit.descuento %>" name="descuento">
             </div>
-            <br>
-            <div class="row">
-              <div class="col">
-                <label  class="form-label subtitulos">Precio</label>
-                <input type="number" class="form-control" placeholder="$ 20.000" name="precio"  value="<%= productEdit.precio %>" required>
-              </div>
-              <div class="col">
-                <label  class="form-label subtitulos">Descuento</label>
-                <input type="number" class="form-control" placeholder="10%"  value="<%= productEdit.descuento %>" name="descuento">
-              </div>
-            </div>
-            <br>
-            <div class="subtitulos"> Subi una imagen de tu producto</div>
-              <div class="input-group mb-3 col-sm">
-                <input type="file" class="form-control" id="inputGroupFile02" name="productFile" value="<%= productEdit.imagen %>" multiple rq>
-                <label class="input-group-text subtitulos" for="inputGroupFile02">Subir imagen</label>
-              </div>
-              <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label subtitulos">Descripción</label>
-                <input class="form-control" id="exampleFormControlTextarea1" placeholder="Descripción del producto" rows="3" name="descripcion" value="<%= productEdit.descripcion %>">
-              </div>
-              <br>
-            <div id="botonSubmit"> <button type="submit" class="btn btn-primary">Edita producto</button></div>
-          </form>
+          </div>
+          <div class="subir-archivo"> 
+            <input type="file" class="input-crear" id="inputGroupFile02" name="productFile" name="error" value="<%= productEdit.imagen %>"" required multiple>
+          </div>
+          <div class="div">
+            <label for="exampleFormControlTextarea1" class="form-label subtitulos">Descripción</label>
+            <input class="form-control" id="exampleFormControlTextarea1" placeholder="Descripción del producto" rows="3" name="descripcion" value="<%= productEdit.descripcion %>">
+          </div>
+          <div id="botonSubmit"> <button type="submit" class="btn btn-primary">Editar producto</button></div>
+        </form>
     </div>
   </main>
     <%- include('../partials/footer') %>

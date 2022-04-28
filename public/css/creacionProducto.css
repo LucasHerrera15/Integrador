@@ -15,13 +15,14 @@
 }
 .borde{
     width: 100%;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    padding: 50px 100px;
+    border: 2px solid #004AAD;
+    border-radius: 4px;
+    padding: 4px;
 }
 #titulo{
     text-align: center;
-    margin-top: 4%;
+    margin: 4% 0;
+    border-bottom: 2px solid #004AAD;
     font-family: 'Secular One', sans-serif;
     font-weight: 800;
     color: #FF9100;
@@ -43,16 +44,17 @@
     color: red;
     font-size: small;
 }
+.input{
+    margin: 2% 0;
+}
 .nombreMarca{
     margin-top: 2%;
 }
 .subir-archivo{
-    margin-bottom: 2%;
+    margin-bottom: 4% 0 4% 0;
     position: relative;
     display: inline-block;
-    width: 95%;
-    margin-left: 2.5%;
-    margin-right: 2.5%
+    width: 100%;
   }
   
   .subir-archivo::before {

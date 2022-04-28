@@ -17,28 +17,32 @@
     <main>
     <div class="banner"></div>
     <div id="contenedor">
-        
         <div id="fondo" class="borde">
             <div id="titulo">Carrito de compras</div>
             <% if (carritoFinished.length > 0){ %>
                <% for(let i = 0; i < carritoFinished?.length ; i++){ %>
             <div id="productCarrito">
-                <div class="productImage"> <img class="productImage" src="/images/products/<%= carritoFinished[i].imagen %>"></div>
-                <div id="productName"> <%= carritoFinished[i].modelo %></div>
-                <div id="productTalle"> <%= carritoFinished[i].talle %></div>
-                <div id="productStock"><input id="cantidad" type="number" value="<%= carritoFinished[i].cantidad %>"></div>
-                <div id="productPrice"> $<%= carritoFinished[i].precio %></div>
-                <form action="/products/eliminarCarrito/<%= carritoFinished[i].id %>?_method=DELETE" method="POST">
-                    <button type=" submit" class="btn btn-primary">Eliminar</button>
-                        <input type="hidden" name="carritoId" value="<%= carritoFinished[i].id %>"> 
-                </form>
+                <div id="productImage">
+                    <img id="imagen-carrito" src="/images/products/<%= carritoFinished[i].imagen %>">
+                </div>
+                <div id="division-descripcion">
+                    <div id="descripcion-div">
+                        <p class="descripcion"> <%= carritoFinished[i].modelo %></p>
+                        <p class="descripcion"> Talle <%= carritoFinished[i].talle %></p>
+                        <p class="descripcion">Cantidad<input id="cantidad" type="number" value="<%= carritoFinished[i].cantidad %>"></p>
+                        <p class="descripcion"> $<%= carritoFinished[i].precio %></p>
+                    </div>
+                    <form id="boton" action="/products/eliminarCarrito/<%= carritoFinished[i].id %>?_method=DELETE" method="POST">
+                        <button type=" submit" class="boton">Eliminar</button>
+                            <input type="hidden" name="carritoId" value="<%= carritoFinished[i].id %>"> 
+                    </form>
+                </div>
             </div>
             <%}%>
             <% } else { %>
                 <h1>Carrito Vacio </h1> 
                 <% } %>
         </div>
-        
     </div>
     </main>
     <%- include('../partials/footer') %>

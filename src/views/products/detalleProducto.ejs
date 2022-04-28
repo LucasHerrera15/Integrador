@@ -20,34 +20,37 @@
         <p id="nombreProducto"><%= productSelected.modelo  %></p>
         <div id="productContenedor">
             <div id="productName">
-                <img src="/images/products/<%= productSelected.imagen  %>" id="productImg">
+                <img src="/images/products/<%= productSelected.imagen %>" id="productImg">
             </div>
-            <div id="infoContenedor">
-                <div class="info" id="precio">$<%= productSelected.precio%></div>
-                <div class="info"> Talle: <%= productSelected.talle %> ars</div>
-                <div class="info"><%= productSelected.descripcion %></div>
-            </div>
-        </div>
-        <div id="actionContenedor">
-            <form action="../carrito" method="POST">
-                <div id="carrito">
-                    <button type=" submit" class="btn btn-primary">Añadir al carrito</button>
-                    <input type="hidden" name="productId" value="<%= productSelected.id %>"> 
+            <div id="contenedor-desktop">
+                <div id="infoContenedor">
+                    <div class="info">$<%= productSelected.precio%></div>
+                    <div class="info"> Talle: <%= productSelected.talle %> ars</div>
+                    <div class="info" id="modelo"><%= productSelected.modelo %></div>
+                    <div class="info"><%= productSelected.descripcion %></div>
                 </div>
-            </form>
-            <% if (productSelected.usuarioFK === locals.userLogged?.id) { %>
-                <button type=" submit" class="btn btn-primary">
-                    <div class="carrito">
-                        <a href="/products/edit/<%= productSelected.id %>">Edita tu producto</a>
+                <div id="actionContenedor">
+                    <div class="action-div">
+                        <form action="../carrito" method="POST">
+                            <button type="submit" class="action">Añadir al carrito</button>
+                            <input type="hidden" name="productId" value="<%= productSelected.id %>"> 
+                        </form>
                     </div>
-                </button>
-                <form  action="/products/eliminarProducto/<%= productSelected.id %>?_method=DELETE" method="POST">
-                    <div id="carrito">
-                        <button type=" submit" class="btn btn-primary">Elimina tu producto</button>
-                        <input type="hidden" name="productId" value="<%= productSelected.id %>"> 
+                    <% if (productSelected.usuarioFK === locals.userLogged?.id) { %>
+                    <div class="action-div">
+                        <button type="submit" class="action" id="añadir">
+                            <a href="/products/edit/<%= productSelected.id %>">Edita tu producto</a>
+                        </button>
                     </div>
-                </form>
-                <% } %>
+                    <div class="action-div">
+                        <form  action="/products/eliminarProducto/<%= productSelected.id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="action">Elimina tu producto</button>
+                            <input type="hidden" name="productId" value="<%= productSelected.id %>"> 
+                        </form>
+                    <% } %>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     </main>

@@ -1,41 +1,28 @@
-/* * {
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Secular one', sans-serif;
-}
-main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-} */
 #box{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    width: 100%;
+    width: 90%;
+    margin: 10% 5%;
+}
+.div{
+    margin: 2% 0;
 }
 .borde{
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 50px 100px;
+    padding: 10px;
+    border: 2px solid #004AAD;
+    border-radius: 4px;
 }
 #titulo{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 10px;
     font-family: 'Secular One', sans-serif;
     font-weight: 900;
     color: #FF9100;
     font-size: 25px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #004AAD;
 }
 .subtitulos{
     font-family: 'Secular One', sans-serif;
@@ -47,3 +34,42 @@ body{
     align-items: center;
     justify-content: center;
 }
+.subir-archivo{
+    margin-bottom: 4% 0 4% 0;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .subir-archivo::before {
+    background-color: #004AAD;;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px;
+    content: 'Seleccionar imagen de perfil'; 
+    position: absolute;
+    left: 17px;
+    right: 17px;
+    top: 0;
+    bottom: 0;
+  }
+  
+  .subir-archivo input[type="file"] {
+    opacity: 0;
+    width: 90%;
+    display: inline-block;
+    border-radius: 5px;
+    border-color: #004AAD;;
+  }
+  .subir-archivo input[type="file"]:hover{
+      cursor: pointer;
+  }
+
+  @media (min-width: 700px){
+      .borde{
+          width: 70%;
+      }
+  }
